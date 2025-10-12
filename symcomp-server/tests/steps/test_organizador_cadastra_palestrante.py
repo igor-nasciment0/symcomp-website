@@ -21,7 +21,7 @@ def palestrante_usuario_dados():
     return {
         'email': 'kely@kely.com',
         'name': 'Kely Cristina',
-        'password': 'divaDemaisCl0seCategory!'
+        'password': 'motherDemaisCl0seCategory!'
     }
 
 @pytest.fixture

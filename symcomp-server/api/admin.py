@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import User, Jogador, PerfilUsuario
+from .models import User, PerfilUsuario
 
 class UserAdmin(BaseUserAdmin):
     ordering = ['email']
@@ -21,5 +21,4 @@ class UserAdmin(BaseUserAdmin):
     search_fields = ('email', 'username', 'name')
 
 admin.site.register(User, UserAdmin)
-admin.site.register(Jogador)
 admin.site.register(PerfilUsuario)

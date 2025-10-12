@@ -40,6 +40,8 @@ else:
 INSTALLED_APPS = [
     'api',
     'desafio',
+    'desafio.username',
+    'atividade',
     "drf_spectacular",
     "drf_spectacular_sidecar",
     'django.contrib.admin',
