@@ -4,7 +4,8 @@ from rest_framework.test import APIClient
 from django.contrib.auth import get_user_model
 from desafio.models import Desafio
 from desafio.username.models import Daname
-from api.models import PerfilUsuario, Papel, Jogador
+from api.models import PerfilUsuario, Papel
+from desafio.jogador.models import Jogador
 
 User = get_user_model()
 
@@ -20,7 +21,7 @@ def contexto():
 
 
 @pytest.mark.django_db
-@scenario('../features/desafio/participar_desafio.feature', 'Usuário cadastrado aceita o desafio')
+@scenario('../../features/desafio/participar_desafio.feature', 'Usuário cadastrado aceita o desafio')
 def test_usuario_cadastrado_aceita_desafio():
     pass
 
@@ -61,7 +62,7 @@ def aceitar_desafio(client, contexto):
     desafio = contexto["desafio"]
     client.force_authenticate(user=user)
     response = client.post(
-        f"/desafios/{desafio.id}/jogador/",
+        f"/desafios/{desafio.id}/jogadores/",
         {},
         format="json"
     )

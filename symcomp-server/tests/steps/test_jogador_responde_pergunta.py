@@ -4,7 +4,8 @@ from rest_framework.test import APIClient
 from django.contrib.auth import get_user_model
 from desafio.models import Desafio
 from desafio.questao.models import Questao
-from api.models import PerfilUsuario, Papel, Jogador
+from api.models import PerfilUsuario, Papel
+from desafio.jogador.models import Jogador
 
 User = get_user_model()
 
