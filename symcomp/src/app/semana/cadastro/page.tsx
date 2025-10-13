@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import z from 'zod'
 
+
 import {
   Form,
   FormControl,
@@ -17,6 +18,13 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import RegisterUser from '@/lib/http/register-user'
+
+import { SCInput } from '@/components/sc-2025/input'
+import { SCLabel } from '@/components/sc-2025/label'
+import { SCField } from '@/components/sc-2025/field'
+import { SCButton } from '@/components/sc-2025/button'
+import { TypographyH1 } from '@/components/sc-2025/typography'
+import { TypographyH2 } from '@/components/sc-2025/typography'
 
 // Representa os campos do formulário.
 const formSchema = z.object({
@@ -60,71 +68,60 @@ export default function CadastroPage() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto p-6 grid gap-6">
+    <div className="max-w-5xl mx-auto p-6 grid gap-6 bg-red-500">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="border rounded-2xl p-6 shadow-sm bg-white grid gap-4"
+          className="p-6 grid gap-4"
         >
-          <Image
-            alt="Logo da Symcomp"
-            src="/logo/symcomp.png"
-            width={80}
-            height={80}
-            className="mx-auto"
-          />
 
-          <h2 className="text-xl font-semibold">Cadastrar</h2>
+          <TypographyH1>Cadastrar</TypographyH1>
+          <div className='text-[#0E0A47]'>
+            <TypographyH2>Preencha suas informações para concluir o cadastro:</TypographyH2>
+          </div>
 
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Nome</FormLabel>
-                <FormControl>
-                  <Input {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className='text-[#0E0A47]'>
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <SCField {...field}>
+                  <SCLabel>Nome</SCLabel>
+                  <SCInput placeholder="Ex.: Grace Hopper"></SCInput>
+                </SCField>
+              )}
+            />
+          </div>
 
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className='text-[#0E0A47]'>
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <SCField {...field}>
+                  <SCLabel>Email</SCLabel>
+                  <SCInput placeholder="Ex.: grace.hopper@ime.usp.br"></SCInput>
+                </SCField>
+              )}
+            />
+          </div>
 
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Senha</FormLabel>
-                <FormControl>
-                  <Input {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className="text-[#0E0A47]">
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <SCField {...field}>
+                  <SCLabel>Senha</SCLabel>
+                  <SCInput placeholder="Ex.: &S3m4n4D@C0mpUT4c@0"></SCInput>
+                </SCField>
+              )}
+            />
+          </div>
 
-          <button
-            type="submit"
-            disabled={isPending}
-            className={`bg-rose-600 text-white rounded px-4 py-2 mt-2 ${isPending ? 'hover:bg-rose-700' : 'opacity-80'}`}
-          >
-            Registrar
-          </button>
+            <FormControl>
+                <SCButton>Finalizar</SCButton>
+            </FormControl>
         </form>
       </Form>
     </div>
