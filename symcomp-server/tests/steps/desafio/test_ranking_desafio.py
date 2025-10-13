@@ -20,7 +20,7 @@ def contexto():
 
 # Definição do cenário
 @pytest.mark.django_db
-@scenario('/app/tests/features/desafio/ranking_desafio.feature', 'Obter o ranking de um desafio com vários jogadores')
+@scenario('/../../features/desafio/ranking_desafio.feature', 'Obter o ranking de um desafio com vários jogadores')
 def test_obter_ranking_de_desafio():
     pass
 
