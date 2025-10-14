@@ -1,3 +1,4 @@
+from backend.settings import SESSION_COOKIE_SECURE
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import status
 from rest_framework.response import Response
@@ -55,16 +56,26 @@ class EmailTokenObtainPairView(TokenObtainPairView):
         access = str(refresh.access_token)
 
         response = Response({
-            'access': access,
-        })
+            'message': 'Login succesful'
+        }, status=status.HTTP_200_OK)
+
+        # set access token in httponly cookie
+        response.set_cookie(
+                key='access_token',
+                value=access,
+                httponly=True,
+                expires=settings.SIMPLE_JWT['ACCESS_TOKEN_LIFETIME']
+                secure=settings.SESSION_COOKIE_SECURE,
+                samesite='Lax',
+        )
 
         response.set_cookie(
-            key='refresh',
-            value=str(refresh),
-            httponly=True,
-            secure=False,
-            samesite='Lax',
-            max_age=self.validade
+                key='refresh_token',
+                value=str(refresh),
+                httponly=True,
+                expires=settings.SIMPLE_JWT['REFRESH_TOKEN_LIFETIME'],
+                secure=settings.SESSION_COOKIE_SECURE,
+                samesite='Lax'
         )
 
         return response
@@ -79,10 +90,30 @@ class RefreshAccessTokenView(APIView):
         try:
             refresh = RefreshToken(refresh_token)
             new_access = str(refresh.access_token)
-            return Response({'access': new_access})
-        except TokenError:
-            return Response({'detail': 'Invalid or expired refresh token'}, status=status.HTTP_401_UNAUTHORIZED)
+            response = Response({'message': 'Access token refreshed successfully.'}, status=status.HTTP_200_OK)
 
+            response.set_cookie(
+                key='access_token',
+                value=new_access,
+                httponly=True,
+                expires=settings.SIMPLE_JWT['ACCESS_TOKEN_LIFETIME'],
+                secure=settings.SESSION_COOKIE_SECURE,
+                samesite='Lax'
+            )
+
+            if 'ROTATE_REFRESH_TOKENS' in settings.SIMPLE_JWT and settings.SIMPLE_JWT['ROTATE_REFRESH_TOKENS']:
+                response.set_cookie(
+                    key='refresh_token',
+                    value=str(refresh), 
+                    httponly=True,
+                    expires=settings.SIMPLE_JWT['REFRESH_TOKEN_LIFETIME'],
+                    secure=settings.SESSION_COOKIE_SECURE,
+                    samesite='Lax'
+                )
+
+            return response
+        except (TokenError, InvalidToken) as e:
+            return Response({'detail': 'Invalid or expired refresh token'}, status=status.HTTP_401_UNAUTHORIZED)
 
 class ValidateCodeView(APIView):
     def post(self, request):
