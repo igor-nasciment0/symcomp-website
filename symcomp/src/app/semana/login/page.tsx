@@ -40,12 +40,9 @@ export default function LoginPage() {
       return await CreateLoginToken(values)
     },
     onSuccess: (data) => {
-      console.log('Login realizado com sucesso:', data.access)
-	  // Salva token para usar em outras requests
-	  localStorage.setItem('accessToken', data.access)
-	  localStorage.setItem('refreshToken', data.refresh)
+      console.log('Login realizado com sucesso:', data.message)
 
-	  router.push('/dashboard')
+	  router.push('/semana/dashboard')
     },
     onError: (error) => {
       console.error('Erro no login:', error)
@@ -64,7 +61,7 @@ export default function LoginPage() {
   }
 
   return (
-     <div className="max-w-5xl mx-auto p-6">
+     <div className="max-w-5xl mx-auto p-6 bg-red-500">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}

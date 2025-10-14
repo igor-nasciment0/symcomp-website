@@ -6,16 +6,16 @@ interface CreateLoginTokenRequest {
 }
 
 type CreateLoginTokenResponse = {
-  access: string
+  message: string
 }
 
 export default async function CreateLoginToken({
   email,
   password,
-}: CreateLoginTokenRequest) {
-  const response = await api.post<CreateLoginTokenRequest, CreateLoginTokenResponse>(
+}: CreateLoginTokenRequest): Promise<CreateLoginTokenResponse> {
+  const data = await api.post<CreateLoginTokenResponse>(
     '/token/',
     { email, password },
   )
-  return response
+  return data 
 }
