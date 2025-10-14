@@ -15,8 +15,8 @@ from django.shortcuts import get_object_or_404
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from .lib.user_validation_code_email import UserValidationCodeEmail
-from rest_framework_simplejwt.tokens import RefreshToken, InvalidToken
-from rest_framework_simplejwt.exceptions import TokenError
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.exceptions import TokenError, InvalidToken
 
 import random
 
@@ -48,16 +48,16 @@ class EmailTokenObtainPairView(TokenObtainPairView):
         response = super().post(request, *args, **kwargs)
 
         if response.status_code == 200:
-            response = Response({
-                'message': 'Login succesful'
-            }, status=status.HTTP_200_OK)
-
+            access = response.data.pop('access')
+            refresh = response.data.pop('refresh')
+            response.data['message'] = 'Login successful.'
+            
             # set access token in httponly cookie
             response.set_cookie(
                     key='access_token',
                     value=access,
                     httponly=True,
-                    expires=settings.SIMPLE_JWT['ACCESS_TOKEN_LIFETIME']
+                    expires=settings.SIMPLE_JWT['ACCESS_TOKEN_LIFETIME'],
                     secure=settings.SESSION_COOKIE_SECURE,
                     samesite='Lax',
             )
