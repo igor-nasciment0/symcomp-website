@@ -32,3 +32,14 @@ docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build -d
 You can remove the `-d` flag to not run on the background only.
 
 Don't forget to fill the `.env` file with appropriate values!
+
+## Migrations
+Ideally, we should not use makemigrations everytime (specially in production), only when creating/editing models. But this causes the problem of backend container failling because there are missing tables from our database. To fix this, there are some workarounds:
+
+- You can add back the `python manage.py makemigrations <app_name>` TEMPORARILY on `entrypoint.sh`
+- You can run this command to make the migration files: 
+```bash
+docker-compose run --rm backend python manage.py makemigrations <app_name>
+```
+
+
