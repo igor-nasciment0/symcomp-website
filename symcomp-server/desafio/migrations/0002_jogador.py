@@ -8,7 +8,6 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0004_delete_jogador'),
         ('desafio', '0001_initial'),
     ]
 

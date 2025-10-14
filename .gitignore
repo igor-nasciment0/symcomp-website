@@ -106,7 +106,6 @@ symcomp-server/.pytype/
 symcomp-server/.pylint.d/
 symcomp-server/ruff_cache/
 
-# Django Migrations (for now at least)
-symcomp-server/api/migrations
+# Do not ignore django migrations!
 *storybook.log
 storybook-static

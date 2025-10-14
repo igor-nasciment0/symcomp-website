@@ -9,11 +9,7 @@ python wait-for-db.py
 # Apply database migrations (NOT RECOMMENDED TO PUT THE MAKEMIGRATIONS HERE)
 # But haven't found any other workaround. Possibly what you can do is makemigraitons when first running to ensure migrations file, and then
 # Remove the makemigrations line
-echo "Creating and applying database migrations..."
-python manage.py makemigrations --empty --noinput api
-python manage.py makemigrations --empty --noinput desafio
-python manage.py makemigrations --empty --noinput username
-python manage.py makemigrations --empty --noinput atividade
+echo "Applying database migrations..."
 python manage.py migrate
 
 python manage.py import_drag_family
