@@ -2,6 +2,10 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from desafio.questao.models import Questao
+from desafio.jogador.models import Jogador
+from desafio.models import Desafio
+from rest_framework import status
+from desafio.serializers import RankingSerializer
 from desafio.services import GerenciadorDePontuacao
 
 @api_view(['POST'])
@@ -26,3 +30,20 @@ def responder_questao(request, questao_id):
         "resposta_correta": correta,
         "pontuacao_atual": request.user.jogador.pontos
     })
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def obter_ranking(request, desafio_id):
+    """
+    Obtém o ranking (Top 10) de um desafio
+    """
+
+    try:
+        desafio = Desafio.objects.get(pk=desafio_id)
+    except Desafio.DoesNotExist:
+        return Response({"error": "Desafio não encontrado"}, status=404)
+
+    top_10_jogadores = Jogador.objects.filter(desafio=desafio).order_by('-pontos')[:10]
+
+    serializer = RankingSerializer(top_10_jogadores, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
