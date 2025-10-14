@@ -1,5 +1,6 @@
 'use client'
 
+import { CheckCheck, CheckCircle, Stamp } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
 
@@ -7,6 +8,7 @@ import { SCButton } from '@/components/sc-2025/button'
 import { SCField } from '@/components/sc-2025/field'
 import { SCInput } from '@/components/sc-2025/input'
 import { SCLabel } from '@/components/sc-2025/label'
+import { Text } from '@/components/sc-2025/typography'
 import { FieldGroup } from '@/components/ui/field'
 
 const Scanner = dynamic(
@@ -21,30 +23,27 @@ export default function Certificado() {
   const [mensagem, setMensagem] = useState('')
 
   async function enviarPresenca(token: string) {
-    const res = await fetch('/api/validate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nome, email, token }),
-    })
-    const data = await res.json()
-    setMensagem(data.mensagem)
     setEtapa('done')
   }
 
   if (etapa === 'scan') {
     return (
-      <div className="w-full h-full flex-1 flex flex-col justify-center items-center bg-sc-2025-background">
-        <p className="text-lg font-semibold">Aponte a câmera para o QR da palestra</p>
-        <div className="w-[300px]">
-          <Scanner
-            onScan={(result) => {
-              if (result) {
-                const text = result.join()
-                enviarPresenca(text)
-              }
-            }}
-          />
-        </div>
+      <div className="relative w-full h-screen bg-black">
+        <Scanner
+          styles={{ video: { width: '100%', height: '100%' } }}
+          constraints={{ facingMode: 'environment' }}
+          onScan={(result) => {
+            if (result) {
+              const text = Array.isArray(result) ? result.join() : result
+              enviarPresenca(text)
+            }
+          }}
+          sound={false}
+        />
+
+        <p className="absolute top-[150px] w-full text-center text-white text-lg font-semibold bg-black/40 p-8">
+          Aponte a câmera para o QR da palestra
+        </p>
       </div>
     )
   }
@@ -52,10 +51,14 @@ export default function Certificado() {
   if (etapa === 'done') {
     return (
       <div className="w-full h-full flex-1 flex justify-center items-center bg-sc-2025-background">
-        <p className="text-xl">{mensagem}</p>
-        <SCButton onClick={() => setEtapa('form')} className="mt-4">
-          Registrar outra presença
-        </SCButton>
+        <div className="flex flex-col gap-4 justify-center items-center">
+          <div className="border-white border-4 p-8 rounded-full">
+            <CheckCheck size={50} />
+          </div>
+          <Text className="text-4xl text-center p-4">
+            Presença registrada com sucesso
+          </Text>
+        </div>
       </div>
     )
   }
