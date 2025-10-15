@@ -8,11 +8,13 @@ interface SCInputProps {
   value?: string
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   required?: boolean
+  type?: string
 }
 
-export function SCInput({ placeholder, value, onChange, required }: SCInputProps) {
+export function SCInput({ placeholder, value, onChange, required, type }: SCInputProps) {
   return (
     <Input
+      type={type}
       value={value ?? ''}
       onChange={onChange}
       className={cn(

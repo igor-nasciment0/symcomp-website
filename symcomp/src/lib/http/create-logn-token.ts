@@ -1,3 +1,5 @@
+import { CreateReadStreamOptions } from 'fs/promises'
+
 import { api } from './api'
 
 interface CreateLoginTokenRequest {
@@ -13,6 +15,9 @@ export default async function CreateLoginToken({
   email,
   password,
 }: CreateLoginTokenRequest): Promise<CreateLoginTokenResponse> {
-  const data = await api.post<CreateLoginTokenResponse>('/token/', { email, password })
+  const data = await api.post<CreateReadStreamOptions, CreateLoginTokenResponse>(
+    '/token/',
+    { email, password },
+  )
   return data
 }

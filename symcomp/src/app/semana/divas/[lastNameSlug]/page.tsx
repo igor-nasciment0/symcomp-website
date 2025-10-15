@@ -2,12 +2,11 @@ import { DivaCard } from '../diva-card'
 import { getDivaByLastNameSlug } from './divas-util'
 
 interface DivaDetailPageProps {
-  params: { lastNameSlug: string }
+  params: Promise<{ lastNameSlug: string }>
 }
 
-export default function DivaDetailPage({
-  params: { lastNameSlug },
-}: DivaDetailPageProps) {
+export default async function DivaDetailPage({ params }: DivaDetailPageProps) {
+  const { lastNameSlug } = await params
   const diva = getDivaByLastNameSlug(lastNameSlug)
 
   return (

@@ -40,12 +40,6 @@ export default function LoginPage() {
     },
     onError: (error) => {
       console.error('Erro no login:', error)
-
-      const errorMessage =
-        error.response?.data?.detail || 'Email ou senha inválidos. Tente novamente.'
-      form.setError('root', {
-        message: errorMessage,
-      })
     },
   })
 
