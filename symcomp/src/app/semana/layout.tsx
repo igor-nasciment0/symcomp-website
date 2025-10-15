@@ -51,7 +51,7 @@ export default function SemanaLayout({ children }: SemanaLayoutProps) {
   return (
     <div
       className={cn(
-        'min-h-svh w-full flex flex-col bg-[#110F0F] text-white',
+        'min-h-svh flex flex-col bg-[#110F0F] text-white',
         silkscreen.className,
       )}
     >
