@@ -13,9 +13,6 @@ export default async function CreateLoginToken({
   email,
   password,
 }: CreateLoginTokenRequest): Promise<CreateLoginTokenResponse> {
-  const data = await api.post<CreateLoginTokenResponse>(
-    '/token/',
-    { email, password },
-  )
-  return data 
+  const data = await api.post<CreateLoginTokenResponse>('/token/', { email, password })
+  return data
 }

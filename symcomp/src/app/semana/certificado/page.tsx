@@ -1,6 +1,6 @@
 'use client'
 
-import { CheckCheck, CheckCircle, Stamp } from 'lucide-react'
+import { CheckCheck } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
 
@@ -20,10 +20,11 @@ export default function Certificado() {
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
   const [etapa, setEtapa] = useState<'form' | 'scan' | 'done'>('form')
-  const [mensagem, setMensagem] = useState('')
+  // const [mensagem, setMensagem] = useState('')
 
   async function enviarPresenca(token: string) {
     setEtapa('done')
+    console.log(token)
   }
 
   if (etapa === 'scan') {

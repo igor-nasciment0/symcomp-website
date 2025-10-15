@@ -11,13 +11,7 @@ import { SCField } from '@/components/sc-2025/field'
 import { SCInput } from '@/components/sc-2025/input'
 import { SCLabel } from '@/components/sc-2025/label'
 import { TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
-
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormMessage,
-} from '@/components/ui/form'
+import { Form, FormControl, FormField, FormMessage } from '@/components/ui/form'
 import CreateLoginToken from '@/lib/http/create-logn-token'
 
 const formSchema = z.object({
@@ -42,17 +36,16 @@ export default function LoginPage() {
     onSuccess: (data) => {
       console.log('Login realizado com sucesso:', data.message)
 
-	  router.push('/semana/dashboard')
+      router.push('/semana/dashboard')
     },
     onError: (error) => {
       console.error('Erro no login:', error)
 
-	  const errorMessage = 
-		  error.response?.data?.detail ||
-		  'Email ou senha inválidos. Tente novamente.'
-	  form.setError('root', {
-		  message: errorMessage,
-	  })
+      const errorMessage =
+        error.response?.data?.detail || 'Email ou senha inválidos. Tente novamente.'
+      form.setError('root', {
+        message: errorMessage,
+      })
     },
   })
 
@@ -61,12 +54,9 @@ export default function LoginPage() {
   }
 
   return (
-     <div className="max-w-5xl mx-auto p-6 bg-red-500">
+    <div className="max-w-5xl mx-auto p-6 bg-red-500">
       <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="p-6 grid gap-4"
-        >
+        <form onSubmit={form.handleSubmit(onSubmit)} className="p-6 grid gap-4">
           <TypographyH1>Login</TypographyH1>
           <div className="text-[#0E0A47]">
             <TypographyH2>Faça login no seu perfil:</TypographyH2>
@@ -79,10 +69,7 @@ export default function LoginPage() {
               render={({ field }) => (
                 <SCField>
                   <SCLabel>Email</SCLabel>
-                  <SCInput
-                    placeholder="Ex.: grace.hopper@ime.usp.br"
-                    {...field}
-                  />
+                  <SCInput placeholder="Ex.: grace.hopper@ime.usp.br" {...field} />
                   <FormMessage />
                 </SCField>
               )}
@@ -96,11 +83,7 @@ export default function LoginPage() {
               render={({ field }) => (
                 <SCField>
                   <SCLabel>Senha</SCLabel>
-                  <SCInput
-                    type="password"
-                    placeholder="Insira sua senha"
-                    {...field}
-                  />
+                  <SCInput type="password" placeholder="Insira sua senha" {...field} />
                   <FormMessage />
                 </SCField>
               )}
@@ -112,11 +95,11 @@ export default function LoginPage() {
               {form.formState.errors.root.message}
             </p>
           )}
-          
+
           <FormControl>
-             <SCButton type="submit" disabled={isPending}>
-                {isPending ? 'Entrando...' : 'Entrar'}
-             </SCButton>
+            <SCButton type="submit" disabled={isPending}>
+              {isPending ? 'Entrando...' : 'Entrar'}
+            </SCButton>
           </FormControl>
         </form>
       </Form>
