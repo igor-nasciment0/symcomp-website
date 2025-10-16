@@ -1,6 +1,6 @@
 # --- Base Stage ---
 # Contém dependências comuns e setup para evitar duplicações
-FROM node:lts-alpine3.22 AS base
+FROM node:lts AS base
 WORKDIR /app
 # Ativa pnpm para gerenciamento de pacotes
 RUN corepack enable && corepack prepare pnpm@10.15.0 --activate
