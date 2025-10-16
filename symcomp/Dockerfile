@@ -35,19 +35,20 @@ RUN pnpm build
 FROM --platform=$TARGETPLATFORM node:lts AS production
 WORKDIR /app
 
-# Ambiente de execução
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV ESBUILD_FORCE_BINARY_DOWNLOAD=true
 
 RUN corepack enable && corepack prepare pnpm@10.15.0 --activate
 
-# Copia somente o necessário
+# Copie apenas os arquivos necessários
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/node_modules ./node_modules
+
+# Reinstale as dependências de produção
+RUN pnpm install --frozen-lockfile --prod --ignore-scripts
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
