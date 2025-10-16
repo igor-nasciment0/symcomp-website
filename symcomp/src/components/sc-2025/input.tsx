@@ -5,16 +5,24 @@ import { Input } from '../ui/input'
 
 interface SCInputProps {
   placeholder?: string
+  value?: string
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  required?: boolean
+  type?: string
 }
 
-export function SCInput({ placeholder }: SCInputProps) {
+export function SCInput({ placeholder, value, onChange, required, type }: SCInputProps) {
   return (
     <Input
+      type={type}
+      value={value ?? ''}
+      onChange={onChange}
       className={cn(
         barlowCondensed.className,
-        'placeholder:font-normal placeholder:opacity-70 border-sc-2025-contrast border-[8px] rounded-none px-4 py-6 !text-lg',
+        'placeholder:font-normal placeholder:opacity-70 border-sc-2025-contrast border-[8px] rounded-none px-4 py-6 !text-lg !text-sc-2025-contrast',
       )}
       placeholder={placeholder}
+      required={required}
     />
   )
 }

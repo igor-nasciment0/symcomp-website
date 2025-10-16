@@ -26,3 +26,13 @@ export function getContrastColor(hex: string): '#000000' | '#ffffff' {
 
   return luminance > 0.179 ? '#000000' : '#ffffff'
 }
+
+export function slugfy(str: string): string {
+  return str
+    .normalize('NFD')
+    .replace(/[^\x00-\x7F]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/_+/g, '-')
+    .replace(/^_+|_+$/g, '')
+    .toLowerCase()
+}

@@ -4,3 +4,5 @@ ignoredBuiltDependencies:
   - esbuild
   - react-tsparticles
   - tsparticles-engine
+onlyBuiltDependencies:
+  - sharp
