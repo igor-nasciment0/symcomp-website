@@ -1,8 +1,6 @@
-ignoredBuiltDependencies:
-  - '@tsparticles/engine'
-  - core-js-pure
+onlyBuiltDependencies:
   - esbuild
   - react-tsparticles
-  - tsparticles-engine
-onlyBuiltDependencies:
   - sharp
+  - tsparticles-engine
+  - unrs-resolver
