@@ -37,5 +37,9 @@ COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/node_modules ./node_modules
 
+# Copia o entrypoint para manter o container vivo em caso de erro
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 EXPOSE 3000
-CMD ["pnpm", "start"]
+CMD ["sh", "/entrypoint.sh"]
