@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 from datetime import timedelta
+from .jwt_config import TOKEN_SETTINGS
 
 DJANGO_ENV = os.getenv("DJANGO_ENV", "development")
 
@@ -200,14 +201,7 @@ REST_FRAMEWORK = {
 if DJANGO_ENV != 'production':
     REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] += ('rest_framework.renderers.BrowsableAPIRenderer',)
 
-# Configuração do SIMPLE_JWT
-SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=14), 
-    "ROTATE_REFRESH_TOKENS": True,
-    "BLACKLIST_AFTER_ROTATION": True,
-    "AUTH_COOKIE": "access_token",
-}
+SIMPLE_JWT = TOKEN_SETTINGS
 
 # Configuração de CSRF e cookies
 
