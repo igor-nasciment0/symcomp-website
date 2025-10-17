@@ -1,13 +1,15 @@
 'use client'
 
-import cronograma from './cronograma.json'
-import { SCCarousel } from '@/components/sc-2025/carousel'
+import { CalendarPlus } from 'lucide-react'
+
 import { SCButton } from '@/components/sc-2025/button'
+import { SCCarousel } from '@/components/sc-2025/carousel'
 import { Text, TypographyH2 } from '@/components/sc-2025/typography'
 import { SCWrapper, SCWrapperFooter } from '@/components/sc-2025/wrapper'
-import { barlowCondensed } from '@/lib/font'
-import { CalendarPlus } from 'lucide-react'
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
+import { barlowCondensed } from '@/lib/font'
+
+import cronograma from './cronograma.json'
 import { CronogramaDetail } from './cronograma-detail'
 
 export function CronogramaCarousel() {

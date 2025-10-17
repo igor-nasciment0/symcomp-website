@@ -1,11 +1,10 @@
+import { TabsContent } from '@radix-ui/react-tabs'
+
 import { SCButton } from '@/components/sc-2025/button'
 import { Text, TypographyH2 } from '@/components/sc-2025/typography'
 import { SCWrapper } from '@/components/sc-2025/wrapper'
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { barlowCondensed } from '@/lib/font'
 import { Atividade } from '@/types/atividade'
-import { TabsContent } from '@radix-ui/react-tabs'
 
 interface CronogramaDetailProps {
   palestra: Atividade

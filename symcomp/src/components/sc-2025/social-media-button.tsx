@@ -2,6 +2,7 @@ import { ComponentType, ReactNode } from 'react'
 import { BsInstagram, BsLink, BsLinkedin, BsYoutube } from 'react-icons/bs'
 
 import { cn } from '@/lib/utils'
+
 import { Highlight, Text } from './typography'
 
 type SocialMediaDomain = 'instagram' | 'linkedin' | 'youtube' | 'custom'

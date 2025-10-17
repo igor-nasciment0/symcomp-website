@@ -1,7 +1,6 @@
-import { Text, TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
+import { TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
+
 import SemanaHeader from '../header'
-import { SCCarousel } from '@/components/sc-2025/carousel'
-import { SCButton } from '@/components/sc-2025/button'
 import { CronogramaCarousel } from './cronograma-carrousel'
 
 export default function CronogramaPage() {

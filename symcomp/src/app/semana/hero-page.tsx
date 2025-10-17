@@ -1,9 +1,11 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
 import { SCButton } from '@/components/sc-2025/button'
 import { SocialMediaButton } from '@/components/sc-2025/social-media-button'
 import { Highlight, TypographyH1 } from '@/components/sc-2025/typography'
 import { semanaCrongorama } from '@/lib/routes'
-import Image from 'next/image'
-import Link from 'next/link'
+
 import SemanaHeader from './header'
 
 export function HeroPage() {

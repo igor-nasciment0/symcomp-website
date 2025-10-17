@@ -1,4 +1,3 @@
-import { TypographyH1 } from '@/components/sc-2025/typography'
 import { Menu } from 'lucide-react'
 import Image from 'next/image'
 

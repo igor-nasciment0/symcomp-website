@@ -3,8 +3,6 @@ import { ReactNode } from 'react'
 import { silkscreen } from '@/lib/font'
 import { cn } from '@/lib/utils'
 
-import SemanaHeader from './header'
-
 interface SemanaLayoutProps {
   children: ReactNode
 }
