@@ -40,12 +40,38 @@ export function SCCarousel<T>({
     api.on('select', onSelect)
 
     return () => {
-      if (api) api.off('select', onSelect)
+      api.off('select', onSelect)
     }
   }, [api])
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-4 w-full">
+      <div className="relative w-full flex items-center justify-center">
+        <button
+          onClick={() => api?.scrollPrev()}
+          className="absolute left-0 z-10 disabled:opacity-50"
+          style={{ width: 64, height: 64 }}
+        >
+          <Image src={prevIcon} alt="Previous" width={64} height={64} />
+        </button>
+
+        <Carousel className={`w-full ${className || ''}`} setApi={setApi}>
+          <CarouselContent>
+            {items.map((item, index) => (
+              <CarouselItem key={index}>{renderItem(item, index)}</CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+
+        <button
+          onClick={() => api?.scrollNext()}
+          className="absolute right-0 z-10 disabled:opacity-50"
+          style={{ width: 64, height: 64 }}
+        >
+          <Image src={nextIcon} alt="Next" width={64} height={64} />
+        </button>
+      </div>
+
       <div className="flex gap-2">
         {Array.from({ length: count }).map((_, index) => (
           <button
@@ -56,24 +82,6 @@ export function SCCarousel<T>({
             }`}
           />
         ))}
-      </div>
-
-      <div className="flex items-center gap-4">
-        <button onClick={() => api?.scrollPrev()} className="disabled:opacity-50">
-          <Image src={prevIcon} alt="Previous" width={64} height={64} />
-        </button>
-
-        <Carousel className={className} setApi={setApi}>
-          <CarouselContent>
-            {items.map((item, index) => (
-              <CarouselItem key={index}>{renderItem(item, index)}</CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-
-        <button onClick={() => api?.scrollNext()} className="disabled:opacity-50">
-          <Image src={nextIcon} alt="Next" width={64} height={64} />
-        </button>
       </div>
     </div>
   )
