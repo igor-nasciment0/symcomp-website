@@ -1,4 +1,4 @@
-import { api } from './api'
+import { signup } from './api'
 
 interface RegisterUserRequest {
   name: string
@@ -11,6 +11,6 @@ export default async function RegisterUser({
   email,
   password,
 }: RegisterUserRequest) {
-  const response = await api.post('/register/', { name, email, password })
-  return response
+  const response = await signup.post('register/', { name, email, password })
+  return response.data
 }

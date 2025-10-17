@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import z from 'zod'
 
-
 import {
   Form,
   FormControl,
@@ -25,6 +24,7 @@ import { SCField } from '@/components/sc-2025/field'
 import { SCButton } from '@/components/sc-2025/button'
 import { TypographyH1 } from '@/components/sc-2025/typography'
 import { TypographyH2 } from '@/components/sc-2025/typography'
+import { useState } from 'react'
 
 // Representa os campos do formulário.
 const formSchema = z.object({
@@ -64,6 +64,7 @@ export default function CadastroPage() {
   })
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values)
     mutate(values)
   }
 
@@ -85,9 +86,9 @@ export default function CadastroPage() {
               control={form.control}
               name="name"
               render={({ field }) => (
-                <SCField {...field}>
+                <SCField>
                   <SCLabel>Nome</SCLabel>
-                  <SCInput placeholder="Ex.: Grace Hopper"></SCInput>
+                  <SCInput placeholder="Ex.: Grace Hopper" {...field} required></SCInput>
                 </SCField>
               )}
             />
@@ -98,9 +99,9 @@ export default function CadastroPage() {
               control={form.control}
               name="email"
               render={({ field }) => (
-                <SCField {...field}>
+                <SCField>
                   <SCLabel>Email</SCLabel>
-                  <SCInput placeholder="Ex.: grace.hopper@ime.usp.br"></SCInput>
+                  <SCInput placeholder="Ex.: grace.hopper@ime.usp.br" {...field} required></SCInput>
                 </SCField>
               )}
             />
@@ -111,17 +112,15 @@ export default function CadastroPage() {
               control={form.control}
               name="password"
               render={({ field }) => (
-                <SCField {...field}>
+                <SCField>
                   <SCLabel>Senha</SCLabel>
-                  <SCInput placeholder="Ex.: &S3m4n4D@C0mpUT4c@0"></SCInput>
+                  <SCInput placeholder="Ex.: &S3m4n4D@C0mpUT4c@0" {...field} required></SCInput>
                 </SCField>
               )}
             />
           </div>
 
-            <FormControl>
-                <SCButton>Finalizar</SCButton>
-            </FormControl>
+          <SCButton type='submit'>Finalizar</SCButton>
         </form>
       </Form>
     </div>
