@@ -7,6 +7,8 @@ import { Text, TypographyH2 } from '@/components/sc-2025/typography'
 import { SCWrapper, SCWrapperFooter } from '@/components/sc-2025/wrapper'
 import { barlowCondensed } from '@/lib/font'
 import { CalendarPlus } from 'lucide-react'
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
+import { CronogramaDetail } from './cronograma-detail'
 
 export function CronogramaCarousel() {
   return (
@@ -30,16 +32,23 @@ export function CronogramaCarousel() {
                     </div>
                     <SCWrapperFooter>
                       <div className="flex flex-row items-center justify-between">
-                        <SCButton className="bg-transparent p-2">
-                          <div className="flex flex-row gap-4 items-center">
-                            <Text
-                              variant="secondary"
-                              className={`text-lg text-white font-semibold ${barlowCondensed.className} hover:text-black`}
-                            >
-                              SABER MAIS +
-                            </Text>
-                          </div>
-                        </SCButton>
+                        <Dialog>
+                          <DialogTrigger>
+                            <SCButton className="bg-transparent p-2">
+                              <div className="flex flex-row gap-4 items-center">
+                                <Text
+                                  variant="secondary"
+                                  className={`text-lg text-white font-semibold ${barlowCondensed.className} hover:text-black`}
+                                >
+                                  SABER MAIS +
+                                </Text>
+                              </div>
+                            </SCButton>
+                          </DialogTrigger>
+                          <DialogContent className="bg-[#1D1D1D] w-fit p-0 m-0 border-none flex flex-col items-center justify-center">
+                            <CronogramaDetail palestra={a} />
+                          </DialogContent>
+                        </Dialog>
                         <div className="px-4 bg-white py-2 flex flex-row gap-4">
                           <Text
                             variant="secondary"

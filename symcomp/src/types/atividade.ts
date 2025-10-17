@@ -4,7 +4,7 @@ export type Atividade = {
   descricao: string
   palestrante: string
   sobre: string
-  foto?: string
+  foto?: string | null
   contato?: string
   status?: string
   linkCalendar: string
