@@ -35,6 +35,7 @@ const formSchema = z.object({
 
 export default function CadastroPage() {
   const router = useRouter()
+  const [errors, setErrors] = useState({});
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -59,12 +60,12 @@ export default function CadastroPage() {
       router.push('/semana/cadastro/verificar')
     },
     onError: (error) => {
-      console.error('Erro no cadastro:', error)
+      //console.error('Erro no cadastro:', error.response.data)
+      setErrors(error.response.data);
     },
   })
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
     mutate(values)
   }
 
@@ -89,6 +90,13 @@ export default function CadastroPage() {
                 <SCField>
                   <SCLabel>Nome</SCLabel>
                   <SCInput placeholder="Ex.: Grace Hopper" {...field} required></SCInput>
+                  {
+                    errors.name && errors.name.map((e : string, index : number) => {
+                      return (
+                        <TypographyH2 key={index}>{e}</TypographyH2>
+                      )
+                    })
+                  }
                 </SCField>
               )}
             />
@@ -102,6 +110,13 @@ export default function CadastroPage() {
                 <SCField>
                   <SCLabel>Email</SCLabel>
                   <SCInput placeholder="Ex.: grace.hopper@ime.usp.br" {...field} required></SCInput>
+                  {
+                    errors.email && errors.email.map((e : string, index : number) => {
+                      return (
+                        <TypographyH2 key={index}>{e}</TypographyH2>
+                      )
+                    })
+                  }
                 </SCField>
               )}
             />
@@ -114,7 +129,14 @@ export default function CadastroPage() {
               render={({ field }) => (
                 <SCField>
                   <SCLabel>Senha</SCLabel>
-                  <SCInput placeholder="Ex.: &S3m4n4D@C0mpUT4c@0" {...field} required></SCInput>
+                  <SCInput placeholder="Ex.: &S3m4n4D@C0mpUT4c@0" {...field} required type='password'></SCInput>
+                  {
+                    errors.password && errors.password.map((e : string, index : number) => {
+                      return (
+                        <TypographyH2 key={index}>{e}</TypographyH2>
+                      )
+                    })
+                  }
                 </SCField>
               )}
             />
