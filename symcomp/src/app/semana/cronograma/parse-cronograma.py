@@ -28,6 +28,7 @@ def parse_csv(path_csv: str, path_json: str):
                     "foto": row.get("arquivo_foto"),
                     "contato": row.get("Contato"),
                     "status": row.get("Status"),
+                    "linkCalendar": row.get("link_calendar")
                 })
         cronograma.append({
             "name": dia["name"],
@@ -41,4 +42,4 @@ def parse_csv(path_csv: str, path_json: str):
     print(f"✅ Arquivo JSON gerado em: {path_json}")
 
 if __name__ == "__main__":
-    parse_csv("2025-10-17__cronograma.csv", "cronograma.json")
+    parse_csv("2025-10-17-2__cronograma.csv", "cronograma.json")

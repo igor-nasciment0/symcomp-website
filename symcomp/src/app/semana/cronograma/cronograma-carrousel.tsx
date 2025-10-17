@@ -3,12 +3,10 @@
 import cronograma from './cronograma.json'
 import { SCCarousel } from '@/components/sc-2025/carousel'
 import { SCButton } from '@/components/sc-2025/button'
-import { Text, TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
+import { Text, TypographyH2 } from '@/components/sc-2025/typography'
 import { SCWrapper, SCWrapperFooter } from '@/components/sc-2025/wrapper'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Plus } from 'lucide-react'
 import { barlowCondensed } from '@/lib/font'
+import { CalendarPlus } from 'lucide-react'
 
 export function CronogramaCarousel() {
   return (
@@ -24,8 +22,8 @@ export function CronogramaCarousel() {
               (a) =>
                 a.titulo && (
                   <SCWrapper key={a.horario}>
-                    <div className="p-4 w-[340px]">
-                      <TypographyH2 className="text-left text-xl text-sc-2025-contrast font-semibold">
+                    <div className="p-4 w-[340px] flex flex-col gap-4">
+                      <TypographyH2 className="text-left text-2xl text-sc-2025-contrast font-semibold">
                         {a.titulo}
                       </TypographyH2>
                       <Text variant="secondary">{a.palestrante}</Text>
@@ -42,12 +40,22 @@ export function CronogramaCarousel() {
                             </Text>
                           </div>
                         </SCButton>
-                        <Text
-                          variant="secondary"
-                          className="bg-white font-bold px-4 text-sc-2025-contrast py-2"
-                        >
-                          {a.horario}
-                        </Text>
+                        <div className="px-4 bg-white py-2 flex flex-row gap-4">
+                          <Text
+                            variant="secondary"
+                            className="text-sc-2025-contrast font-bold"
+                          >
+                            {a.horario}
+                          </Text>
+                          <a
+                            href={a.linkCalendar}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Adicionar ao Google Calendar"
+                          >
+                            <CalendarPlus color="black" />
+                          </a>
+                        </div>
                       </div>
                     </SCWrapperFooter>
                   </SCWrapper>
