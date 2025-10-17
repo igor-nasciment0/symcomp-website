@@ -7,4 +7,5 @@ export type Atividade = {
   foto?: string
   contato?: string
   status?: string
+  linkCalendar: string
 }
