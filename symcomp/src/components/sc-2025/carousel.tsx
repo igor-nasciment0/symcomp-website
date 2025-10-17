@@ -46,7 +46,18 @@ export function SCCarousel<T>({
 
   return (
     <div className="flex flex-col items-center gap-4 w-full">
-      <div className="relative w-full flex items-center justify-center">
+      <div className="flex gap-2">
+        {Array.from({ length: count }).map((_, index) => (
+          <button
+            key={index}
+            onClick={() => api?.scrollTo(index)}
+            className={`h-3 w-3 transition-colors ${
+              current === index + 1 ? 'bg-white' : 'bg-sc-2025-contrast'
+            }`}
+          />
+        ))}
+      </div>
+      <div className="relative w-full flex items-start justify-center">
         <button
           onClick={() => api?.scrollPrev()}
           className="absolute left-0 z-10 disabled:opacity-50"
@@ -70,18 +81,6 @@ export function SCCarousel<T>({
         >
           <Image src={nextIcon} alt="Next" width={64} height={64} />
         </button>
-      </div>
-
-      <div className="flex gap-2">
-        {Array.from({ length: count }).map((_, index) => (
-          <button
-            key={index}
-            onClick={() => api?.scrollTo(index)}
-            className={`h-3 w-3 transition-colors ${
-              current === index + 1 ? 'bg-white' : 'bg-sc-2025-contrast'
-            }`}
-          />
-        ))}
       </div>
     </div>
   )
