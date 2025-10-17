@@ -1,7 +1,7 @@
 from django.utils import timezone
 from django.db import transaction
 from .models import Atividade
-from .presenca import RegistroPresenca, PresencaTotal
+from .presenca import RegistroPresenca
 
 class ValidadorPresenca:
     def __init__(self, atividade: Atividade):
@@ -21,19 +21,17 @@ class RegistroPresencaService:
         if not self.validador.validar_horario():
             return False, "Presença só pode ser registrada durante o horário da atividade"
 
+        if RegistroPresenca.objects.filter(
+            usuario=self.usuario,
+            atividade=self.atividade
+        ).exists():
+            return False, "Presença já registrada para esta atividade"
+
         try:
-            with transaction.atomic():
-                RegistroPresenca.objects.create(
-                    usuario=self.usuario,
-                    atividade=self.atividade
-                )
-
-                PresencaTotal.atualizar_ou_criar(self.usuario)
-
+            RegistroPresenca.objects.create(
+                usuario=self.usuario,
+                atividade=self.atividade
+            )
             return True, "Presença registrada com sucesso"
         except Exception as e:
             return False, f"Erro ao registrar presença: {str(e)}"
-
-    def obter_total_horas(self) -> float:
-        presenca_total = PresencaTotal.objects.filter(usuario=self.usuario).first()
-        return presenca_total.total_horas if presenca_total else 0.0

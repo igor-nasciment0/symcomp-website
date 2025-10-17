@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from rest_framework_simplejwt.tokens import AccessToken
 import uuid
+from api.lib.qr_code_generator import generate_qr_code
 
 class StatusAtividade(models.TextChoices):
     PROVISORIA = 'provisoria'
@@ -28,15 +29,14 @@ class Atividade(models.Model):
         return str(token)
 
     def generate_qr_data(self) -> str:
-        base_url = settings.HOST_URL
         token = self._generate_token()
-        return f"{base_url}/api/atividade/registrar-presenca/?token={token}"
+        return token
 
-    # def generate_qr_code(self):
-    #    if not self.qr_code:
-    #        qr_data = self.generate_qr_data()
-    #        filename, image_file = generate_qr_code(qr_data)
-    #        self.qr_code.save(filename.split('/')[-1], image_file, save=False)
+    def generate_qr_code(self):
+        if not self.qr_code:
+            qr_data = self.generate_qr_data()
+            filename, image_file = generate_qr_code(qr_data)
+            self.qr_code.save(filename.split('/')[-1], image_file, save=False)
 
     def save(self, *args, **kwargs):
         if not self.qr_code:
