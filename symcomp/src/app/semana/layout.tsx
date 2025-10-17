@@ -51,14 +51,16 @@ export default function SemanaLayout({ children }: SemanaLayoutProps) {
   return (
     <div
       className={cn(
-        'min-h-svh flex flex-col bg-[#110F0F] text-white',
+        'min-h-svh flex flex-col items-center text-white bg-sc-2025-background overflow-hidden',
         silkscreen.className,
       )}
     >
-      <SemanaHeader />
-      <main className="flex-1 flex flex-col w-full items-stretch justify-stretch">
-        {children}
-      </main>
+      <div className="max-w-[1024px] w-full">
+        <SemanaHeader />
+        <main className="flex-1 flex flex-col w-full items-stretch justify-stretch">
+          {children}
+        </main>
+      </div>
     </div>
   )
 }
