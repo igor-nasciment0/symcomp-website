@@ -20,7 +20,7 @@ import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
 import { barlowCondensed } from '@/lib/font'
 
 import cronograma from './cronograma.json'
-import { CronogramaDetail } from './cronograma-detail'
+import { CronogramaDetail, parseHorarioToICS } from './cronograma-detail'
 import { Palestra } from '@/types/palestra'
 
 export function CronogramaCarousel() {
@@ -70,6 +70,14 @@ function BreakCard({ palestra }: { palestra: Palestra }) {
 }
 
 function AtividadeCard({ palestra }: { palestra: Palestra }) {
+  const { start, end } = parseHorarioToICS(palestra)
+
+  const googleCalendarUrl = new URL('https://www.google.com/calendar/render')
+  googleCalendarUrl.searchParams.set('action', 'TEMPLATE')
+  googleCalendarUrl.searchParams.set('text', palestra.titulo || '')
+  googleCalendarUrl.searchParams.set('details', palestra.descricao || '')
+  googleCalendarUrl.searchParams.set('dates', `${start}/${end}`)
+
   return (
     <SCWrapper key={palestra.horario}>
       <div className="p-4 w-[340px] flex flex-row items-center gap-4">
@@ -105,8 +113,9 @@ function AtividadeCard({ palestra }: { palestra: Palestra }) {
               {palestra.horario}
             </Text>
             <a
+              href={googleCalendarUrl.toString()}
               target="_blank"
-              href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=M3M5bGYzYWZzbWdwNXBiaGxlbzBmYXEwZzUgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&amp;tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+              rel="noopener noreferrer"
             >
               <CalendarPlus color="black" />
             </a>

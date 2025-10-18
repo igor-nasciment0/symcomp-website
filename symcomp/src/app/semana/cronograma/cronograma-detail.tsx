@@ -71,7 +71,7 @@ export function CronogramaDetail({ palestra }: CronogramaDetailProps) {
   )
 }
 
-function parseHorarioToICS(palestra: Palestra) {
+export function parseHorarioToICS(palestra: Palestra) {
   const dias = {
     SEG: '2025-10-20',
     TER: '2025-10-21',
