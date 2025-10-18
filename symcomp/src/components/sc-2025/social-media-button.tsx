@@ -39,9 +39,18 @@ export function SocialMediaButton({
           Icon
         )}
       </a>
-      <Highlight className="hidden lg:flex">
-        <Text className="text-white">{domain.toUpperCase()}</Text>
-      </Highlight>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          'inline-flex items-center justify-center flex-row hover:cursor-pointer',
+        )}
+      >
+        <Highlight className="hidden lg:flex">
+          <Text className="text-white">{domain.toUpperCase()}</Text>
+        </Highlight>
+      </a>
     </div>
   )
 }
