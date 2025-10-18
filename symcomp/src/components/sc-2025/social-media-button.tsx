@@ -3,6 +3,8 @@ import { BsInstagram, BsLink, BsLinkedin, BsYoutube } from 'react-icons/bs'
 
 import { cn } from '@/lib/utils'
 
+import { Highlight, Text } from './typography'
+
 type SocialMediaDomain = 'instagram' | 'linkedin' | 'youtube' | 'custom'
 
 interface SocialMediaButtonProps {
@@ -21,21 +23,35 @@ export function SocialMediaButton({
   const Icon = icon ?? inferSocialMediaIcon(domain)
 
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={cn(
-        'inline-flex items-center justify-center p-2 rounded-full',
-        variant === 'secondary' ? 'bg-sc-2025-secondary' : 'bg-white',
-      )}
-    >
-      {typeof Icon === 'function' ? (
-        <Icon color={variant === 'secondary' ? 'white' : 'black'} size={24} />
-      ) : (
-        Icon
-      )}
-    </a>
+    <div className="flex flex-row items-center gap-4">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          'inline-flex items-center justify-center p-2 rounded-full flex-row hover:cursor-pointer',
+          variant === 'secondary' ? 'bg-sc-2025-secondary' : 'bg-white',
+        )}
+      >
+        {typeof Icon === 'function' ? (
+          <Icon color={variant === 'secondary' ? 'white' : 'black'} size={24} />
+        ) : (
+          Icon
+        )}
+      </a>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          'inline-flex items-center justify-center flex-row hover:cursor-pointer',
+        )}
+      >
+        <Highlight className="hidden lg:flex">
+          <Text className="text-white">{domain.toUpperCase()}</Text>
+        </Highlight>
+      </a>
+    </div>
   )
 }
 

@@ -3,8 +3,6 @@ import { ReactNode } from 'react'
 import { silkscreen } from '@/lib/font'
 import { cn } from '@/lib/utils'
 
-import SemanaHeader from './header'
-
 interface SemanaLayoutProps {
   children: ReactNode
 }
@@ -51,14 +49,11 @@ export default function SemanaLayout({ children }: SemanaLayoutProps) {
   return (
     <div
       className={cn(
-        'min-h-svh flex flex-col bg-[#110F0F] text-white',
+        'min-h-svh flex flex-col items-center text-white overflow-hidden',
         silkscreen.className,
       )}
     >
-      <SemanaHeader />
-      <main className="flex-1 flex flex-col w-full items-stretch justify-stretch">
-        {children}
-      </main>
+      {children}
     </div>
   )
 }

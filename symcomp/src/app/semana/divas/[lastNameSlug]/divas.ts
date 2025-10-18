@@ -102,7 +102,7 @@ export const divas = [
     lastName: 'Vaughan',
     fullName: 'Dorothy Vaughan',
     description:
-      'Matemática e programadora da NASA, foi uma das primeiras mulheres afro-americanas a trabalhar como programadora em computadores eletrônicos. Foi pioneira na programação em COBOL na NASA.',
+      'Matemática e programadora da NASA, foi uma das primeiras mulheres afro-americanas a trabalhar como programadora em computadores eletrônicos. Foi pioneira na programação em COBOL.',
   },
   {
     firstName: 'Sister Mary Kenneth',

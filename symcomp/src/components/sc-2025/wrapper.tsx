@@ -17,7 +17,7 @@ export function SCWrapper({ children }: SCWrapperProps) {
 
 export function SCWrapperFooter({ children }: SCWrapperProps) {
   return (
-    <div className="w-full p-2 bg-sc-2025-contrast border-white border-t-[8px]">
+    <div className="w-full bg-sc-2025-contrast border-white border-t-[8px]">
       {children}
     </div>
   )

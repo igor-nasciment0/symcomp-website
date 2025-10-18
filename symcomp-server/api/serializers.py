@@ -129,3 +129,23 @@ class PalestranteSerializer(serializers.ModelSerializer):
 # 
 #     def create(self, validated_data):
 #         return ActivityHistory.objects.create(**validated_data)
+class PerfilUsuarioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PerfilUsuario
+        fields = ["papel", "data_registro"]
+
+class UserSerializer(serializers.ModelSerializer):
+    perfil = PerfilUsuarioSerializer(read_only=True)
+
+    class Meta:
+        model = User
+        fields = [
+            "id",
+            "email",
+            "name",
+            "username",
+            "eh_verificado",
+            "eh_organizador",
+            "eh_presidente",
+            "perfil",
+        ]
