@@ -12,7 +12,8 @@
         "foto": null,
         "contato": " https://www.linkedin.com/in/victor-domiciano/ e Odair tem o número do Gustavo Futanaka",
         "status": "Quase Ok",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NHBkZzVuOGpvbWJnMzRoMGo1M2l1MThqMXAgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NHBkZzVuOGpvbWJnMzRoMGo1M2l1MThqMXAgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "games"
       },
       {
         "horario": "13:15 - 14:15",
@@ -23,7 +24,20 @@
         "foto": null,
         "contato": "gkc@connect.ust.hk",
         "status": "Tudo OK",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3M5bGYzYWZzbWdwNXBiaGxlbzBmYXEwZzUgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3M5bGYzYWZzbWdwNXBiaGxlbzBmYXEwZzUgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "research"
+      },
+      {
+        "horario": "14:15 - 14:45",
+        "titulo": "Coffee Break",
+        "descricao": "",
+        "palestrante": "",
+        "sobre": "",
+        "foto": null,
+        "contato": "",
+        "status": "",
+        "linkCalendar": "",
+        "keyWord": "break"
       },
       {
         "horario": "14:45 - 15:45",
@@ -34,7 +48,8 @@
         "foto": null,
         "contato": "rafael@iryasolutions.com.br",
         "status": "Tudo OK",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NHJ1cTNzbWdnYTZkbHZoa3RoZWU3NzA3ZDcgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NHJ1cTNzbWdnYTZkbHZoa3RoZWU3NzA3ZDcgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "ai"
       },
       {
         "horario": "16:00 - 17:00",
@@ -45,7 +60,8 @@
         "foto": null,
         "contato": "https://www.linkedin.com/in/rodrigo-nogueira-730ba431/",
         "status": "Tudo OK",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M2tzN2g1cTFrMmw3aGF0cDh2NmRuNmZyZGEgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M2tzN2g1cTFrMmw3aGF0cDh2NmRuNmZyZGEgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "ai"
       },
       {
         "horario": "17:15 - 18:15",
@@ -56,7 +72,20 @@
         "foto": null,
         "contato": "Telegram (Anna)",
         "status": "Tudo ok",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NHBtcmJybHVoN3BnZzE1MmgwZGNkZG90Nm8gY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NHBtcmJybHVoN3BnZzE1MmgwZGNkZG90Nm8gY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "games"
+      },
+      {
+        "horario": "18:15 - 19:30",
+        "titulo": "Coffee Break",
+        "descricao": "",
+        "palestrante": "",
+        "sobre": "",
+        "foto": null,
+        "contato": "",
+        "status": "",
+        "linkCalendar": "",
+        "keyWord": "break"
       }
     ]
   },
@@ -73,7 +102,8 @@
         "foto": null,
         "contato": "",
         "status": "",
-        "linkCalendar": ""
+        "linkCalendar": "",
+        "keyWord": ""
       },
       {
         "horario": "13:15 - 14:15",
@@ -84,7 +114,20 @@
         "foto": null,
         "contato": "",
         "status": "Tudo OK",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWdxdWxxcXI2czhqczFpOW1pZHRqbGNmM2kgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWdxdWxxcXI2czhqczFpOW1pZHRqbGNmM2kgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "market"
+      },
+      {
+        "horario": "14:15 - 14:45",
+        "titulo": "Coffee break",
+        "descricao": "",
+        "palestrante": "",
+        "sobre": "",
+        "foto": null,
+        "contato": "",
+        "status": "",
+        "linkCalendar": "",
+        "keyWord": "break"
       },
       {
         "horario": "14:45 - 15:45",
@@ -95,7 +138,8 @@
         "foto": null,
         "contato": "anchisesbr@gmail.com",
         "status": "Tudo OK",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M2twM2l2aGYzNTM3OGJvdWluZGloNzNwZjggY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M2twM2l2aGYzNTM3OGJvdWluZGloNzNwZjggY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "cybersecurity"
       },
       {
         "horario": "16:00 - 17:00",
@@ -106,7 +150,8 @@
         "foto": null,
         "contato": "paulo.silveira@alura.com.br",
         "status": "Tudo OK",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=Nm5ubjc5bTJ1Z29tNmozZDFza243dWx2NzIgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=Nm5ubjc5bTJ1Z29tNmozZDFza243dWx2NzIgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "ai"
       },
       {
         "horario": "17:15 - 18:15",
@@ -117,7 +162,20 @@
         "foto": null,
         "contato": "fgcozman@usp.br",
         "status": "Tudo OK",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDdtdnVtZ2h0NHNnOWw2ZXNmdnJ0NGF2bHYgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDdtdnVtZ2h0NHNnOWw2ZXNmdnJ0NGF2bHYgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "ai"
+      },
+      {
+        "horario": "18:15 - 19:30",
+        "titulo": "Coffee break",
+        "descricao": "",
+        "palestrante": "",
+        "sobre": "",
+        "foto": null,
+        "contato": "",
+        "status": "",
+        "linkCalendar": "",
+        "keyWord": "break"
       }
     ]
   },
@@ -134,7 +192,8 @@
         "foto": null,
         "contato": "",
         "status": "falta ft",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MmdodGUydjJmdDY2bDVhb3BoNGZ0N2kwMmMgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MmdodGUydjJmdDY2bDVhb3BoNGZ0N2kwMmMgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "ai"
       },
       {
         "horario": "13:15 - 14:15",
@@ -145,7 +204,20 @@
         "foto": null,
         "contato": "cef@ime.usp.br",
         "status": "Tudo Ok",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NTgyN2xwcTJnanY3cjhoYzBqZjBzdDZ2bG4gY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NTgyN2xwcTJnanY3cjhoYzBqZjBzdDZ2bG4gY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "research"
+      },
+      {
+        "horario": "14:15 - 14:45",
+        "titulo": "Coffee break",
+        "descricao": "",
+        "palestrante": "",
+        "sobre": "",
+        "foto": null,
+        "contato": "",
+        "status": "",
+        "linkCalendar": "",
+        "keyWord": "break"
       },
       {
         "horario": "14:45 - 15:45",
@@ -156,7 +228,8 @@
         "foto": null,
         "contato": "paloma.silva@teltecsolutions.com.br ou https://www.linkedin.com/in/frankllin-nunes/",
         "status": "Tudo Ok",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDI4b21saDQ5NjV2dnQ2cnJxYTcydjFrcHEgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDI4b21saDQ5NjV2dnQ2cnJxYTcydjFrcHEgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "cybersecurity"
       },
       {
         "horario": "16:00 - 17:00",
@@ -167,7 +240,8 @@
         "foto": null,
         "contato": "lxoliva@fsfla.org",
         "status": "Tudo Ok",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDI4b21saDQ5NjV2dnQ2cnJxYTcydjFrcHEgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDI4b21saDQ5NjV2dnQ2cnJxYTcydjFrcHEgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "systems"
       },
       {
         "horario": "17:15 - 18:15",
@@ -178,7 +252,20 @@
         "foto": null,
         "contato": "",
         "status": "",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NzNxZGM5amFjMjRkamE4NmQ1YmszNnNqdGUgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NzNxZGM5amFjMjRkamE4NmQ1YmszNnNqdGUgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "ai"
+      },
+      {
+        "horario": "18:15 - 19:30",
+        "titulo": "Coffee break",
+        "descricao": "",
+        "palestrante": "",
+        "sobre": "",
+        "foto": null,
+        "contato": "",
+        "status": "",
+        "linkCalendar": "",
+        "keyWord": "break"
       }
     ]
   },
@@ -195,7 +282,8 @@
         "foto": null,
         "contato": "",
         "status": "Tudo oK",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWhxOXFzOTFzNmw3OWswaDVmaDFwdDFtYmcgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWhxOXFzOTFzNmw3OWswaDVmaDFwdDFtYmcgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "market"
       },
       {
         "horario": "13:15 - 14:15",
@@ -206,7 +294,20 @@
         "foto": null,
         "contato": "renatogeh@gmail.com",
         "status": "Tudo Ok",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=N3Blb29vaG5tdm45N2k2ZDFyMmFhdHNxa3YgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=N3Blb29vaG5tdm45N2k2ZDFyMmFhdHNxa3YgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "ai"
+      },
+      {
+        "horario": "14:15 - 14:45",
+        "titulo": "Coffee break",
+        "descricao": "",
+        "palestrante": "",
+        "sobre": "",
+        "foto": null,
+        "contato": "",
+        "status": "",
+        "linkCalendar": "",
+        "keyWord": "break"
       },
       {
         "horario": "14:45 - 15:45",
@@ -217,7 +318,8 @@
         "foto": null,
         "contato": "jerry@jerrystrazzeri.com",
         "status": "Tudo Ok",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NTUwcDV0cGl2OXFiNGlsa3VhMHAwa3BhcmogY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NTUwcDV0cGl2OXFiNGlsa3VhMHAwa3BhcmogY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "ai"
       },
       {
         "horario": "16:00 - 17:00",
@@ -228,7 +330,8 @@
         "foto": null,
         "contato": "",
         "status": "Tudo Ok",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3U1ZXJ1MjdtbmtocGdudHM4cDUyMTRka2sgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3U1ZXJ1MjdtbmtocGdudHM4cDUyMTRka2sgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "ai"
       },
       {
         "horario": "17:15 - 18:15",
@@ -239,7 +342,20 @@
         "foto": null,
         "contato": "phmb@cin.ufpe.br",
         "status": "Tudo Ok",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDlwbG1raDM3bnRsaXVvdGZiNTJyaGVwMGYgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDlwbG1raDM3bnRsaXVvdGZiNTJyaGVwMGYgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "ai"
+      },
+      {
+        "horario": "18:15 - 19:30",
+        "titulo": "Coffee break",
+        "descricao": "",
+        "palestrante": "",
+        "sobre": "",
+        "foto": null,
+        "contato": "",
+        "status": "",
+        "linkCalendar": "",
+        "keyWord": "break"
       }
     ]
   },
@@ -256,7 +372,8 @@
         "foto": null,
         "contato": "",
         "status": "",
-        "linkCalendar": ""
+        "linkCalendar": "",
+        "keyWord": "cybersecurity"
       },
       {
         "horario": "13:15 - 14:15",
@@ -267,7 +384,20 @@
         "foto": null,
         "contato": "bruno.mestanza@rocketseat.team",
         "status": "falta descrição da palestra e enviar o convite pelo google calendar",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MzcxZDFkZTRhMm45amJwYzYyOHRmNHE4czEgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MzcxZDFkZTRhMm45amJwYzYyOHRmNHE4czEgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "systems"
+      },
+      {
+        "horario": "14:15 - 14:45",
+        "titulo": "Coffee break",
+        "descricao": "",
+        "palestrante": "",
+        "sobre": "",
+        "foto": null,
+        "contato": "",
+        "status": "",
+        "linkCalendar": "",
+        "keyWord": "break"
       },
       {
         "horario": "14:45 - 15:45",
@@ -278,7 +408,8 @@
         "foto": null,
         "contato": "",
         "status": "Falta a Renata. Temos que criar a descrição.",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NXBzNDltbWpqNDY1cGttcG5zbThpNTVuN24gY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NXBzNDltbWpqNDY1cGttcG5zbThpNTVuN24gY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "research"
       },
       {
         "horario": "16:00 - 17:00",
@@ -289,7 +420,8 @@
         "foto": null,
         "contato": "Telegram",
         "status": "falta tudo",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NTU4a2VvODh2dnZhcmQ4aWw1dGNnZ2pkZm4gY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NTU4a2VvODh2dnZhcmQ4aWw1dGNnZ2pkZm4gY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "ai"
       },
       {
         "horario": "17:15 - 18:15",
@@ -300,18 +432,20 @@
         "foto": null,
         "contato": "",
         "status": "Falta a descrição da palestra.",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MTVtYm9ham9hY2h1aDRhNnE5M3JvNjAzdDIgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com"
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MTVtYm9ham9hY2h1aDRhNnE5M3JvNjAzdDIgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "ai"
       },
       {
-        "horario": "18:30 - 19:30",
-        "titulo": "",
+        "horario": "18:15 - 19:30",
+        "titulo": "Encerramento",
         "descricao": "",
-        "palestrante": "Encerramento",
+        "palestrante": "",
         "sobre": "",
         "foto": null,
         "contato": "",
         "status": "",
-        "linkCalendar": ""
+        "linkCalendar": "",
+        "keyWord": "break"
       }
     ]
   }

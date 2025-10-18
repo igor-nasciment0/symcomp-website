@@ -4,10 +4,10 @@ import { SCButton } from '@/components/sc-2025/button'
 import { Text, TypographyH2 } from '@/components/sc-2025/typography'
 import { SCWrapper } from '@/components/sc-2025/wrapper'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Atividade } from '@/types/atividade'
+import { Palestra } from '@/types/palestra'
 
 interface CronogramaDetailProps {
-  palestra: Atividade
+  palestra: Palestra
 }
 
 export function CronogramaDetail({ palestra }: CronogramaDetailProps) {
