@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 import { Text } from '@/components/sc-2025/typography'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-import { semanaCrongorama, semanaHome, semanaLogin } from '@/lib/routes'
+import { semanaCadastro, semanaCrongorama, semanaHome, semanaLogin } from '@/lib/routes'
 
 export default function SemanaHeader() {
   return (
@@ -28,7 +28,7 @@ export default function SemanaHeader() {
             <Link href={semanaLogin} className="bg-white w-fit p-2">
               <Text>Entrar</Text>
             </Link>
-            <Link href={semanaLogin} className="bg-sc-2025-primary w-fit p-2">
+            <Link href={semanaCadastro} className="bg-sc-2025-primary w-fit p-2">
               <Text>Cadastrar</Text>
             </Link>
           </div>

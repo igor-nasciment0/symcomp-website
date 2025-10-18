@@ -2,44 +2,57 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
-import z from 'zod'
+import { z } from 'zod'
+import { useState } from 'react'
 
 import {
   Form,
-  FormControl,
   FormField,
   FormItem,
   FormLabel,
+  FormControl,
   FormMessage,
 } from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import RegisterUser from '@/lib/http/register-user'
 
 import { SCInput } from '@/components/sc-2025/input'
 import { SCLabel } from '@/components/sc-2025/label'
-import { SCField } from '@/components/sc-2025/field'
 import { SCButton } from '@/components/sc-2025/button'
-import { TypographyH1 } from '@/components/sc-2025/typography'
-import { TypographyH2 } from '@/components/sc-2025/typography'
-import { useState } from 'react'
+import { Highlight, TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
+
 import SemanaHeader from '../header'
+import RegisterUser from '@/lib/http/register-user'
+import { SCFormMessage } from '@/components/sc-2025/form-message'
 
-
-// Representa os campos do formulário.
 const formSchema = z.object({
-  name: z.string(),
-  email: z.email(),
-  password: z.string(),
+  name: z.string().nonempty('O nome é obrigatório'),
+  email: z.string().nonempty('O email é obrigatório').email('Informe um e-mail válido.'),
+  password: z
+    .string()
+    .nonempty('A senha é obrigatória.')
+    .min(8, 'A senha deve ter pelo menos 8 caracteres.')
+    .max(255, 'A senha deve ter menos de 256 caracteres.')
+    .refine((val) => /[a-z]/.test(val), {
+      message: 'A senha deve conter pelo menos uma letra minúscula.',
+    })
+    .refine((val) => /[A-Z]/.test(val), {
+      message: 'A senha deve conter pelo menos uma letra maiúscula.',
+    })
+    .refine((val) => /\d/.test(val), {
+      message: 'A senha deve conter pelo menos um número.',
+    })
+    .refine((val) => /[!@#$%^&*(),.?":{}|<>_\-+=~`[\]\\;/]/.test(val), {
+      message: 'A senha deve conter pelo menos um caractere especial.',
+    }),
 })
+
+type FormSchema = z.infer<typeof formSchema>
 
 export default function CadastroPage() {
   const router = useRouter()
-  const [errors, setErrors] = useState({});
 
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
@@ -48,109 +61,85 @@ export default function CadastroPage() {
     },
   })
 
-  const { isPending, mutate } = useMutation({
-    mutationFn: async (values: z.infer<typeof formSchema>) => {
+  const { mutate, isPending } = useMutation({
+    mutationFn: async (values: FormSchema) => {
       return await RegisterUser(values)
     },
-    onSuccess: (data) => {
-      console.log('Cadastro realizado com sucesso:', data)
-      // Salva o email no localStorage.
-      // localStorage.setItem('email', fields.email)
-      localStorage.setItem('email', form.getValues().email)
-
-      // Redireciona para a página de verificação.
+    onSuccess: () => {
+      localStorage.setItem('email', form.getValues('email'))
       router.push('/semana/cadastro/verificar')
-    },
-    onError: (error) => {
-      //console.error('Erro no cadastro:', error.response.data)
-      setErrors(error.response.data);
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: FormSchema) {
     mutate(values)
   }
 
   return (
-    <div className='w-full flex justify-center bg-sc-2025-background min-h-svh'>
-      <div className="max-w-[1024px] w-full">
-        <SemanaHeader></SemanaHeader>
-        <main className="max-w-5xl mx-auto p-6 grid gap-6">
-          <Form {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="p-6 grid gap-4"
-            >
+    <div className="flex flex-col flex-1 items-center justify-center w-full bg-sc-2025-background">
+      <SemanaHeader />
+      <div className="flex flex-col flex-1 items-center justify-start pt-8 w-full">
+        <div className="p-8">
+          <TypographyH1>Cadastrar</TypographyH1>
+          <TypographyH2 className="text-sc-2025-contrast">
+            Preencha suas informações para concluir o cadastro:
+          </TypographyH2>
+        </div>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="p-6 grid gap-4 w-full max-w-sm"
+          >
+            {/* Campo Nome */}
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem className="space-y-0">
+                  <SCLabel>Nome</SCLabel>
+                  <FormControl>
+                    <SCInput placeholder="Ex.: Grace Hopper" {...field} />
+                  </FormControl>
+                  <SCFormMessage />
+                </FormItem>
+              )}
+            />
 
-              <TypographyH1>Cadastrar</TypographyH1>
-              <div className='text-[#0E0A47]'>
-                <TypographyH2>Preencha suas informações para concluir o cadastro:</TypographyH2>
-              </div>
+            {/* Campo Email */}
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem className="space-y-0">
+                  <SCLabel>Email</SCLabel>
+                  <FormControl>
+                    <SCInput placeholder="Ex.: grace.hopper@ime.usp.br" {...field} />
+                  </FormControl>
+                  <SCFormMessage />
+                </FormItem>
+              )}
+            />
 
-              <div className='text-[#0E0A47]'>
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <SCField>
-                      <SCLabel>Nome</SCLabel>
-                      <SCInput placeholder="Ex.: Grace Hopper" {...field} required></SCInput>
-                      {
-                        errors.name && errors.name.map((e : string, index : number) => {
-                          return (
-                            <TypographyH2 key={index}>{e}</TypographyH2>
-                          )
-                        })
-                      }
-                    </SCField>
-                  )}
-                />
-              </div>
+            {/* Campo Senha */}
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem className="space-y-0">
+                  <SCLabel>Senha</SCLabel>
+                  <FormControl>
+                    <SCInput placeholder="Digite uma senha" type="password" {...field} />
+                  </FormControl>
+                  <SCFormMessage />
+                </FormItem>
+              )}
+            />
 
-              <div className='text-[#0E0A47]'>
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <SCField>
-                      <SCLabel>Email</SCLabel>
-                      <SCInput placeholder="Ex.: grace.hopper@ime.usp.br" {...field} required></SCInput>
-                      {
-                        errors.email && errors.email.map((e : string, index : number) => {
-                          return (
-                            <TypographyH2 key={index}>{e}</TypographyH2>
-                          )
-                        })
-                      }
-                    </SCField>
-                  )}
-                />
-              </div>
-
-              <div className="text-[#0E0A47]">
-                <FormField
-                  control={form.control}
-                  name="password"
-                  render={({ field }) => (
-                    <SCField>
-                      <SCLabel>Senha</SCLabel>
-                      <SCInput placeholder="Ex.: &S3m4n4D@C0mpUT4c@0" {...field} required type='password'></SCInput>
-                      {
-                        errors.password && errors.password.map((e : string, index : number) => {
-                          return (
-                            <TypographyH2 key={index}>{e}</TypographyH2>
-                          )
-                        })
-                      }
-                    </SCField>
-                  )}
-                />
-              </div>
-
-              <SCButton type='submit'>Finalizar</SCButton>
-            </form>
-          </Form>
-        </main>
+            <SCButton type="submit" disabled={isPending}>
+              {isPending ? 'Cadastrando...' : 'Finalizar'}
+            </SCButton>
+          </form>
+        </Form>
       </div>
     </div>
   )

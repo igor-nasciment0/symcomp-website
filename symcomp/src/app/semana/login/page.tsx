@@ -14,6 +14,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from '@/component
 import createLoginToken from '@/lib/http/create-logn-token'
 
 import SemanaHeader from '../header'
+import { SCFormMessage } from '@/components/sc-2025/form-message'
 
 const formSchema = z.object({
   email: z.string().email('Por favor, insira um e-mail válido.').nonempty(),
@@ -65,7 +66,7 @@ export default function LoginPage() {
                   <FormControl>
                     <SCInput placeholder="Ex.: grace.hopper@ime.usp.br" {...field} />
                   </FormControl>
-                  <FormMessage />
+                  <SCFormMessage />
                 </FormItem>
               )}
             />
@@ -79,7 +80,7 @@ export default function LoginPage() {
                   <FormControl>
                     <SCInput type="password" placeholder="Insira sua senha" {...field} />
                   </FormControl>
-                  <FormMessage />
+                  <SCFormMessage />
                 </FormItem>
               )}
             />

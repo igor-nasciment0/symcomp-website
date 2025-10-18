@@ -5,27 +5,6 @@ from django.conf import settings
 from .lib.qr_code_generator import generate_qr_code
 import random
 
-## Para geração de usernames (Nota: é possível passar isso para um arquivo de texto depois)
-ADJECTIVES = [
-    "Happy", "Sad", "Sleepy", "Hungry", "Thirsty", "Excited", "Curious", "Shy",
-    "Brave", "Clever", "Lazy", "Nervous", "Grumpy", "Silly", "Goofy", "Epic",
-    "Sneaky", "Spicy", "Salty", "Crispy", "Chunky", "Tiny", "Mega", "Ultra",
-    "Electric", "Digital", "Pixel", "Cosmic", "Quantum", "Galactic", "Loud",
-    "Silent", "Rusty", "Shiny", "Broken", "Weird", "Random", "Fuzzy", "Sticky",
-    "Slimy", "Wobbly", "Bouncy", "Floating", "Melty", "Explosive", "Turbo",
-    "Invisible", "Obvious", "Secret", "Illegal", "Confused", "Chaotic"
-]
-
-NOUNS = [
-    "Potato", "Pickle", "Taco", "Pizza", "Donut", "Burger", "Cookie",
-    "Noodle", "Toast", "Pineapple", "Pumpkin", "Cabbage", "Cheese", "Onion",
-    "Penguin", "Duck", "Llama", "Cat", "Dog", "Hamster", "Sloth", "Koala",
-    "Tiger", "Shark", "Octopus", "Dolphin", "Dragon", "Unicorn", "Wizard",
-    "Ninja", "Pirate", "Knight", "Robot", "Alien", "Zombie", "Vampire", "Ghost",
-    "Goblin", "Troll", "Gnome", "Witch", "Demon", "Angel", "King", "Queen",
-    "Prince", "Princess", "Lord", "Overlord", "Captain", "Doctor", "Professor"
-]
-
 class Link(models.Model):
     domain = models.CharField(max_length=100)
     url = models.URLField()
@@ -74,19 +53,6 @@ class UserManager(BaseUserManager):
     User Manager customizado, onde email é o identificador único.
     Implementa geração de username customizado
     """
-    def _generate_unique_username(self):
-        """
-        Gera um username único da lista de palavras
-        """
-        while True:
-            adjective = random.choice(ADJECTIVES).capitalize()
-            noun = random.choice(NOUNS).capitalize()
-            number = random.randint(1000, 9999)
-
-            username = f"{adjective}{noun}{number}"
-            
-            if not User.objects.filter(username=username).exists():
-                return username
             
     def create_user(self, email, name, password=None, **kwargs):
         if not email:
@@ -94,10 +60,6 @@ class UserManager(BaseUserManager):
         if not name:
             raise ValueError("O nome completo é obrigatório.")
         email = self.normalize_email(email)
-
-        # Possibilita nomes customizados, indicado apenas para admins/palestrantes/etc
-        if 'username' not in kwargs:
-            kwargs['username'] = self._generate_unique_username()
 
         user = self.model(email=email, name=name, **kwargs)
         user.set_password(password)
@@ -136,7 +98,7 @@ class User(AbstractUser):
     """
     name = models.CharField("Nome Completo", max_length=255)
     email = models.EmailField("Email", unique=True)
-    username = models.CharField(max_length=150, unique=True, null=True, blank=True) # Revisar depois
+    username = models.CharField(max_length=150, unique=True, null=True, blank=True)
     
     eh_verificado = models.BooleanField(default=False)
     eh_organizador = models.BooleanField(default=False)
@@ -145,10 +107,9 @@ class User(AbstractUser):
     def verifica_email():
         pass
     
-    USERNAME_FIELD = 'email' # id principal
+    USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name']
 
-    # Linka o manager com o model
     objects = UserManager()
 
     def __str__(self):
