@@ -7,20 +7,28 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 import { SCButton } from '@/components/sc-2025/button'
-import { SCField } from '@/components/sc-2025/field'
 import { SCInput } from '@/components/sc-2025/input'
-import { SCLabel } from '@/components/sc-2025/label'
 import { TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
-import { Form, FormControl, FormField, FormMessage } from '@/components/ui/form'
-import CreateLoginToken from '@/lib/http/create-logn-token'
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form'
+import createLoginToken from '@/lib/http/create-logn-token'
+import SemanaHeader from '../header'
+import { SCLabel } from '@/components/sc-2025/label'
 
 const formSchema = z.object({
-  email: z.string().email('Por favor, insira um e-mail válido.'),
-  password: z.string().min(1, 'A senha é obrigatória.'),
+  email: z.string().email('Por favor, insira um e-mail válido.').nonempty(),
+  password: z.string().nonempty('A senha é obrigatória.'),
 })
 
 export default function LoginPage() {
   const router = useRouter()
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -29,18 +37,10 @@ export default function LoginPage() {
     },
   })
 
-  const { isPending, mutate } = useMutation({
-    mutationFn: async (values: z.infer<typeof formSchema>) => {
-      return await CreateLoginToken(values)
-    },
-    onSuccess: (data) => {
-      console.log('Login realizado com sucesso:', data.message)
-
-      router.push('/semana/dashboard')
-    },
-    onError: (error) => {
-      console.error('Erro no login:', error)
-    },
+  const { mutate, isPending } = useMutation({
+    mutationFn: (values: z.infer<typeof formSchema>) => createLoginToken(values),
+    onSuccess: () => router.push('/semana/dashboard'),
+    onError: (error) => console.error('Erro no login:', error),
   })
 
   function onSubmit(values: z.infer<typeof formSchema>) {
@@ -48,55 +48,54 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto p-6 bg-red-500">
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="p-6 grid gap-4">
+    <div className="flex flex-col flex-1 items-center justify-center w-full bg-sc-2025-background">
+      <SemanaHeader />
+      <div className="flex flex-col flex-1 items-center justify-start pt-8 w-full">
+        <div className="p-8">
           <TypographyH1>Login</TypographyH1>
-          <div className="text-[#0E0A47]">
-            <TypographyH2>Faça login no seu perfil:</TypographyH2>
-          </div>
-
-          <div className="text-[#0E0A47]">
+          <TypographyH2 variant="secondary" className="text-sc-2025-contrast">
+            Faça login no seu perfil:
+          </TypographyH2>
+        </div>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="p-6 grid gap-4 w-full max-w-sm"
+          >
             <FormField
               control={form.control}
               name="email"
               render={({ field }) => (
-                <SCField>
+                <FormItem className="space-y-0">
                   <SCLabel>Email</SCLabel>
-                  <SCInput placeholder="Ex.: grace.hopper@ime.usp.br" {...field} />
+                  <FormControl>
+                    <SCInput placeholder="Ex.: grace.hopper@ime.usp.br" {...field} />
+                  </FormControl>
                   <FormMessage />
-                </SCField>
+                </FormItem>
               )}
             />
-          </div>
 
-          <div className="text-[#0E0A47]">
             <FormField
               control={form.control}
               name="password"
               render={({ field }) => (
-                <SCField>
+                <FormItem className="space-y-0">
                   <SCLabel>Senha</SCLabel>
-                  <SCInput type="password" placeholder="Insira sua senha" {...field} />
+                  <FormControl>
+                    <SCInput type="password" placeholder="Insira sua senha" {...field} />
+                  </FormControl>
                   <FormMessage />
-                </SCField>
+                </FormItem>
               )}
             />
-          </div>
 
-          {form.formState.errors.root && (
-            <p className="text-sm font-medium text-destructive">
-              {form.formState.errors.root.message}
-            </p>
-          )}
-
-          <FormControl>
             <SCButton type="submit" disabled={isPending}>
               {isPending ? 'Entrando...' : 'Entrar'}
             </SCButton>
-          </FormControl>
-        </form>
-      </Form>
+          </form>
+        </Form>
+      </div>
     </div>
   )
 }

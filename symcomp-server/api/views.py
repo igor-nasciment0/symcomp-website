@@ -17,6 +17,9 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 from .lib.user_validation_code_email import UserValidationCodeEmail
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.exceptions import TokenError, InvalidToken
+from desafio.jogador.models import Jogador
+from desafio.jogador.serializers import JogadorSerializer
+from .serializers import UserSerializer
 
 import random
 
@@ -72,7 +75,33 @@ class EmailTokenObtainPairView(TokenObtainPairView):
             )
 
         return response
+    
+class MeView(APIView):
+    permission_classes = [IsAuthenticated]
 
+    def get(self, request):
+        user = request.user
+
+        # garante que o perfil exista
+        perfil, _ = PerfilUsuario.objects.get_or_create(user=user)
+
+        # tenta pegar o jogador associado ao usuário (se houver)
+        try:
+            jogador = user.jogador
+            jogador_data = JogadorSerializer(jogador).data
+        except Jogador.DoesNotExist:
+            jogador_data = None
+
+        user_data = UserSerializer(user).data
+
+        # retorna os dados combinados
+        return Response({
+            "user": user_data,
+            "perfil": {
+                "papel": perfil.papel
+            },
+            "jogador": jogador_data
+        }, status=200)
 
 class RefreshAccessTokenView(APIView):
     def post(self, request):

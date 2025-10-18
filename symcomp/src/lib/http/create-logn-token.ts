@@ -2,20 +2,20 @@ import { CreateReadStreamOptions } from 'fs/promises'
 
 import { api } from './api'
 
-interface CreateLoginTokenRequest {
+interface createLoginTokenRequest {
   email: string
   password: string
 }
 
-type CreateLoginTokenResponse = {
+type createLoginTokenResponse = {
   message: string
 }
 
-export default async function CreateLoginToken({
+export default async function createLoginToken({
   email,
   password,
-}: CreateLoginTokenRequest): Promise<CreateLoginTokenResponse> {
-  const data = await api.post<CreateReadStreamOptions, CreateLoginTokenResponse>(
+}: createLoginTokenRequest): Promise<createLoginTokenResponse> {
+  const data = await api.post<CreateReadStreamOptions, createLoginTokenResponse>(
     '/token/',
     { email, password },
   )

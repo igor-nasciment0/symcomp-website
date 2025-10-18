@@ -1,5 +1,10 @@
+'use client'
+
+import { Sheet, SheetContent, SheetHeader, SheetTrigger } from '@/components/ui/sheet'
+import { semanaLogin } from '@/lib/routes'
 import { Menu } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function SemanaHeader() {
   return (
@@ -12,7 +17,15 @@ export default function SemanaHeader() {
         width={45}
         height={200}
       />
-      <Menu size={32} />
+      <Sheet>
+        <SheetTrigger asChild>
+          <Menu size={32} />
+        </SheetTrigger>
+        <SheetContent>
+          <SheetHeader>Olá,</SheetHeader>
+          <Link href={semanaLogin}>Login</Link>
+        </SheetContent>
+      </Sheet>
     </div>
   )
 }
