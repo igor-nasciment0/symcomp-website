@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 from datetime import timedelta
+from .jwt_config import TOKEN_SETTINGS
 
 DJANGO_ENV = os.getenv("DJANGO_ENV", "development")
 
@@ -139,16 +140,26 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# Media files (Uploads)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 if DJANGO_ENV == "production":
     STORAGES = {
         "staticfiles": {
             "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+        "default": {
+            "BACKEND": "django.core.files.storage.FileSystemStorage",
         },
     }
 else:
     STORAGES = {
         "staticfiles": {
             "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
+        },
+        "default": {
+            "BACKEND": "django.core.files.storage.FileSystemStorage",
         },
     }
 
@@ -190,14 +201,7 @@ REST_FRAMEWORK = {
 if DJANGO_ENV != 'production':
     REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] += ('rest_framework.renderers.BrowsableAPIRenderer',)
 
-# Configuração do SIMPLE_JWT
-SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=14), 
-    "ROTATE_REFRESH_TOKENS": True,
-    "BLACKLIST_AFTER_ROTATION": True,
-    "AUTH_COOKIE": "access_token",
-}
+SIMPLE_JWT = TOKEN_SETTINGS
 
 # Configuração de CSRF e cookies
 
@@ -210,3 +214,5 @@ CSRF_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_SAMESITE = 'Lax'
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+HOST_URL = os.getenv('HOST_URL', 'http://localhost:8000')

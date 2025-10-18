@@ -1,4 +1,8 @@
 from django.db import models
+from django.conf import settings
+from rest_framework_simplejwt.tokens import AccessToken
+import uuid
+from api.lib.qr_code_generator import generate_qr_code
 
 class StatusAtividade(models.TextChoices):
     PROVISORIA = 'provisoria'
@@ -16,20 +20,23 @@ class Atividade(models.Model):
     comeca_as = models.DateTimeField(unique=True)
     termina_as = models.DateTimeField(unique=True)
     qr_code = models.ImageField(upload_to='qr_codes', null=True, blank=True)
+    uid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+
+    def _generate_token(self) -> str:
+        token = AccessToken()
+        token['uid'] = str(self.uid)
+        token['type'] = 'qr_presence'
+        return str(token)
 
     def generate_qr_data(self) -> str:
-        return (
-            f"Atividade: {self.get_tipo_display()}\n"
-            f"Status: {self.get_status_display()}\n"
-            f"Início: {self.comeca_as.strftime('%d/%m/%Y %H:%M')}\n"
-            f"Término: {self.termina_as.strftime('%d/%m/%Y %H:%M')}"
-        )
+        token = self._generate_token()
+        return token
 
-    # def generate_qr_code(self):
-    #    if not self.qr_code:
-    #        qr_data = self.generate_qr_data()
-    #        filename, image_file = generate_qr_code(qr_data)
-    #        self.qr_code.save(filename.split('/')[-1], image_file, save=False)
+    def generate_qr_code(self):
+        if not self.qr_code:
+            qr_data = self.generate_qr_data()
+            filename, image_file = generate_qr_code(qr_data)
+            self.qr_code.save(filename.split('/')[-1], image_file, save=False)
 
     def save(self, *args, **kwargs):
         if not self.qr_code:
