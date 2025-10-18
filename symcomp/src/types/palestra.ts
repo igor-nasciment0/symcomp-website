@@ -1,5 +1,6 @@
 export type Palestra = {
-  horario: string | null
+  horario: string
+  data: 'SEG' | 'TER' | 'QUA' | 'QUI' | 'SEX'
   titulo: string | null
   descricao: string | null
   palestrante: string | null
