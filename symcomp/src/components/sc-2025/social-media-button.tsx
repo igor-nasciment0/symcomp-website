@@ -29,7 +29,7 @@ export function SocialMediaButton({
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
-          'inline-flex items-center justify-center p-2 rounded-full flex-row',
+          'inline-flex items-center justify-center p-2 rounded-full flex-row hover:cursor-pointer',
           variant === 'secondary' ? 'bg-sc-2025-secondary' : 'bg-white',
         )}
       >

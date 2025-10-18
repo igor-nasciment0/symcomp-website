@@ -30,7 +30,7 @@ export function HeroPage() {
               className="absolute right-0 top-1/3 translate-x-1/3 -translate-y-1/3  z-0"
             />
             <div className="w-full flex flex-col gap-8 z-10 px-4 lg:w-[300px]">
-              <div className="flex flex-col items-start mt-[40px] lg:items-center lg:scale-150 lg:py-[50px]">
+              <div className="flex flex-col items-start mt-[40px] lg:items-center lg:scale-150 lg:py-[50px] z-0">
                 <TypographyH1>2025</TypographyH1>
                 <TypographyH1 className="font-normal text-sc-2025-contrast">
                   OUTUBRO
@@ -45,7 +45,7 @@ export function HeroPage() {
                   </TypographyH1>
                 </Highlight>
               </div>
-              <div className="flex flex-col gap-4 w-fit">
+              <div className="flex flex-col gap-4 w-fit z-10">
                 <SocialMediaButton
                   domain="instagram"
                   href="https://www.instagram.com/symcomp.imeusp/"
