@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 
 from .models import Atividade
-from .services import RegistroPresencaService
+from .services import PresencaService
 from .validators import TokenPresencaValidator
 
 @api_view(['POST'])
@@ -20,7 +20,7 @@ def registrar_presenca(request, uid):
     if not token_valid:
         return Response({'error': error_message}, status=status.HTTP_400_BAD_REQUEST)
     
-    service = RegistroPresencaService(atividade, request.user)
+    service = PresencaService(atividade, request.user)
     sucesso, mensagem = service.registrar_presenca()
     
     if sucesso:

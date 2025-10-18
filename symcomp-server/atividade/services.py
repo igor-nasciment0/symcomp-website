@@ -1,7 +1,7 @@
 from django.utils import timezone
 from django.db import transaction
 from .models import Atividade
-from .presenca import RegistroPresenca
+from .presenca import Presenca
 
 class ValidadorPresenca:
     def __init__(self, atividade: Atividade):
@@ -11,7 +11,7 @@ class ValidadorPresenca:
         horario = horario or timezone.now()
         return self.atividade.comeca_as <= horario <= self.atividade.termina_as
 
-class RegistroPresencaService:
+class PresencaService:
     def __init__(self, atividade: Atividade, usuario):
         self.atividade = atividade
         self.usuario = usuario
@@ -21,14 +21,14 @@ class RegistroPresencaService:
         if not self.validador.validar_horario():
             return False, "Presença só pode ser registrada durante o horário da atividade"
 
-        if RegistroPresenca.objects.filter(
+        if Presenca.objects.filter(
             usuario=self.usuario,
             atividade=self.atividade
         ).exists():
             return False, "Presença já registrada para esta atividade"
 
         try:
-            RegistroPresenca.objects.create(
+            Presenca.objects.create(
                 usuario=self.usuario,
                 atividade=self.atividade
             )

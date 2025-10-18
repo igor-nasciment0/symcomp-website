@@ -12,6 +12,7 @@ urlpatterns = [
     path("api/", include("atividade.urls")),
     path("desafio/", include("desafio.urls")),
     path("schema/", SpectacularAPIView.as_view(), name="schema"),
+    path('email/', include('email_service.urls')), 
     path(
         "redoc/",
         SpectacularRedocView.as_view(url_name="schema"),

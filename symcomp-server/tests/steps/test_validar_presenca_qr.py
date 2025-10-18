@@ -5,14 +5,14 @@ from django.utils import timezone
 from rest_framework.test import APIClient
 from rest_framework_simplejwt.tokens import AccessToken
 from atividade.models import Atividade, TipoAtividade, StatusAtividade
-from atividade.presenca import RegistroPresenca
-from atividade.services import RegistroPresencaService
+from atividade.presenca import Presenca
+from atividade.services import PresencaService
 from atividade.validators import TokenPresencaValidator
 from api.models import User
 
 @pytest.fixture(autouse=True)
 def limpar_registros_presenca(db):
-    RegistroPresenca.objects.all().delete()
+    Presenca.objects.all().delete()
     yield
 
 @pytest.fixture
@@ -82,12 +82,12 @@ def atividade_fora_horario(atividade_cadastrada):
 
 @given('que já registrei presença nesta atividade')
 def presenca_registrada(db, atividade_cadastrada, usuario_autenticado):
-    RegistroPresenca.objects.filter(
+    Presenca.objects.filter(
         usuario=usuario_autenticado,
         atividade=atividade_cadastrada
     ).delete()
     
-    RegistroPresenca.objects.create(
+    Presenca.objects.create(
         usuario=usuario_autenticado,
         atividade=atividade_cadastrada
     )
@@ -117,13 +117,13 @@ def criar_token_invalido() -> str:
 @pytest.fixture
 @when('eu escanear o QR code válido da atividade')
 def escanear_qr_valido(atividade_cadastrada, usuario_autenticado):
-    RegistroPresenca.objects.filter(
+    Presenca.objects.filter(
         usuario=usuario_autenticado,
         atividade=atividade_cadastrada
     ).delete()
     
     token = criar_token_valido(atividade_cadastrada)
-    service = RegistroPresencaService(atividade_cadastrada, usuario_autenticado)
+    service = PresencaService(atividade_cadastrada, usuario_autenticado)
     validator = TokenPresencaValidator(token, str(atividade_cadastrada.uid))
     is_valid, message = validator.validate()
     if not is_valid:
@@ -134,7 +134,7 @@ def escanear_qr_valido(atividade_cadastrada, usuario_autenticado):
 @when('eu escanear um QR code inválido')
 def escanear_qr_invalido(atividade_cadastrada, usuario_autenticado):
     token = criar_token_invalido()
-    service = RegistroPresencaService(atividade_cadastrada, usuario_autenticado)
+    service = PresencaService(atividade_cadastrada, usuario_autenticado)
     validator = TokenPresencaValidator(token, str(atividade_cadastrada.uid))
     is_valid, _ = validator.validate()
     if is_valid:
@@ -145,7 +145,7 @@ def escanear_qr_invalido(atividade_cadastrada, usuario_autenticado):
 @when('eu escanear o QR code válido da atividade novamente')
 def escanear_qr_novamente(usuario_autenticado, atividade_cadastrada):
     token = criar_token_valido(atividade_cadastrada)
-    service = RegistroPresencaService(atividade_cadastrada, usuario_autenticado)
+    service = PresencaService(atividade_cadastrada, usuario_autenticado)
     validator = TokenPresencaValidator(token, str(atividade_cadastrada.uid))
     is_valid, _ = validator.validate()
     if is_valid:
@@ -164,7 +164,7 @@ def escanear_qr_outra_atividade(atividade_cadastrada, outra_atividade, usuario_a
 def verificar_presenca_registrada(usuario_autenticado, atividade_cadastrada, escanear_qr_valido):
     sucesso, mensagem = escanear_qr_valido
     assert sucesso, f"Falha ao registrar presença: {mensagem}"
-    assert RegistroPresenca.objects.filter(
+    assert Presenca.objects.filter(
         usuario=usuario_autenticado,
         atividade=atividade_cadastrada
     ).exists(), "Registro de presença não foi criado"
@@ -173,7 +173,7 @@ def verificar_presenca_registrada(usuario_autenticado, atividade_cadastrada, esc
 def verificar_presenca_nao_registrada(usuario_autenticado, atividade_cadastrada, escanear_qr_invalido):
     sucesso, _ = escanear_qr_invalido
     assert not sucesso
-    assert not RegistroPresenca.objects.filter(
+    assert not Presenca.objects.filter(
         usuario=usuario_autenticado,
         atividade=atividade_cadastrada
     ).exists()
@@ -202,7 +202,7 @@ def verificar_sem_presenca_duplicada(usuario_autenticado, atividade_cadastrada, 
     sucesso, mensagem = escanear_qr_novamente
     assert not sucesso
     assert mensagem == "Presença já registrada para esta atividade"
-    assert RegistroPresenca.objects.filter(
+    assert Presenca.objects.filter(
         usuario=usuario_autenticado,
         atividade=atividade_cadastrada
     ).count() == 1
