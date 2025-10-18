@@ -5,6 +5,7 @@
     "atividades": [
       {
         "horario": "12:00 - 13:00",
+        "data": "SEG",
         "titulo": "Entre bugs e boss fights: os desafios reais de criar jogos mobile para milhões de pessoas.",
         "descricao": "Uma conversa sobre os bastidores do desenvolvimento de jogos mobile — dos desafios técnicos às decisões criativas — e o que realmente acontece por trás das telas que entretêm milhões de jogadores.",
         "palestrante": "Victor Domiciano (Wildlife)",
@@ -17,6 +18,7 @@
       },
       {
         "horario": "13:15 - 14:15",
+        "data": "SEG",
         "titulo": "Como virar um pesquisador em Linguagens de Programação",
         "descricao": "Linguagens de programação lida com a criação, otimização, e análise de programas. É uma área fundamental e extremamente divertida da computação, que aborda desde matemática e algoritmos a linguística e engenharia de software. Nessa palestra, falarei sobre motivos pelos quais você deveria considerar virar pesquisador em Linguagens de Programação, e como é a progressão de carreira e o dia-a-dia de um pesquisador na Ásia ou Europa.",
         "palestrante": " Giovanna Kobus Conrado",
@@ -29,6 +31,7 @@
       },
       {
         "horario": "14:15 - 14:45",
+        "data": "SEG",
         "titulo": "Coffee Break",
         "descricao": "",
         "palestrante": "",
@@ -41,6 +44,7 @@
       },
       {
         "horario": "14:45 - 15:45",
+        "data": "SEG",
         "titulo": "Antes e Depois da IA: Como Mudou Nosso Jeito de Criar Software",
         "descricao": "Nesta palestra, compartilharemos a experiência real da Irya Solutions navegando pela revolução da IA no desenvolvimento de software. Vamos explorar como era nosso dia a dia antes do boom, quais ferramentas e práticas adotamos, e o impacto direto que sentimos em projetos e na relação com clientes. Além de casos práticos, discutiremos as habilidades que se tornaram essenciais para devs neste novo contexto e nossa visão sobre o que vem pela frente.\n",
         "palestrante": "Rafael Reggiani Manzo; e Diego Araujo Martinez Camarinha",
@@ -53,6 +57,7 @@
       },
       {
         "horario": "16:00 - 17:00",
+        "data": "SEG",
         "titulo": "Como IAs modernas são construídas: intuição, teoria e prática",
         "descricao": "Nesta palestra vamos abordar os fundamentos do funcionamento das redes neurais, com foco nos modelos de linguagem e na arquitetura Transformer. Em seguida, exploraremos como se dá o treinamento em múltiplos estágios e o papel dos dados. Por fim, buscaremos transmitir a intuição de por que a ordem em que as informações são apresentadas aos LLMs) é de extrema importância, e discutiremos algumas hipóteses sobre a alucinação em LLMs.",
         "palestrante": "Rodrigo Nogueira (Maritaca AI)",
@@ -65,6 +70,7 @@
       },
       {
         "horario": "17:15 - 18:15",
+        "data": "SEG",
         "titulo": "A Jornada de Pivot of Hearts",
         "descricao": "A Dragonroll Studio é um empresa indie de jogos fundada por três alumni USP e que lançou seu primeiro jogo, Pivot of Hearts, em maio de 2025. O jogo passou por três editais, foi premiado no SBGames 2022 e foi finalista na Gamescom latam 2024. Nessa apresentação, compartilharemos nossos aprendizados para quem tem interesse em trabalhar com desenvolvimento de jogos e abrir seu próprio estúdio de jogos no futuro. Abordaremos temas como dicas de editais, o papel de incubadoras e aceleradoras, os desafios de participar de eventos e rodadas de negócio, estratégias de marketing e outras coisas que normalmente não se tem oportunidade de aprender numa graduação em computação.",
         "palestrante": "Wilson Kazuo Mizutani\nLivia Maki Yoshikawa\nLívia Amaral Santos",
@@ -77,6 +83,7 @@
       },
       {
         "horario": "18:15 - 19:30",
+        "data": "SEG",
         "titulo": "Coffee Break",
         "descricao": "",
         "palestrante": "",
@@ -95,6 +102,7 @@
     "atividades": [
       {
         "horario": "12:00 - 13:00",
+        "data": "TER",
         "titulo": "",
         "descricao": "",
         "palestrante": "NIC",
@@ -107,6 +115,7 @@
       },
       {
         "horario": "13:15 - 14:15",
+        "data": "TER",
         "titulo": "Porque estudar computação é legal pra caramba ",
         "descricao": "Nessa palestra conto algumas histórias da minha trajetória na computação e como a faculdade me ajudou a vencer desafios e alcançar objetivos pessoais e profissionais. O que me permite continuar atualizado hoje? Como alguém que está estudando hoje pode se preparar para um futuro cada vez mais imprevisível?",
         "palestrante": "João Barguil (Opus)",
@@ -119,6 +128,7 @@
       },
       {
         "horario": "14:15 - 14:45",
+        "data": "TER",
         "titulo": "Coffee break",
         "descricao": "",
         "palestrante": "",
@@ -131,6 +141,7 @@
       },
       {
         "horario": "14:45 - 15:45",
+        "data": "TER",
         "titulo": "De Hacker a profissional em Cibersegurança",
         "descricao": "Anchises Moraes, paulistano da casa Hacker, primeiro de seu nome, nascido na ciência da computação, work-aholic da cibersegurança, Threat Intel Lead da Apura, founder da Security BSides São Paulo, Chanceler Supremo do Garoa Hacker Clube, He for She da WOMCY (LATAM Women in Cybersecurity), mestre dos conselhos da Mente Binária, especialista em segurança e protetor do ciberespaço.",
         "palestrante": "Anchises Moraes",
@@ -143,6 +154,7 @@
       },
       {
         "horario": "16:00 - 17:00",
+        "data": "TER",
         "titulo": "do C ao Vibe Coding",
         "descricao": "Nesta palestra, abordarei a evolução não da programação, mas sim da criaçao de produtos. Desde os primeiros dias de manipulação direta de bits e bytes , passando pelos frameworks a la Django e Ruby on Rails até as atuais ferramentas de codificação assistida por IA, como o 'vibe coding'. O que muda para nossa carreira? O que muda para estar na ponta? E será que isso tudo faz diferença ou o que importa são os algortimos e a matemática?",
         "palestrante": "\nPaulo Silveira",
@@ -155,6 +167,7 @@
       },
       {
         "horario": "17:15 - 18:15",
+        "data": "TER",
         "titulo": "Pesquisas no Centro de Inteligência Artificial da USP: Aprendizado Enriquecido por Conhecimento",
         "descricao": "O Centro de Inteligência Artificial da USP tem como missão a pesquisa de qualidade internacional em inteligência artificial, trabalhando para integrar suas áreas, divulgar seus resultados, e transferir sua tecnologia. Nesta palestra serão apresentadas as linhas de pesquisa relacionadas ao centro, de medicina a humanidades, e será explorada uma particular linha onde se procura enriquecer técnicas de aprendizado de máquina com representação de conhecimento. \n",
         "palestrante": "Fabio Gagliardi Cozman",
@@ -167,6 +180,7 @@
       },
       {
         "horario": "18:15 - 19:30",
+        "data": "TER",
         "titulo": "Coffee break",
         "descricao": "",
         "palestrante": "",
@@ -185,6 +199,7 @@
     "atividades": [
       {
         "horario": "12:00 - 13:00",
+        "data": "QUA",
         "titulo": "Por que modelos de Machine Learning alucinam?",
         "descricao": "Grandes modelos de linguagem (LLMs, como o ChatGPT) apresentam o fenômeno de \"alucinação\", gerando saídas com informações erradas ou comportamento para os quais não foram treinados.\nBuscaremos explorar exemplos de tais ocorrênciais assim como avanços recentes no entendimento das suas causas e sua aparição em outros modelos de Machine Learning.",
         "palestrante": "LEARN",
@@ -197,6 +212,7 @@
       },
       {
         "horario": "13:15 - 14:15",
+        "data": "QUA",
         "titulo": "Busca em Grafos e Relações de Parentesco",
         "descricao": "Nesta palestra vamos mostrar alguns problemas interessantes propostos por antropólogos sobre relações de parentesco, em especial aplicados a populações de povos originários. Vamos mostrar como esses problemas podem ser formulados usando grafos mistos, e algoritmos eficientes para encontrar estruturas interessantes que ocorrem no grafo de parentesco dessas populações. ",
         "palestrante": "Carlos E. Ferreira",
@@ -209,6 +225,7 @@
       },
       {
         "horario": "14:15 - 14:45",
+        "data": "QUA",
         "titulo": "Coffee break",
         "descricao": "",
         "palestrante": "",
@@ -221,6 +238,7 @@
       },
       {
         "horario": "14:45 - 15:45",
+        "data": "QUA",
         "titulo": "Cibersegurança na Prática: erros reais, impactos e lições pra sua carreira",
         "descricao": "Muito além de um tema técnico, a cibersegurança já é uma das competências mais valorizadas no mercado de trabalho -independentemente da área. Entender os riscos, os principais tipos de ataque e como proteger dados pessoais e corporativos é essencial para quem quer crescer com responsabilidade e estar preparado para os desafios do mundo digital. Nesta palestra, você vai conhecer histórias reais de invasões, aprender com os erros que abriram portas para vazamentos e descobrir como esse conhecimento pode fortalecer sua atuação profissional em qualquer carreira.",
         "palestrante": "Frankllin Nunes",
@@ -233,6 +251,7 @@
       },
       {
         "horario": "16:00 - 17:00",
+        "data": "QUA",
         "titulo": "Enshittificação de Software ou Liberdade?\nNão é uma escolha difícil!\n",
         "descricao": "Software não-livre subjuga usuários, e isso já é ruim, mas não é como se não desse pra piorar.  Quanto mais fácil for pra que outros imponham suas escolhas de versões do software a um usuário, mais poderão co(c)optar o software, ester[cç]ando-o e embo(s)tando-o para melhor servir a si mesmos, em vez de ao usuário, e mais eles poderão esca(n)galhar a computação do usuário.  Isso ocorre com os sistemas operacionais dominantes nas estações de trabalho e nas tornozeleiras de bolso (espertinhomóveis), por conta de suas atualizações obrigatórias, mas usuários ficam ainda mais sujeitos à embos(t)cada usando web apps baixados de servidores alheios, contando com SaaSS, ou usando dispositivos e eletrodomésticos IoT sob controle remoto.  Mesmo usando software local sem atualização automática, usuários podem ser enganados ou coagidos a migrar para versões estrumentadas, inclusive de microcódigo, firmware e controladores.  Essas modalidades de adubação orgânica são um emb[ou]ste, só podia dar no que dá!  Mas será que basta usar software livre pra desemerdar?",
         "palestrante": "\nAlexandre Oliva",
@@ -245,6 +264,7 @@
       },
       {
         "horario": "17:15 - 18:15",
+        "data": "QUA",
         "titulo": "O papel da inovação no mercado financeiro. Tecnologia, Inteligência Artificial e Dados.",
         "descricao": "A palestra abordará a revolução digital em andamento no mercado financeiro, e como o Banco Pine tem se utilizado de tecnologias como Cloud Computing, Data & Analytics e Inteligência Artificial para se posicionar na vanguarda dessa revolução, otimizando processos, tomando melhores decisões e oferecendo a melhor experiência para seu cliente.",
         "palestrante": "Alexandre Pinelli",
@@ -257,6 +277,7 @@
       },
       {
         "horario": "18:15 - 19:30",
+        "data": "QUA",
         "titulo": "Coffee break",
         "descricao": "",
         "palestrante": "",
@@ -275,6 +296,7 @@
     "atividades": [
       {
         "horario": "12:00 - 13:00",
+        "data": "QUI",
         "titulo": "Como nasce uma invenção: da ideia à patente\n",
         "descricao": "A palestra apresenta o percurso completo de criação de uma invenção, desde a geração da ideia até o registro da patente. Com base na cultura maker e abordagem STEAM, são discutidos os processos de concepção, prototipagem, validação e proteção da propriedade intelectual. A proposta é mostrar, de forma prática, como a integração entre ciência, criatividade e colaboração pode transformar ideias em produtos inovadores!",
         "palestrante": "Hadassa Onisaki \n",
@@ -287,6 +309,7 @@
       },
       {
         "horario": "13:15 - 14:15",
+        "data": "QUI",
         "titulo": "Modelos de Linguagem, Tokenização e Compressão",
         "descricao": "A representação atômica da maior parte dos modelos de linguagem estado-da-arte é o token: strings que definem o vocabulário do modelo. Em outras palavras, um modelo de linguagem é uma distribuição de probabilidade sob tokens, e não exclusivamente sob caracteres. Nesta palestra, vamos apresentar alguns de nossos resultados recentes que seguem desta suposição. Vamos brevemente introduzir tokenização, o processo de mapear strings em sequência de tokens, apresentar resultados teóricos sobre a complexidade de certas computações probabilísticas neste contexto, e apresentar algumas consequências práticas de tokenização em segurança e alinhamento. Em particular, vamos mostrar que a inteligência artificial (IA) moderna não é apenas aprendizado de máquina: mostraremos a intersecção da IA com métodos formais, complexidade, estatística e técnicas clássicas de IA, como busca e amostragem por Monte Carlo. Finalmente, se houver tempo, discutiremos sobre o papel da compressão (no contexto de teoria da informação) em modelos de linguagem e tokenização.",
         "palestrante": "Renato Geh",
@@ -299,6 +322,7 @@
       },
       {
         "horario": "14:15 - 14:45",
+        "data": "QUI",
         "titulo": "Coffee break",
         "descricao": "",
         "palestrante": "",
@@ -311,6 +335,7 @@
       },
       {
         "horario": "14:45 - 15:45",
+        "data": "QUI",
         "titulo": "Como a inteligência artificial está transformando a Ciência de Dados e o Mercado de Trabalho",
         "descricao": "O Profissional Híbrido: Humanos + IA no Mercado de Trabalho\n(Além do algoritmo: O Novo Perfil do Profissional de Tecnologia)\nNesta palestra, vamos discutir como a IA está transformando carreiras,\nhabilidades e formas de trabalho e o que os profissionais precisam\ndesenvolver para continuarem relevantes e protagonistas.\nVamos explorar não só os riscos, mas também as oportunidades de \ncriar, liderar e inovar em um mundo onde humanos e máquinas trabalham lado a lado.",
         "palestrante": "Jerry Strazzeri",
@@ -323,6 +348,7 @@
       },
       {
         "horario": "16:00 - 17:00",
+        "data": "QUI",
         "titulo": "O papel do cientista de dados no mundo dos AI",
         "descricao": "O hype do AI vem com força nos últimos anos, ele abarca desde o desenvolvimento às decisões de negócio. Como profissionais de ciência de dados, engenharia, desenvolvimento e outras áreas de programação o uso dessas ferramentas é algo inevitável no dia a dia.\n\nDeste uso nascem diversas práticas questionáveis: o vibe code, a fetichização da tecnologia, onde a aplicação de modelos mais avançados como LLM vem antes da definição do problema.\n\nNascem também coisas fantásticas: como a possibilidade do tratamento de dados desestruturados (textos, imagens, sons e vídeos) que antes não eram possíveis sem o auxílio humano; a interação com sistemas através de linguagem natural possibilitando a democratização do uso de ferramentas de análise avançada.\n\nO mercado muda, posições de trabalho antes ocupadas por recém formados (juniors) são substituídas por algoritmos, mas também potencializam a produtividade permitindo a solução rápida de problemas. Soluções rápidas que, muitas vezes, trazem débito técnico, aparentemente todo ganho vem com um custo.\n\nO objetivo da palestra é explorar a dualidade vinda da aplicação do AI no dia a dia dos projetos de desenvolvimento de sistemas e ciência de dados. Murabei como uma empresa com mais de 10 anos, viveu essa mudança e aplica no dia a dia tais técnicas. Se podemos adiantar, algo que não muda é o pensamento científico, abordagem crítica sobre os problemas e a noção estética sobre a escolha das soluções.\n\nAtos humanos até que venha a próxima geração de AIs.",
         "palestrante": "(Murabei) André Baceti ",
@@ -335,6 +361,7 @@
       },
       {
         "horario": "17:15 - 18:15",
+        "data": "QUI",
         "titulo": "Mitos e Realidades no Desenvolvimento de Software com IA",
         "descricao": "Nesta palestra discutiremos alguns Mitos e Realidades sobre o uso de técnicas de Inteligência Artificial, especialmente os LLMs (Large Language Models), para desenvolvimento de software. Explicaremos o mecanismo básico de funcionamento dos LLMs e dos Agentes de Engenharia de Software, suas limitações e seus potenciais, e como os mesmos podem atualmente ser utilizados na prática, destacando o que funciona (realidade) e o que é exagero ou puro marketing (mito).",
         "palestrante": "Paulo Borba",
@@ -347,6 +374,7 @@
       },
       {
         "horario": "18:15 - 19:30",
+        "data": "QUI",
         "titulo": "Coffee break",
         "descricao": "",
         "palestrante": "",
@@ -365,6 +393,7 @@
     "atividades": [
       {
         "horario": "12:00 - 13:00",
+        "data": "SEX",
         "titulo": "",
         "descricao": "",
         "palestrante": "IME Sec",
@@ -377,6 +406,7 @@
       },
       {
         "horario": "13:15 - 14:15",
+        "data": "SEX",
         "titulo": "Desenvolvimento Frontend (Web, App, Design de interfaces)",
         "descricao": "Vamos entender como criar uma experiência de aplicações, pensando desde o design até o desenvolvimento da aplicação em si. Dessa forma é possível criar uma experiência completa pros usuários do sistema.",
         "palestrante": "Bruno Mestanza",
@@ -389,6 +419,7 @@
       },
       {
         "horario": "14:15 - 14:45",
+        "data": "SEX",
         "titulo": "Coffee break",
         "descricao": "",
         "palestrante": "",
@@ -401,6 +432,7 @@
       },
       {
         "horario": "14:45 - 15:45",
+        "data": "SEX",
         "titulo": "Bate-papo academico",
         "descricao": "",
         "palestrante": "Cristina G. Fernandes                \n Kelly Rosa Braghetto",
@@ -413,6 +445,7 @@
       },
       {
         "horario": "16:00 - 17:00",
+        "data": "SEX",
         "titulo": "Ferramentas de IA para o desenvolvimento de software.",
         "descricao": "As ferramentas de inteligência artificial estão revolucionando o ciclo de desenvolvimento de software, desde a escrita de código até a manutenção e otimização de sistemas.\n\nAbordaremos as principais categorias de ferramentas disponíveis, incluindo assistentes de código e suas features, geradores de testes automatizados e ferramentas de revisão de código inteligente.\n\nTambém vamos discutir casos práticos de uso, benefícios em produtividade, limitações atuais e como integrar essas tecnologias de forma eficaz no fluxo de trabalho das equipes de desenvolvimento, sempre considerando boas práticas de IA no contexto profissional.",
         "palestrante": "Mario Silva e Lucas Sobrinho",
@@ -425,6 +458,7 @@
       },
       {
         "horario": "17:15 - 18:15",
+        "data": "SEX",
         "titulo": "A Liderança Ágil que a IA não pode Substituir",
         "descricao": "Em um mundo cada vez mais conectado e com assistentes inteligentes no centro do dia a dia, como manter a liderança humana indispensável? Nesta palestra, você vai descobrir quais competências ágeis permanecem exclusivas aos seres humanos e como potencializá-las mesmo quando a Inteligência Artificial avança em ritmo acelerado. Vamos abordar:\n\n- Introdução aos conceitos de Inteligência Artificial, para praticar o \"Não deixar ninguém para trás\" e todos conseguirem acompanhar a tese;\n- Como unir agilidade e propósito em times orientados por dados e IA;\n- Quais habilidades socioemocionais e de visão estratégica continuam vitais;\n- Exemplos práticos de liderança humana em contexto tecnológico;\n- Apresentação do framework denominado \"VITAL\", de autoria de Marcio Namiki, que propõe uma linha de solução para o problema proposto na palestra, com a esperança de servir de guia para adoção ética da IA nas organizações.\n\nSe você quer liderar com impacto, além dos algoritmos, essa palestra é para você.",
         "palestrante": "Márcio Namiki",
@@ -437,6 +471,7 @@
       },
       {
         "horario": "18:15 - 19:30",
+        "data": "SEX",
         "titulo": "Encerramento",
         "descricao": "",
         "palestrante": "",

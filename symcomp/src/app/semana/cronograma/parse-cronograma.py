@@ -21,6 +21,7 @@ def parse_csv(path_csv: str, path_json: str):
             if row.get("Dia da Semana") == dia["key"]:
                 atividades.append({
                     "horario": row.get("Horário"),
+                    "data": dia["key"],
                     "titulo": row.get("Titulo da Palestra"),
                     "descricao": row.get("Descrição"),
                     "palestrante": row.get("Nome do palestrante"),

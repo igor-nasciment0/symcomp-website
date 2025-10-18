@@ -37,9 +37,9 @@ export function CronogramaCarousel() {
               (atividade) =>
                 atividade.titulo &&
                 (atividade.keyWord === 'break' ? (
-                  <BreakCard palestra={atividade} />
+                  <BreakCard palestra={atividade as Palestra} />
                 ) : (
-                  <AtividadeCard palestra={atividade} />
+                  <AtividadeCard palestra={atividade as Palestra} />
                 )),
             )}
           </div>
