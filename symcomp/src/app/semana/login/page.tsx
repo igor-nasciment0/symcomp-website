@@ -8,18 +8,12 @@ import { z } from 'zod'
 
 import { SCButton } from '@/components/sc-2025/button'
 import { SCInput } from '@/components/sc-2025/input'
-import { TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form'
-import createLoginToken from '@/lib/http/create-logn-token'
-import SemanaHeader from '../header'
 import { SCLabel } from '@/components/sc-2025/label'
+import { TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
+import createLoginToken from '@/lib/http/create-logn-token'
+
+import SemanaHeader from '../header'
 
 const formSchema = z.object({
   email: z.string().email('Por favor, insira um e-mail válido.').nonempty(),

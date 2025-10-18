@@ -18,10 +18,10 @@ import { Text, TypographyH2 } from '@/components/sc-2025/typography'
 import { SCWrapper, SCWrapperFooter } from '@/components/sc-2025/wrapper'
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
 import { barlowCondensed } from '@/lib/font'
+import { Palestra } from '@/types/palestra'
 
 import cronograma from './cronograma.json'
 import { CronogramaDetail, parseHorarioToICS } from './cronograma-detail'
-import { Palestra } from '@/types/palestra'
 
 export function CronogramaCarousel() {
   return (

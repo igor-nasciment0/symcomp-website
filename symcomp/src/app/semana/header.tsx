@@ -1,17 +1,14 @@
 'use client'
 
-import { Text } from '@/components/sc-2025/typography'
-import { Sheet, SheetContent, SheetHeader, SheetTrigger } from '@/components/ui/sheet'
-import { useCurrentUser } from '@/hooks/useCurrentUser'
-import { semanaCrongorama, semanaHome, semanaLogin } from '@/lib/routes'
-import { cn } from '@/lib/utils'
-import { LogIn, Menu } from 'lucide-react'
+import { Menu } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function SemanaHeader() {
-  const { data } = useCurrentUser()
+import { Text } from '@/components/sc-2025/typography'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { semanaCrongorama, semanaHome, semanaLogin } from '@/lib/routes'
 
+export default function SemanaHeader() {
   return (
     <div className="p-4 w-full flex flex-row justify-between items-start bg-transparent">
       <Image src="/sc-2025/ime-usp-branca.svg" alt="" width={52} height={59} />

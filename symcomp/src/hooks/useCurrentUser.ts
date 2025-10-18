@@ -1,7 +1,7 @@
-import { AuthenticationError } from '@/lib/errors'
+import { useQuery } from '@tanstack/react-query'
+
 import { api } from '@/lib/http/api'
 import { Jogador, Perfil, User } from '@/types/user'
-import { useQuery } from '@tanstack/react-query'
 
 interface MeResponse {
   user: User
@@ -15,10 +15,7 @@ async function fetchCurrentUser(): Promise<MeResponse> {
       withCredentials: true,
     })
     return data
-  } catch (error: any) {
-    if (error.response?.status === 401) {
-      throw new AuthenticationError()
-    }
+  } catch (error) {
     throw error
   }
 }

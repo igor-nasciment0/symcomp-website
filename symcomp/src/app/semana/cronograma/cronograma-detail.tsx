@@ -1,4 +1,5 @@
 import { TabsContent } from '@radix-ui/react-tabs'
+
 import { SCButton } from '@/components/sc-2025/button'
 import { Text, TypographyH2 } from '@/components/sc-2025/typography'
 import { SCWrapper } from '@/components/sc-2025/wrapper'

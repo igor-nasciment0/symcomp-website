@@ -4,7 +4,7 @@ import { Text } from '@/components/sc-2025/typography'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 
 export default function UserDashboard() {
-  const { data, error } = useCurrentUser()
+  const { data } = useCurrentUser()
 
   return (
     <div className="flex-1 bg-sc-2025-background w-full h-full">
