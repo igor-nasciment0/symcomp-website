@@ -9,7 +9,45 @@ from rest_framework import status
 from desafio.serializers import RankingSerializer
 from desafio.resposta.serializers import RespostaSerializer
 from .questao.serializers import QuestaoSerializer
+from desafio.jogador.serializers import JogadorSerializer
 from desafio.services import GerenciadorDePontuacao, ValidadorFormulario
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def criar_jogador(request, desafio_id):
+    try:
+        desafio = Desafio.objects.get(pk=desafio_id)
+    except Desafio.DoesNotExist:
+        return Response(
+            {"error": "Desafio não encontrado."},
+            status=status.HTTP_404_NOT_FOUND
+        )
+
+    if Jogador.objects.filter(user=request.user, desafio=desafio).exists():
+        return Response(
+            {"error": "Você já está inscrito neste desafio."},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    try:
+        jogador = Jogador.objects.create(
+            user=request.user,
+            desafio=desafio
+        )
+        serializer = JogadorSerializer(jogador)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+    except ValueError as e:
+        # Captura o erro do 'busca_username_disponivel'
+        return Response(
+            {"error": str(e)},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    except Exception as e:
+        return Response(
+            {"error": f"Ocorreu um erro ao criar o jogador: {str(e)}"},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
 
 # salvar_questao -> utilizado para salvar a resposta do usuário sem submeter todo o formulario
 @api_view(['POST'])
