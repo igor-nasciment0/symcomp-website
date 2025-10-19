@@ -15,6 +15,7 @@ import createLoginToken from '@/lib/http/create-logn-token'
 
 import SemanaHeader from '../header'
 import { SCFormMessage } from '@/components/sc-2025/form-message'
+import { semanaCadastro } from '@/lib/routes'
 
 const formSchema = z.object({
   email: z.string().email('Por favor, insira um e-mail válido.').nonempty(),
@@ -34,7 +35,7 @@ export default function LoginPage() {
 
   const { mutate, isPending } = useMutation({
     mutationFn: (values: z.infer<typeof formSchema>) => createLoginToken(values),
-    onSuccess: () => router.push('/semana/dashboard'),
+    onSuccess: () => router.push(semanaCadastro),
     onError: (error) => console.error('Erro no login:', error),
   })
 

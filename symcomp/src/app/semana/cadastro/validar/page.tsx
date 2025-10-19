@@ -26,6 +26,7 @@ import { SCFormMessage } from '@/components/sc-2025/form-message'
 import SemanaHeader from '../../header'
 import VerifyCode from '@/lib/http/verify-code'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
+import { semanaDashboard } from '@/lib/routes'
 
 const formSchema = z.object({
   code: z.string().length(6),
@@ -46,7 +47,7 @@ export default function ValidarPage() {
   const { mutate, isPending } = useMutation({
     mutationFn: (values: FormSchema) => VerifyCode({ code: values.code }),
     onSuccess: () => {
-      router.push('/semana/cadastro/dashboard')
+      router.push(semanaDashboard)
     },
   })
 

@@ -22,6 +22,8 @@ from desafio.jogador.serializers import JogadorSerializer
 from .serializers import UserSerializer
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import ensure_csrf_cookie
+from rest_framework.decorators import api_view, permission_classes
+from .authentication import CookieJWTAuthentication
 
 import random
 
@@ -150,7 +152,7 @@ class LogoutView(APIView):
         return response
 
 class ValidateCodeView(APIView):
-    authentication_classes = [JWTAuthentication]
+    authentication_classes = [CookieJWTAuthentication]
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
@@ -179,8 +181,6 @@ class ValidateCodeView(APIView):
         )
 
 class PromoverUsuarioView(APIView):
-    authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated]
 
     def post(self, request):
         if not request.user.is_authenticated:
