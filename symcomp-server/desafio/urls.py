@@ -6,5 +6,5 @@ urlpatterns = [
     path('<int:desafio_id>/ranking/', obter_ranking, name='obter-ranking'), 
     # O formato para resposta deve ser algo como {'questao': ID, 'resposta': 'resposta do usuario '}
     path('respostas/salvar/', salvar_resposta, name='salvar-resposta'),
-    path('<int:desafio_id>/submeter', submeter_formulario, name='submeter-formulario'),
+    path('<int:desafio_id>/submeter/', submeter_formulario, name='submeter-formulario'),
 ]

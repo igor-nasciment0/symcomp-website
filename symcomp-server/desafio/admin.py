@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Desafio
 from .questao.models import Questao
 from .jogador.models import Jogador
+from .resposta.models import Resposta
 
 @admin.register(Desafio)
 class DesafioAdmin(admin.ModelAdmin):
@@ -17,3 +18,4 @@ class DesafioAdmin(admin.ModelAdmin):
 
 admin.site.register(Questao)
 admin.site.register(Jogador)
+admin.site.register(Resposta)

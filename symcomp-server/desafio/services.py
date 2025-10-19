@@ -36,7 +36,7 @@ class ValidadorFormulario:
             resposta_obj.save()
 
         jogador.pontos += pontuacao
-        jogador.save(update_fields['pontos'])
+        jogador.save()
         
         return pontuacao
 
