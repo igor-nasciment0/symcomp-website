@@ -4,4 +4,4 @@ from desafio.questao.models import Questao
 class QuestaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Questao
-        fields = "__all__"
+        fields = ['id', 'pergunta', 'valor_pontos'] 
