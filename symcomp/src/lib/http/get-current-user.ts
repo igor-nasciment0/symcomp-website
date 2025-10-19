@@ -1,4 +1,5 @@
 import { Jogador, Perfil, User } from '@/types/user'
+
 import { api } from './api'
 
 interface MeResponse {

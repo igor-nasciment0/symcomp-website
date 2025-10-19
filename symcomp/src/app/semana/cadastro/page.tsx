@@ -5,27 +5,17 @@ import { useMutation } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { useState } from 'react'
 
-import {
-  Form,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormMessage,
-} from '@/components/ui/form'
-
+import { SCButton } from '@/components/sc-2025/button'
+import { SCFormMessage } from '@/components/sc-2025/form-message'
 import { SCInput } from '@/components/sc-2025/input'
 import { SCLabel } from '@/components/sc-2025/label'
-import { SCButton } from '@/components/sc-2025/button'
-import { Highlight, TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
+import { TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
+import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
+import registerUser from '@/lib/http/register-user'
+import { semanaLogin } from '@/lib/routes'
 
 import SemanaHeader from '../header'
-import registerUser from '@/lib/http/register-user'
-import { SCFormMessage } from '@/components/sc-2025/form-message'
-import createLoginToken from '@/lib/http/create-logn-token'
-import { semanaCrongorama, semanaLogin, semanaValidar } from '@/lib/routes'
 
 const formSchema = z.object({
   name: z.string().nonempty('O nome é obrigatório'),

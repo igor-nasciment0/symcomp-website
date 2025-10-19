@@ -1,11 +1,12 @@
 'use client'
 
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+
 import { SCButton } from '@/components/sc-2025/button'
 import { Text } from '@/components/sc-2025/typography'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { semanaRegistrarPresenca, semanaValidar } from '@/lib/routes'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
 export default function UserDashboard() {
   const { data } = useCurrentUser()

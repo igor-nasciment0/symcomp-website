@@ -5,28 +5,17 @@ import { useMutation } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { useState } from 'react'
 
-import {
-  Form,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormMessage,
-} from '@/components/ui/form'
-
+import { SCButton } from '@/components/sc-2025/button'
+import { SCFormMessage } from '@/components/sc-2025/form-message'
 import { SCInput } from '@/components/sc-2025/input'
 import { SCLabel } from '@/components/sc-2025/label'
-import { SCButton } from '@/components/sc-2025/button'
 import { TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
-
-import RegisterUser from '@/lib/http/register-user'
-import { SCFormMessage } from '@/components/sc-2025/form-message'
-import SemanaHeader from '../../header'
+import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import VerifyCode from '@/lib/http/verify-code'
-import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { semanaDashboard } from '@/lib/routes'
+
+import SemanaHeader from '../../header'
 
 const formSchema = z.object({
   code: z.string().length(6),
