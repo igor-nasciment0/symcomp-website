@@ -5,6 +5,8 @@ from drf_spectacular.views import (
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -21,5 +23,7 @@ urlpatterns = [
         "swagger/",
         SpectacularSwaggerView.as_view(url_name="schema"),
         name="swagger-ui",
-    ),
+    )
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

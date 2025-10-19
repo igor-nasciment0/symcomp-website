@@ -16,6 +16,7 @@ class TipoAtividade(models.TextChoices):
 
 class Atividade(models.Model):
     tipo = models.CharField(max_length=30, choices=TipoAtividade.choices)
+    titulo = models.CharField(max_length=255, default="")
     status = models.CharField(max_length=30, choices=StatusAtividade.choices, default=StatusAtividade.PROVISORIA)
     comeca_as = models.DateTimeField(unique=True)
     termina_as = models.DateTimeField(unique=True)
@@ -44,4 +45,4 @@ class Atividade(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"{self.get_tipo_display()} - {self.comeca_as.strftime('%d/%m/%Y %H:%M')}"
+        return f"{self.titulo} - {self.comeca_as.strftime('%d/%m/%Y %H:%M')}"
