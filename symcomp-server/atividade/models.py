@@ -1,18 +1,23 @@
 from django.db import models
 from django.conf import settings
-from rest_framework_simplejwt.tokens import AccessToken
+from rest_framework_simplejwt.tokens import Token
 import uuid
+import jwt  # PyJWT
+from datetime import datetime
 from api.lib.qr_code_generator import generate_qr_code
+
 
 class StatusAtividade(models.TextChoices):
     PROVISORIA = 'provisoria'
     CONFIRMADA = 'confirmada'
+
 
 class TipoAtividade(models.TextChoices):
     PALESTRA = 'palestra'
     ENCERRAMENTO = 'encerramento'
     CONVERSA = 'conversa'
     COFFEE_BREAK = 'coffee_break'
+
 
 class Atividade(models.Model):
     tipo = models.CharField(max_length=30, choices=TipoAtividade.choices)
@@ -22,16 +27,20 @@ class Atividade(models.Model):
     termina_as = models.DateTimeField(unique=True)
     qr_code = models.ImageField(upload_to='qr_codes', null=True, blank=True)
     uid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    token = models.CharField(max_length=512, default="", null=True, blank=True)
 
-    def _generate_token(self) -> str:
-        token = AccessToken()
-        token['uid'] = str(self.uid)
-        token['type'] = 'qr_presence'
-        return str(token)
+    def _generate_signed_token(self) -> str:
+        payload = {
+            "uid": str(self.uid),
+            "type": "qr_presence",
+            "iat": int(datetime.utcnow().timestamp()),  # apenas para registro, não expira
+        }
+        token = jwt.encode(payload, settings.SECRET_KEY, algorithm="HS256")
+        self.token = token
+        return token
 
     def generate_qr_data(self) -> str:
-        token = self._generate_token()
-        return token
+        return self._generate_signed_token()
 
     def generate_qr_code(self):
         if not self.qr_code:

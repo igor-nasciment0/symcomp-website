@@ -103,11 +103,16 @@ const config: Config = {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-500%)' },
         },
+        blink: {
+          '0%, 50%, 100%': { opacity: '1' },
+          '25%, 75%': { opacity: '0' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         marquee: 'marquee 100s linear infinite',
+        'blink-fast': 'blink 1.2s step-end infinite',
       },
     },
   },
