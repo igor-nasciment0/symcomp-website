@@ -8,6 +8,7 @@ from desafio.models import Desafio
 from rest_framework import status
 from desafio.serializers import RankingSerializer
 from desafio.resposta.serializers import RespostaSerializer
+from .questao.serializers import QuestaoSerializer
 from desafio.services import GerenciadorDePontuacao, ValidadorFormulario
 
 # salvar_questao -> utilizado para salvar a resposta do usuário sem submeter todo o formulario
@@ -57,6 +58,19 @@ def submeter_formulario(request, desafio_id):
             {"status": "Desafio finalizado!", "pontuacao_final": pontuacao_final},
             status=status.HTTP_200_OK
             )
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def listar_questoes_desafio(request, desafio_id):
+    try:
+        # Verifica se o desafio existe para evitar erros
+        Desafio.objects.get(pk=desafio_id)
+    except Desafio.DoesNotExist:
+        return Response({"error": "Desafio não encontrado"}, status=status.HTTP_404_NOT_FOUND)
+
+    questoes = Questao.objects.filter(desafio_id=desafio_id)
+    serializer = QuestaoSerializer(questoes, many=True)
+    return Response(serializer.data)
 
 # será inutilizável no futuro, pois não responderemos as questões individualmente, nem obteremos a pontuação individual de cada 
 @api_view(['POST'])
