@@ -20,6 +20,8 @@ from rest_framework_simplejwt.exceptions import TokenError, InvalidToken
 from desafio.jogador.models import Jogador
 from desafio.jogador.serializers import JogadorSerializer
 from .serializers import UserSerializer
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 import random
 
@@ -49,6 +51,7 @@ class RegisterView(APIView):
 class EmailTokenObtainPairView(TokenObtainPairView):
     serializer_class = EmailTokenObtainPairSerializer
 
+    @method_decorator(ensure_csrf_cookie)
     def post(self, request, *args, **kwargs):
         response = super().post(request, *args, **kwargs)
 
