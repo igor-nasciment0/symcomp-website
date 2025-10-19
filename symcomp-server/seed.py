@@ -10,7 +10,7 @@ User = get_user_model()
 
 print("Seeding database...")
 
-admin_email = os.getenv("SEEDER_ADMIN_EMAIL", "admin@symcomp.ime.usp.com")
+admin_email = os.getenv("SEEDER_ADMIN_EMAIL", "admin@symcomp.ime.usp.br")
 admin_password = os.getenv(
     "SEEDER_ADMIN_PASSWORD",
     "d36efcdb53a2e3d8030a15ac0fb0317f0e5e981cf4bf1c62afdc9bd3e5f81bcf"

@@ -1,6 +1,7 @@
 from datetime import time, date
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import serializers
+from rest_framework import exceptions
 from .validators import validate_strong_password
 from .models import Palestrante, Link, User, PerfilUsuario, Papel
 
@@ -38,7 +39,9 @@ class EmailTokenObtainPairSerializer(TokenObtainPairSerializer):
 
     def validate(self, attrs):
         attrs['username'] = attrs.get('email')
-        return super().validate(attrs)
+        data = super().validate(attrs)
+
+        return data
     
 class PalestranteSerializer(serializers.ModelSerializer):
     links = LinkSerializer(many=True, required=False)

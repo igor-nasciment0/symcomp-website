@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import User, PerfilUsuario
+from .models import User, PerfilUsuario, EmailVerificationCode
 
 class UserAdmin(BaseUserAdmin):
     ordering = ['email']
@@ -8,7 +8,7 @@ class UserAdmin(BaseUserAdmin):
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ('Informações Pessoais', {'fields': ('name', 'username')}),
-        ('Permissões', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+        ('Permissões', {'fields': ('is_active', 'eh_verificado', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Datas Importantes', {'fields': ('last_login', 'date_joined')}),
     )
     add_fieldsets = (
@@ -22,3 +22,4 @@ class UserAdmin(BaseUserAdmin):
 
 admin.site.register(User, UserAdmin)
 admin.site.register(PerfilUsuario)
+admin.site.register(EmailVerificationCode)

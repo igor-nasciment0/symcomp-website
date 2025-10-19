@@ -22,8 +22,10 @@ import { SCButton } from '@/components/sc-2025/button'
 import { Highlight, TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
 
 import SemanaHeader from '../header'
-import RegisterUser from '@/lib/http/register-user'
+import registerUser from '@/lib/http/register-user'
 import { SCFormMessage } from '@/components/sc-2025/form-message'
+import createLoginToken from '@/lib/http/create-logn-token'
+import { semanaCrongorama, semanaLogin, semanaValidar } from '@/lib/routes'
 
 const formSchema = z.object({
   name: z.string().nonempty('O nome é obrigatório'),
@@ -62,12 +64,9 @@ export default function CadastroPage() {
   })
 
   const { mutate, isPending } = useMutation({
-    mutationFn: async (values: FormSchema) => {
-      return await RegisterUser(values)
-    },
+    mutationFn: (values: z.infer<typeof formSchema>) => registerUser(values),
     onSuccess: () => {
-      localStorage.setItem('email', form.getValues('email'))
-      router.push('/semana/cadastro/verificar')
+      router.push(semanaLogin)
     },
   })
 

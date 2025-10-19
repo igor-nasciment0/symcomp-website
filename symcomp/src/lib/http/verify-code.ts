@@ -1,11 +1,17 @@
 import { api } from './api'
 
 interface VerifyCodeRequest {
-  email: string
   code: string
 }
 
-export default async function VerifyCode({ email, code }: VerifyCodeRequest) {
-  const response = await api.post('/validate-code/', { email, code })
+interface VerifyCodeResponse {
+  message: string
+}
+
+export default async function VerifyCode({ code }: VerifyCodeRequest) {
+  const response = await api.post<VerifyCodeRequest, VerifyCodeResponse>(
+    '/validate-code/',
+    { code },
+  )
   return response
 }

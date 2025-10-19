@@ -39,7 +39,7 @@ export const divas = [
     lastName: 'Tomita Hirata',
     fullName: 'Nina Sumiko Tomita Hirata',
     description:
-      'Professora livre-docente no IME-USP, com doutorado em Ciência da Computação pela USP. Suas pesquisas incluem classificação de doenças retinianas com aprendizado de máquina e análise de imagens oftalmológicas. Contribui para o avanço da inteligência artificial aplicada à saúde ocular.',
+      'Professora livre-docente no IME-USP, com doutorado em Ciência da Computação pela USP. Sua pesquisa concentra-se em aprendizado de máquina, reconhecimento de padrões e processamento de imagens, com aplicações em áreas como análise de imagens médicas, reconhecimento de escrita manual e segmentação de documentos.',
   },
   {
     firstName: 'Renata',
@@ -161,16 +161,16 @@ export const divas = [
       'Especialista em arquitetura de computadores, com foco em sistemas embarcados e computação móvel. Sua pesquisa aborda o design de sistemas computacionais com consciência de energia e confiabilidade, além de explorar tecnologias emergentes em sistemas computacionais.',
   },
   {
-    firstName: 'Maria',
+    firstName: 'Anita',
     lastName: 'Borg',
-    fullName: 'Maria Borg',
+    fullName: 'Anita Borg',
     description:
       'Pioneira na promoção da participação feminina em tecnologia, cofundadora da Grace Hopper Celebration, a maior conferência de mulheres na computação. Fundadora do Instituted for Women and Technology, que mais tarde se tornou o Anita Borg Institute, dedicado a apoiar mulheres na tecnologia.',
   },
   {
     firstName: 'Reshma',
-    lastName: 'Clark',
-    fullName: 'Reshma Clark',
+    lastName: 'Saujani',
+    fullName: 'Reshma Saujani',
     description:
       'Fundadora do Girls Who Code, uma organização sem fins lucrativos que visa fechar a lacuna de gênero na tecnologia, oferecendo educação em ciência da computação para meninas. Seu trabalho tem sido fundamental para aumentar a participação feminina na área de tecnologia.',
   },
@@ -187,13 +187,6 @@ export const divas = [
     fullName: 'Shafi Goldwasser',
     description:
       'Premiada com o Prêmio Turing em 2012 por suas contribuições fundamentais à criptografia. Desenvolveu os fundamentos teóricos da criptografia moderna, incluindo provas interativas de conhecimento zero e criptografia probabilística, com aplicações em segurança e privacidade.',
-  },
-  {
-    firstName: 'Sister Mary',
-    lastName: 'Norris-Grey',
-    fullName: 'Sister Mary Norris-Grey',
-    description:
-      'Pioneira na educação em ciência da computação, foi uma das primeiras mulheres a obter um doutorado em ciência da computação nos Estados Unidos. Defensora do uso de computadores na educação, contribuindo para a formação de futuras gerações de profissionais de tecnologia.',
   },
   {
     firstName: 'Fei-Fei',

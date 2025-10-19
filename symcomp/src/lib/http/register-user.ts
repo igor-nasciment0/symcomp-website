@@ -1,4 +1,4 @@
-import { signup } from './api'
+import { api } from './api'
 
 interface RegisterUserRequest {
   name: string
@@ -6,11 +6,23 @@ interface RegisterUserRequest {
   password: string
 }
 
-export default async function RegisterUser({
+type RegisterUserResponse = {
+  message: string
+}
+
+export default async function registerUser({
   name,
   email,
   password,
-}: RegisterUserRequest) {
-  const response = await signup.post('register/', { name, email, password })
-  return response.data
+}: RegisterUserRequest): Promise<RegisterUserResponse> {
+  const data = await api.post<RegisterUserRequest, RegisterUserResponse>(
+    '/register/',
+    {
+      name,
+      email,
+      password,
+    },
+    { withCredentials: false },
+  )
+  return data
 }

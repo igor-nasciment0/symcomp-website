@@ -62,6 +62,7 @@ class UserManager(BaseUserManager):
         email = self.normalize_email(email)
 
         user = self.model(email=email, name=name, **kwargs)
+        user.username = email
         user.set_password(password)
         user.save(using=self._db)
         return user
