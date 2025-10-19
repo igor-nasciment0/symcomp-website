@@ -1,7 +1,8 @@
 from django.urls import path
-from desafio.views import responder_questao, obter_ranking, salvar_resposta, submeter_formulario,listar_questoes_desafio 
+from desafio.views import responder_questao, obter_ranking, salvar_resposta, submeter_formulario,listar_questoes_desafio, criar_jogador
 
 urlpatterns = [
+    path('<int:desafio_id>/join/', criar_jogador, name='criar-jogador'),
     #path('questoes/<int:questao_id>/responder/', responder_questao, name='responder-questao'),
     path('<int:desafio_id>/ranking/', obter_ranking, name='obter-ranking'), 
     # O formato para resposta deve ser algo como {'questao': ID, 'resposta': 'resposta do usuario '}
