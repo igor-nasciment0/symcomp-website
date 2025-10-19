@@ -12,26 +12,26 @@ class ValidadorPresenca:
         return self.atividade.comeca_as <= horario <= self.atividade.termina_as
 
 class PresencaService:
-    def __init__(self, atividade: Atividade, usuario):
+    def __init__(self, atividade, nome, email, compartilhar):
         self.atividade = atividade
-        self.usuario = usuario
-        self.validador = ValidadorPresenca(atividade)
+        self.nome = nome
+        self.email = email
+        self.compartilhar = compartilhar
 
-    def registrar_presenca(self) -> tuple[bool, str]:
-        if not self.validador.validar_horario():
-            return False, "Presença só pode ser registrada durante o horário da atividade"
+    def registrar_presenca(self):
+        ja_registrado = Presenca.objects.filter(
+            atividade=self.atividade,
+            email=self.email
+        ).exists()
 
-        if Presenca.objects.filter(
-            usuario=self.usuario,
-            atividade=self.atividade
-        ).exists():
-            return False, "Presença já registrada para esta atividade"
+        if ja_registrado:
+            return False, "Presença já registrada."
 
-        try:
-            Presenca.objects.create(
-                usuario=self.usuario,
-                atividade=self.atividade
-            )
-            return True, "Presença registrada com sucesso"
-        except Exception as e:
-            return False, f"Erro ao registrar presença: {str(e)}"
+        Presenca.objects.create(
+            atividade=self.atividade,
+            email=self.email,
+            nome=self.nome,
+            compartilhar_email=self.compartilhar
+        )
+
+        return True, f"Presença de {self.nome} registrada com sucesso."
