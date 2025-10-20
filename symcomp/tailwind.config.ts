@@ -76,6 +76,7 @@ const config: Config = {
         'sc-2025': {
           primary: '#ffbe0b',
           secondary: '#A850C0',
+          tertiary: '#fb5607',
           background: '#148180',
           foreground: '#fefefe',
           contrast: '#0E0A47',
