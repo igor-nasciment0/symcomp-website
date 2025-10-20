@@ -1,5 +1,7 @@
 'use client'
 
+import { useMemo } from 'react'
+
 import { SCButton } from '@/components/sc-2025/button'
 import { SCCarousel } from '@/components/sc-2025/carousel'
 import { Text } from '@/components/sc-2025/typography'
@@ -7,7 +9,6 @@ import { SCWrapper, SCWrapperFooter } from '@/components/sc-2025/wrapper'
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
 import { barlowCondensed } from '@/lib/font'
 import { Palestra } from '@/types/palestra'
-import { useMemo } from 'react'
 
 import patrocinadores from './patrocinadores.json'
 import { PatrocinadoresDetail } from './patrocinadores-detail'

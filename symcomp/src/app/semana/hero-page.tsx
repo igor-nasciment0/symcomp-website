@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { SCButton } from '@/components/sc-2025/button'
 import { SocialMediaButton } from '@/components/sc-2025/social-media-button'
 import { Highlight, TypographyH1 } from '@/components/sc-2025/typography'
-import { semanaCadastro, semanaCrongorama } from '@/lib/routes'
+import { semanaCadastro } from '@/lib/routes'
 
 import SemanaHeader from './header'
 

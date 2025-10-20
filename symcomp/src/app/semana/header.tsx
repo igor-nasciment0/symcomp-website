@@ -16,7 +16,6 @@ import {
   semanaPatrocinadores,
   semanaRegistrarPresenca,
 } from '@/lib/routes'
-import { useMutation } from '@tanstack/react-query'
 
 export default function SemanaHeader() {
   const { data } = useCurrentUser()

@@ -11,6 +11,10 @@ interface PatrocinadoresDetailProps {
   palestra: Palestra
 }
 
+type Sponsor = {
+  sponsorName?: string
+}
+
 export function PatrocinadoresDetail({ palestra }: PatrocinadoresDetailProps) {
   const { start, end } = parseHorarioToICS(palestra)
 
@@ -21,7 +25,7 @@ export function PatrocinadoresDetail({ palestra }: PatrocinadoresDetailProps) {
   googleCalendarUrl.searchParams.set('dates', `${start}/${end}`)
 
   const fotoUrl = palestra.foto ? `/sc-2025/patrocinadores/${palestra.foto}` : ''
-  const sponsorName = (palestra as any).sponsorName || ''
+  const sponsorName = (palestra as Sponsor).sponsorName || ''
   const horarioFormatado = palestra.horario.replace(/:/g, 'h').substring(0, 5)
 
   return (
