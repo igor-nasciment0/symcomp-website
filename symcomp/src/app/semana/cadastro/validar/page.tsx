@@ -16,6 +16,7 @@ import VerifyCode from '@/lib/http/verify-code'
 import { semanaDashboard } from '@/lib/routes'
 
 import SemanaHeader from '../../header'
+import { useCurrentUser } from '@/hooks/useCurrentUser'
 
 const formSchema = z.object({
   code: z.string().length(6),
@@ -25,6 +26,11 @@ type FormSchema = z.infer<typeof formSchema>
 
 export default function ValidarPage() {
   const router = useRouter()
+  const { data } = useCurrentUser()
+
+  if (data?.user.eh_verificado) {
+    router.push(semanaDashboard)
+  }
 
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),

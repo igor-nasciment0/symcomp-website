@@ -14,7 +14,8 @@ export type Perfil = {
 }
 
 export type Desafio = {
-  title: string
+  id: string
+  titulo: string
 }
 
 export type Jogador = {

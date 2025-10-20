@@ -1,5 +1,5 @@
 from django.urls import path
-from desafio.views import responder_questao, obter_ranking, salvar_resposta, submeter_formulario,listar_questoes_desafio, criar_jogador
+from desafio.views import responder_questao, obter_ranking, salvar_resposta, submeter_formulario,listar_questoes_desafio, criar_jogador, listar_desafios
 
 urlpatterns = [
     path('<int:desafio_id>/join/', criar_jogador, name='criar-jogador'),
@@ -9,4 +9,5 @@ urlpatterns = [
     path('respostas/salvar/', salvar_resposta, name='salvar-resposta'),
     path('<int:desafio_id>/submeter/', submeter_formulario, name='submeter-formulario'),
     path('<int:desafio_id>/questoes/', listar_questoes_desafio, name='desafio-questoes-list'),
+    path('listar/', listar_desafios, name='listar-desafios'),
 ]

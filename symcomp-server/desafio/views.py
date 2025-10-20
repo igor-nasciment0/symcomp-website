@@ -1,12 +1,12 @@
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from desafio.questao.models import Questao
 from desafio.jogador.models import Jogador
 from desafio.resposta.models import Resposta
 from desafio.models import Desafio
 from rest_framework import status
-from desafio.serializers import RankingSerializer
+from desafio.serializers import RankingSerializer, DesafioSerializer
 from desafio.resposta.serializers import RespostaSerializer
 from .questao.serializers import QuestaoSerializer
 from desafio.jogador.serializers import JogadorSerializer
@@ -148,4 +148,11 @@ def obter_ranking(request, desafio_id):
     top_10_jogadores = Jogador.objects.filter(desafio=desafio).order_by('-pontos')[:10]
 
     serializer = RankingSerializer(top_10_jogadores, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def listar_desafios(request):
+    desafios = Desafio.objects.all()
+    serializer = DesafioSerializer(desafios, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
