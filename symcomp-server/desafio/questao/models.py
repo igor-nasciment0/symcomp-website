@@ -2,7 +2,7 @@ from django.db import models
 from desafio.models import Desafio
 
 class Questao(models.Model):
-    pergunta = models.CharField(max_length=255)
+    pergunta = models.CharField(max_length=5000)
     resposta = models.CharField(max_length=255)
     valor_pontos = models.DecimalField(max_digits=10, decimal_places=2)
 
