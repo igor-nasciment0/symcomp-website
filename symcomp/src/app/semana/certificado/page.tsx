@@ -1,23 +1,22 @@
 'use client'
 
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useMutation } from '@tanstack/react-query'
 import { CheckCheck, X } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
 
 import { SCButton } from '@/components/sc-2025/button'
-import { SCInput } from '@/components/sc-2025/input'
-import { Highlight, Text } from '@/components/sc-2025/typography'
-import { FieldGroup } from '@/components/ui/field'
-import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
-
-import registerPresence from '@/lib/http/register-presence'
-import { SCLabel } from '@/components/sc-2025/label'
 import { SCFormMessage } from '@/components/sc-2025/form-message'
-import { useMutation } from '@tanstack/react-query'
+import { SCInput } from '@/components/sc-2025/input'
+import { SCLabel } from '@/components/sc-2025/label'
+import { Highlight, Text } from '@/components/sc-2025/typography'
 import { Checkbox } from '@/components/ui/checkbox'
+import { FieldGroup } from '@/components/ui/field'
+import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
+import registerPresence from '@/lib/http/register-presence'
 
 const Scanner = dynamic(
   () => import('@yudiel/react-qr-scanner').then((mod) => mod.Scanner),
@@ -68,7 +67,6 @@ export default function Certificado() {
   }
 
   if (etapa === 'scan') {
-    const data = form.getValues()
     return (
       <div className="relative w-full h-screen bg-black">
         <Scanner

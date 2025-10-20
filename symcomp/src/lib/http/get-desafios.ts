@@ -1,5 +1,3 @@
-import { Jogador, Perfil, User } from '@/types/user'
-
 import { desafio } from './desafio'
 
 type Desafio = {

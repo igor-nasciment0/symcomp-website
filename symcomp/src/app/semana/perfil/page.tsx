@@ -1,13 +1,13 @@
 'use client'
 
 import Image from 'next/image'
-import { useContext } from 'react'
 
 import { SCButton } from '@/components/sc-2025/button'
 import { Highlight } from '@/components/sc-2025/typography'
 import { TypographyH1 } from '@/components/sc-2025/typography'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
+
 import SemanaHeader from '../header'
 
 interface Stats {

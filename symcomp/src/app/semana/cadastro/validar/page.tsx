@@ -12,11 +12,11 @@ import { SCInput } from '@/components/sc-2025/input'
 import { SCLabel } from '@/components/sc-2025/label'
 import { TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
+import { useCurrentUser } from '@/hooks/useCurrentUser'
 import VerifyCode from '@/lib/http/verify-code'
 import { semanaDashboard } from '@/lib/routes'
 
 import SemanaHeader from '../../header'
-import { useCurrentUser } from '@/hooks/useCurrentUser'
 
 const formSchema = z.object({
   code: z.string().length(6),

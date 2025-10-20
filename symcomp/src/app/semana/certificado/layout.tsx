@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+
 import SemanaHeader from '../header'
 
 interface CertificadoLayoutProps {

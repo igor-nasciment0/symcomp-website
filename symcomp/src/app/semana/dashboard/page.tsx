@@ -1,18 +1,18 @@
 'use client'
 
+import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-import { SCButton } from '@/components/sc-2025/button'
 import { Text } from '@/components/sc-2025/typography'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
-import { semanaRegistrarPresenca, semanaValidar } from '@/lib/routes'
+import { semanaValidar } from '@/lib/routes'
+import { slugfy } from '@/lib/utils'
+import { Jogador, User } from '@/types/user'
+
+import { divas } from '../divas/[lastNameSlug]/divas'
 import SemanaHeader from '../header'
 import { AceitarDesafioButton } from './aceitar-desafio-button'
-import { Jogador, User } from '@/types/user'
-import { divas } from '../divas/[lastNameSlug]/divas'
-import { slugfy } from '@/lib/utils'
-import { ExternalLink } from 'lucide-react'
 
 export default function UserDashboard() {
   const { data } = useCurrentUser()
@@ -69,6 +69,7 @@ export default function UserDashboard() {
                     <Link
                       href={`/semana/divas/${slugfy(diva.lastName)}`}
                       className="flex flex-row items-center gap-4"
+                      key={diva.lastName}
                     >
                       <Text key={diva.fullName}>{diva.fullName}</Text>
                       <ExternalLink size={16} />

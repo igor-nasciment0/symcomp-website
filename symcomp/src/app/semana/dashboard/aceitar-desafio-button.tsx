@@ -1,8 +1,9 @@
+import { useMutation, useQuery } from '@tanstack/react-query'
+import { useRouter } from 'next/navigation'
+
 import { SCButton } from '@/components/sc-2025/button'
 import { getDesafios } from '@/lib/http/get-desafios'
 import joinDesafio from '@/lib/http/join-desafio'
-import { useMutation, useQuery } from '@tanstack/react-query'
-import { useRouter } from 'next/navigation'
 
 export function AceitarDesafioButton() {
   const router = useRouter()
