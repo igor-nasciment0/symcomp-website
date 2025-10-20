@@ -204,9 +204,9 @@ mothers = [
       'Pesquisadora em inteligência artificial, conhecida por seu trabalho no desenvolvimento do ImageNet, um banco de dados visual que impulsionou o avanço do aprendizado profundo. Cofundadora do AI4ALL, uma iniciativa para aumentar a diversidade na IA. Atualmente, lidera a World Labs, focada em inteligência artificial espacial.',
   },
   {
-    "firstName": 'Mary',
+    "firstName": 'Clarisse',
     "lastName": 'Sieckenius',
-    "fullName": 'Mary Sieckenius',
+    "fullName": 'Clarisse Sieckenius',
     "description":
       'Pesquisadora em ciência da computação, com foco em áreas como aprendizado de máquina, processamento de linguagem natural e ética em IA. Seu trabalho contribui para o desenvolvimento de tecnologias de IA mais justas e acessíveis.',
   },

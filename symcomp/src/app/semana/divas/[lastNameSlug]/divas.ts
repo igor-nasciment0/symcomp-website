@@ -196,17 +196,17 @@ export const divas = [
       'Pesquisadora em inteligência artificial, conhecida por seu trabalho no desenvolvimento do ImageNet, um banco de dados visual que impulsionou o avanço do aprendizado profundo. Cofundadora do AI4ALL, uma iniciativa para aumentar a diversidade na IA. Atualmente, lidera a World Labs, focada em inteligência artificial espacial.',
   },
   {
-    firstName: 'Mary',
+    firstName: 'Clarisse',
     lastName: 'Sieckenius',
-    fullName: 'Mary Sieckenius',
+    fullName: 'Clarisse Sieckenius',
     description:
-      'Pesquisadora em ciência da computação, com foco em áreas como aprendizado de máquina, processamento de linguagem natural e ética em IA. Seu trabalho contribui para o desenvolvimento de tecnologias de IA mais justas e acessíveis.',
+      'Professora Emérita do Departamento de Informática da PUC-Rio, onde dedicou mais de 30 anos à pesquisa em Interação Humano-Computador e Inteligência Artificial, com ênfase em Processamento de Linguagem Natural, Geração Automática de Textos e Sistemas de Explicação.',
   },
   {
     firstName: 'Beyoncé',
     lastName: 'Knowles-Carter',
     fullName: 'Beyoncé Knowles-Carter',
     description:
-      'Beyoncé é a personificação do poder, da elegância e do deboche divino — “Girls, let’s get in formation”, porque o mundo gira no ritmo que ela manda. 💅🏾✨👑. Thank u, Beyoncé!',
+      '“Girls, let’s get in formation”, porque o mundo gira no ritmo que elas mandam. Let the "Diva" out, for "Black is king", no doubt. 💅🏾✨👑. Thank u, Beyoncé!',
   },
 ]

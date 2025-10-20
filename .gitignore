@@ -109,7 +109,3 @@ symcomp-server/ruff_cache/
 # Do not ignore django migrations!
 *storybook.log
 storybook-static
-
-# Ignorar todas as migrations, exceto __init__.py
-symcomp-server/**/migrations/*
-!symcomp-server/**/migrations/__init__.py
