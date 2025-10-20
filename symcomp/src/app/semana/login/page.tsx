@@ -13,7 +13,7 @@ import { SCLabel } from '@/components/sc-2025/label'
 import { TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import createLoginToken from '@/lib/http/create-logn-token'
-import { semanaCadastro } from '@/lib/routes'
+import { semanaValidar } from '@/lib/routes'
 
 import SemanaHeader from '../header'
 
@@ -35,7 +35,7 @@ export default function LoginPage() {
 
   const { mutate, isPending } = useMutation({
     mutationFn: (values: z.infer<typeof formSchema>) => createLoginToken(values),
-    onSuccess: () => router.push(semanaCadastro),
+    onSuccess: () => router.push(semanaValidar),
     onError: (error) => console.error('Erro no login:', error),
   })
 
