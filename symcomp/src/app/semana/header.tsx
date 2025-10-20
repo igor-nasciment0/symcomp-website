@@ -15,6 +15,7 @@ import {
   semanaLogin,
   semanaRegistrarPresenca,
 } from '@/lib/routes'
+import { useMutation } from '@tanstack/react-query'
 
 export default function SemanaHeader() {
   const { data } = useCurrentUser()
@@ -35,7 +36,7 @@ export default function SemanaHeader() {
         </SheetTrigger>
         <SheetContent className="bg-sc-2025-contrast border-none">
           {data?.user ? (
-            <div className="pb-10 flex flex-col gap-4">
+            <div className="flex flex-col gap-0">
               <div className="flex flex-row">
                 <Text className="text-white">
                   $ {data.user.name.split(' ')[0]}
@@ -48,12 +49,16 @@ export default function SemanaHeader() {
               </Link>
             </div>
           ) : (
-            <div className="flex flex-row gap-4 items-center justify-center">
-              <Link href={semanaLogin} className="bg-white w-fit p-2">
-                <Text>Entrar</Text>
+            <div className="flex flex-col gap-0">
+              <div className="flex flex-row">
+                <Text className="text-white">$ ssh local@symcomp</Text>
+                <div className="h-[24px] w-[10px] bg-white animate-blink-fast" />
+              </div>
+              <Link href={semanaLogin}>
+                <Text className="text-white opacity-50 text-sm">{`>`} Entrar</Text>
               </Link>
-              <Link href={semanaCadastro} className="bg-sc-2025-primary w-fit p-2">
-                <Text>Cadastrar</Text>
+              <Link href={semanaCadastro}>
+                <Text className="text-white opacity-50 text-sm">{`>`} Cadastrar</Text>
               </Link>
             </div>
           )}
