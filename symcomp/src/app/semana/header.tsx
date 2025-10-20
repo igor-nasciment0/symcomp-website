@@ -4,8 +4,9 @@ import { Menu } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Highlight, Text } from '@/components/sc-2025/typography'
+import { Text } from '@/components/sc-2025/typography'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { useCurrentUser } from '@/hooks/useCurrentUser'
 import {
   semanaCadastro,
   semanaCrongorama,
@@ -14,7 +15,6 @@ import {
   semanaLogin,
   semanaRegistrarPresenca,
 } from '@/lib/routes'
-import { useCurrentUser } from '@/hooks/useCurrentUser'
 
 export default function SemanaHeader() {
   const { data } = useCurrentUser()

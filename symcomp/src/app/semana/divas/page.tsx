@@ -1,10 +1,6 @@
 import { getRandomDiva } from './[lastNameSlug]/divas-util'
 import { DivaCard } from './diva-card'
 
-interface DivaDetailPageProps {
-  params: Promise<{ lastNameSlug: string }>
-}
-
 export default async function DivaPage() {
   const diva = getRandomDiva()
 
