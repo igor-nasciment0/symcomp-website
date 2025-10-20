@@ -8,11 +8,11 @@ import { Text } from '@/components/sc-2025/typography'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { semanaValidar } from '@/lib/routes'
 import { slugfy } from '@/lib/utils'
-import { Jogador, User } from '@/types/user'
 
 import { divas } from '../divas/[lastNameSlug]/divas'
 import SemanaHeader from '../header'
 import { AceitarDesafioButton } from './aceitar-desafio-button'
+import { UserLabel } from './user-label'
 
 export default function UserDashboard() {
   const { data } = useCurrentUser()
@@ -90,24 +90,5 @@ export default function UserDashboard() {
         )}
       </div>
     </div>
-  )
-}
-
-export function UserLabel({
-  user,
-  jogador,
-  dir,
-}: {
-  user: User
-  jogador: Jogador
-  dir?: string
-}) {
-  const nome = user?.name?.split(' ')[0] ?? 'user'
-  const username = jogador?.username ?? 'anon'
-  return (
-    <>
-      {nome}@<strong className="text-sc-2025-background text-sm">{username}</strong>
-      {`:~${dir || ''}$ `}
-    </>
   )
 }
