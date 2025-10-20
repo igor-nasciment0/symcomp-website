@@ -13,6 +13,7 @@ import {
   semanaDashboard,
   semanaHome,
   semanaLogin,
+  semanaPatrocinadores,
   semanaRegistrarPresenca,
 } from '@/lib/routes'
 import { useMutation } from '@tanstack/react-query'
@@ -73,6 +74,9 @@ export default function SemanaHeader() {
             </Link>
             <Link href={semanaCrongorama}>
               <Text className="text-sc-2025-secondary text-xl">{`/`} Cronograma</Text>
+            </Link>
+            <Link href={semanaPatrocinadores}>
+              <Text className="text-[#FB5607] text-xl">{`/`} Patrocinadores</Text>
             </Link>
           </div>
         </SheetContent>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { SCButton } from '@/components/sc-2025/button'
 import { SocialMediaButton } from '@/components/sc-2025/social-media-button'
 import { Highlight, TypographyH1 } from '@/components/sc-2025/typography'
-import { semanaCrongorama } from '@/lib/routes'
+import { semanaCadastro, semanaCrongorama } from '@/lib/routes'
 
 import SemanaHeader from './header'
 
@@ -60,8 +60,8 @@ export function HeroPage() {
                 />
               </div>
             </div>
-            <Link href={semanaCrongorama} className="mt-[40px]">
-              <SCButton className="mt-[24px] w-fit z-10">Cronograma</SCButton>
+            <Link href={semanaCadastro} className="mt-[40px]">
+              <SCButton className="mt-[24px] w-fit z-10">Inscrever-se</SCButton>
             </Link>
           </div>
         </main>
