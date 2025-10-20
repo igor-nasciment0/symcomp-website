@@ -29,7 +29,7 @@ export function PatrocinadoresCarousel() {
     <SCCarousel
       items={allAtividades}
       renderItem={(atividade) => (
-        <div className="flex justify-center w-full">
+        <div className="flex justify-center w-full px-4 sm:px-0">
           <AtividadeCard
             key={atividade.titulo}
             palestra={atividade as Palestra}
@@ -54,14 +54,14 @@ function AtividadeCard({
   const fotoUrl = palestra.foto ? `/sc-2025/patrocinadores/${palestra.foto}` : ''
 
   return (
-    <div className="relative w-[340px]">
-      <div className="absolute top-3 right-2 px-2 py-1 bg-[#1D1D1D] border-8 border-white rounded-none z-10">
+    <div className="relative w-auto max-w-[340px] top-3 max-md:px-16">
+      <div className="absolute -top-1 -right-1 max-md:w-fit max-md:h-fit max-md:right-10 px-1 py-1 bg-[#1D1D1D] border-8 border-white rounded-none z-10">
         <Text className="text-white text-xs">{sponsorTier}</Text>
       </div>
 
       <SCWrapper>
         <div className="p-4 w-full flex flex-row justify-center items-center gap-4">
-          <div className="flex flex-col justify-center items-center gap-4 w-[242px]">
+          <div className="flex flex-col justify-center items-center gap-4 w-full max-w-[242px]">
             {fotoUrl && (
               <div className="w-27 h-27 bg-black border-8 border-white rounded-none p-1 flex justify-center items-center overflow-hidden">
                 <img

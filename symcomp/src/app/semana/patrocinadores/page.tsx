@@ -9,8 +9,10 @@ export default function CronogramaPage() {
       <div className="max-w-[1024px] w-full">
         <SemanaHeader />
         <main className="flex-1 flex flex-col w-full items-stretch justify-stretch pb-10">
-          <TypographyH1>PATROCINADORES</TypographyH1>
-          <TypographyH2 className="text-sc-2025-contrast mb-10">
+          <TypographyH1 className="text-3xl md:text-5xl lg:text-6xl">
+            PATROCINADORES
+          </TypographyH1>
+          <TypographyH2 className="text-xl md:text-2xl text-sc-2025-contrast mb-10">
             Conheça as empresas patrocinadoras do evento!
           </TypographyH2>
           <PatrocinadoresCarousel />
