@@ -108,8 +108,11 @@ def listar_questoes_desafio(request, desafio_id):
     questoes = Questao.objects.filter(desafio=desafio)
     jogador = Jogador.objects.filter(user=request.user, desafio=desafio).first()
     respostas = Resposta.objects.filter(jogador=jogador) if jogador else []
-    respostas_dict = {r.questao.id: r.resposta for r in respostas}
 
+    if respostas.filter(correta__isnull=False).exists():
+        return Response({"detail": "Respostas já validadas."}, status=status.HTTP_200_OK)
+
+    respostas_dict = {r.questao.id: r.resposta for r in respostas}
     serializer = QuestaoSerializer(questoes, many=True)
     data = serializer.data
 

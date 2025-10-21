@@ -18,6 +18,7 @@ import { Form, FormField, FormItem, FormControl } from '@/components/ui/form'
 import { SCButton } from '@/components/sc-2025/button'
 import { sendAnswers } from '@/lib/http/send-answers'
 import { submitForm } from '@/lib/http/submit-form'
+import { semanaDashboard } from '@/lib/routes'
 
 const schema = z.object({
   respostas: z.record(z.string(), z.string()),
@@ -69,8 +70,33 @@ export default function EnigmaPage() {
     })
   }
 
+  const saveAndSubmit = async () => {
+    if (!primeiroDesafioId) return
+
+    await new Promise<void>((resolve, reject) => {
+      saveMutation.mutate(
+        {
+          desafioId: String(primeiroDesafioId),
+          answers: form.getValues().respostas,
+        },
+        {
+          onSuccess: () => resolve(),
+          onError: (err) => reject(err),
+        },
+      )
+    })
+
+    submitMutation.mutate(String(primeiroDesafioId))
+    router.push(semanaDashboard)
+  }
+
   useEffect(() => {
     if (questions && questions.length > 0) {
+      if ('detail' in questions && questions.detail === 'Respostas já validadas.') {
+        form.reset({ respostas: {} })
+        return
+      }
+
       const respostasIniciais: Record<string, string> = {}
       for (const q of questions) {
         respostasIniciais[q.id] = q.respostaSalva || ''
@@ -80,7 +106,17 @@ export default function EnigmaPage() {
   }, [questions, form])
 
   if (userLoading || desafiosLoading || questionsLoading) return null
-  if (!questions?.length) return null
+  if (
+    !questions?.length ||
+    ('detail' in questions && questions.detail === 'Respostas já validadas.')
+  ) {
+    return (
+      <div className="flex-1 bg-sc-2025-contrast w-full flex flex-col h-full items-center">
+        <SemanaHeader />
+        <Text>Respostas já foram validadas.</Text>
+      </div>
+    )
+  }
 
   return (
     <div className="flex-1 bg-sc-2025-contrast w-full flex flex-col h-full items-center">
@@ -125,12 +161,18 @@ export default function EnigmaPage() {
                 type="button"
                 className="w-[300px]"
                 onClick={() => {
-                  if (!primeiroDesafioId) return
-                  submitMutation.mutate(String(primeiroDesafioId))
+                  const confirmacao = window.confirm(
+                    'Você tem certeza que deseja enviar suas respostas? Uma vez enviado você não poderá mais acessar essa página',
+                  )
+                  if (confirmacao) {
+                    saveAndSubmit()
+                  }
                 }}
-                disabled={submitMutation.isPending}
+                disabled={submitMutation.isPending || saveMutation.isPending}
               >
-                {submitMutation.isPending ? 'Enviando...' : 'Enviar respostas'}
+                {submitMutation.isPending || saveMutation.isPending
+                  ? 'Enviando...'
+                  : 'Enviar respostas'}
               </SCButton>
             </div>
           </form>
