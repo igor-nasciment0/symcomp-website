@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 
 import { Text } from '@/components/sc-2025/typography'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
-import { semanaValidar } from '@/lib/routes'
+import { semanaLogin, semanaValidar } from '@/lib/routes'
 import { slugfy } from '@/lib/utils'
 
 import { divas } from '../divas/[lastNameSlug]/divas'
@@ -17,6 +17,11 @@ import { UserLabel } from './user-label'
 export default function UserDashboard() {
   const { data } = useCurrentUser()
   const router = useRouter()
+
+  if (!data) {
+    router.push(semanaLogin)
+    return null
+  }
 
   if (typeof window !== 'undefined' && !data?.user?.eh_verificado) {
     router.push(semanaValidar)

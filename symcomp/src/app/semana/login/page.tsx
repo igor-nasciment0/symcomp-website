@@ -10,12 +10,14 @@ import { SCButton } from '@/components/sc-2025/button'
 import { SCFormMessage } from '@/components/sc-2025/form-message'
 import { SCInput } from '@/components/sc-2025/input'
 import { SCLabel } from '@/components/sc-2025/label'
-import { TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
+import { Text, TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import createLoginToken from '@/lib/http/create-logn-token'
-import { semanaValidar } from '@/lib/routes'
+import { semanaCadastro, semanaLogin, semanaValidar } from '@/lib/routes'
 
 import SemanaHeader from '../header'
+import { Separator } from '@/components/ui/separator'
+import Link from 'next/link'
 
 const formSchema = z.object({
   email: z.string().email('Por favor, insira um e-mail válido.').nonempty(),
@@ -86,9 +88,15 @@ export default function LoginPage() {
               )}
             />
 
-            <SCButton type="submit" disabled={isPending}>
-              {isPending ? 'Entrando...' : 'Entrar'}
-            </SCButton>
+            <div className="flex flex-col gap-8 w-full">
+              <SCButton type="submit" disabled={isPending}>
+                {isPending ? 'Entrando...' : 'Entrar'}
+              </SCButton>
+              <Text className="text-center">OU</Text>
+              <Link href={semanaCadastro}>
+                <SCButton className="w-full">Cadastarar</SCButton>
+              </Link>
+            </div>
           </form>
         </Form>
       </div>

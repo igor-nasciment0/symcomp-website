@@ -101,14 +101,22 @@ def submeter_formulario(request, desafio_id):
 @permission_classes([IsAuthenticated])
 def listar_questoes_desafio(request, desafio_id):
     try:
-        # Verifica se o desafio existe para evitar erros
-        Desafio.objects.get(pk=desafio_id)
+        desafio = Desafio.objects.get(pk=desafio_id)
     except Desafio.DoesNotExist:
         return Response({"error": "Desafio não encontrado"}, status=status.HTTP_404_NOT_FOUND)
 
-    questoes = Questao.objects.filter(desafio_id=desafio_id)
+    questoes = Questao.objects.filter(desafio=desafio)
+    jogador = Jogador.objects.filter(user=request.user, desafio=desafio).first()
+    respostas = Resposta.objects.filter(jogador=jogador) if jogador else []
+    respostas_dict = {r.questao.id: r.resposta for r in respostas}
+
     serializer = QuestaoSerializer(questoes, many=True)
-    return Response(serializer.data)
+    data = serializer.data
+
+    for q in data:
+        q["respostaSalva"] = respostas_dict.get(q["id"], "")
+
+    return Response(data, status=status.HTTP_200_OK)
 
 # será inutilizável no futuro, pois não responderemos as questões individualmente, nem obteremos a pontuação individual de cada 
 @api_view(['POST'])
@@ -156,3 +164,43 @@ def listar_desafios(request):
     desafios = Desafio.objects.all()
     serializer = DesafioSerializer(desafios, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def salvar_respostas_em_lote(request, desafio_id):
+    """
+    Recebe um payload no formato:
+    {
+        "1": "resposta da questão 1",
+        "2": "",
+        "3": "resposta da questão 3"
+    }
+
+    e salva ou atualiza todas as respostas do jogador para o desafio informado.
+    """
+    try:
+        desafio = Desafio.objects.get(pk=desafio_id)
+    except Desafio.DoesNotExist:
+        return Response({"error": "Desafio não encontrado."}, status=status.HTTP_404_NOT_FOUND)
+
+    try:
+        jogador = Jogador.objects.get(user=request.user, desafio=desafio)
+    except Jogador.DoesNotExist:
+        return Response({"error": "Jogador não encontrado para este desafio."}, status=status.HTTP_404_NOT_FOUND)
+
+    respostas_data = request.data  # dicionário com questao_id -> resposta
+
+    # Percorre cada par (questao_id, resposta)
+    for questao_id, resposta_texto in respostas_data.items():
+        try:
+            questao = Questao.objects.get(pk=questao_id, desafio=desafio)
+        except Questao.DoesNotExist:
+            continue  # ignora IDs inválidos, mas não quebra o processo
+
+        Resposta.objects.update_or_create(
+            jogador=jogador,
+            questao=questao,
+            defaults={'resposta': resposta_texto or ""}
+        )
+
+    return Response({"status": "Respostas salvas com sucesso."}, status=status.HTTP_200_OK)
