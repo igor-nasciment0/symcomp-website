@@ -70,9 +70,9 @@ export default function ValidarPage() {
               name="code"
               render={({ field }) => (
                 <FormItem className="space-y-0">
-                  <SCLabel>Nome</SCLabel>
+                  <SCLabel>Código de Validação</SCLabel>
                   <FormControl>
-                    <SCInput placeholder="Ex.: Grace Hopper" {...field} />
+                    <SCInput placeholder="Ex.: 000000" {...field} />
                   </FormControl>
                   <SCFormMessage />
                 </FormItem>
