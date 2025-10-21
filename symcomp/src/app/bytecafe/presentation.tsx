@@ -41,7 +41,7 @@ export const BCPresentation = () => {
           melhor a USP, formas de entrada na Universidade, os diferentes benefícios e
           auxílios para permanência em uma experiência prática.
         </Section>
-        <span className='flag_do_enigma:use_apenas_o_que_estah_entre_chaves{8yT3c@pH3?}'></span>
+        <span className="flag_do_enigma:use_apenas_o_que_estah_entre_chaves{8yT3c@pH3?}"></span>
         <Section title="QUEM" subtitle="SOMOS_">
           Somos um grupo de extensão chamado SymComp | Simpósio de Computação, formado por
           alunos da graduação do curso de Ciência da Computação do IME-USP, cujo foco é

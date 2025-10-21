@@ -2,6 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -12,12 +13,11 @@ import { SCInput } from '@/components/sc-2025/input'
 import { SCLabel } from '@/components/sc-2025/label'
 import { Text, TypographyH1, TypographyH2 } from '@/components/sc-2025/typography'
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
+import { Separator } from '@/components/ui/separator'
 import createLoginToken from '@/lib/http/create-logn-token'
 import { semanaCadastro, semanaLogin, semanaValidar } from '@/lib/routes'
 
 import SemanaHeader from '../header'
-import { Separator } from '@/components/ui/separator'
-import Link from 'next/link'
 
 const formSchema = z.object({
   email: z.string().email('Por favor, insira um e-mail válido.').nonempty(),

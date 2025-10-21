@@ -1,24 +1,25 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { useForm, FormProvider } from 'react-hook-form'
-import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useRouter } from 'next/navigation'
 import { useEffect, useMemo } from 'react'
+import { FormProvider, useForm } from 'react-hook-form'
+import { z } from 'zod'
 
-import SemanaHeader from '../header'
+import { SCButton } from '@/components/sc-2025/button'
+import { SCInput } from '@/components/sc-2025/input'
+import { Text } from '@/components/sc-2025/typography'
+import { SCWrapper } from '@/components/sc-2025/wrapper'
+import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { getDesafios } from '@/lib/http/get-desafios'
 import { getQuestions } from '@/lib/http/get-questions'
-import { SCWrapper } from '@/components/sc-2025/wrapper'
-import { Text } from '@/components/sc-2025/typography'
-import { SCInput } from '@/components/sc-2025/input'
-import { Form, FormField, FormItem, FormControl } from '@/components/ui/form'
-import { SCButton } from '@/components/sc-2025/button'
 import { sendAnswers } from '@/lib/http/send-answers'
 import { submitForm } from '@/lib/http/submit-form'
 import { semanaDashboard } from '@/lib/routes'
+
+import SemanaHeader from '../header'
 
 const schema = z.object({
   respostas: z.record(z.string(), z.string()),

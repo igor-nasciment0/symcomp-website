@@ -1,4 +1,5 @@
 import { Question } from '@/types/question'
+
 import { desafio } from './desafio'
 
 export async function getQuestions({

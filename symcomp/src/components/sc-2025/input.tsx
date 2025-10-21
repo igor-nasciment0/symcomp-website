@@ -1,5 +1,6 @@
 import { barlowCondensed } from '@/lib/font'
 import { cn } from '@/lib/utils'
+
 import { Input } from '../ui/input'
 
 interface SCInputProps {
