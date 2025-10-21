@@ -34,6 +34,7 @@ type QRResult = { rawValue: string }
 
 export default function Certificado() {
   const [etapa, setEtapa] = useState<'form' | 'scan' | 'done' | 'error'>('form')
+  const [zoom, setZoom] = useState(1)
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -68,7 +69,7 @@ export default function Certificado() {
 
   if (etapa === 'scan') {
     return (
-      <div className="relative w-full h-screen bg-black">
+      <div className="relative w-full max-sm:h-[500px] max-md:h-[650px] max-lg:h-[750px] h-screen bg-black">
         <Scanner
           styles={{ video: { width: '100%', height: '100%' } }}
           constraints={{ facingMode: 'environment' }}
@@ -101,9 +102,24 @@ export default function Certificado() {
           sound={false}
         />
 
-        <p className="absolute top-[150px] w-full text-center text-white text-lg font-semibold bg-black/40 p-8">
+        <p className="absolute top-[30px] w-full text-center text-white text-lg font-semibold bg-black/40 p-8">
           Aponte a câmera para o QR da palestra
         </p>
+
+        <div className="absolute text-white bottom-8 w-full px-8 z-10">
+          <SCLabel>
+            <Text>Zoom</Text>
+          </SCLabel>
+          <input
+            type="range"
+            min="1"
+            max="10"
+            step="0.1"
+            value={zoom}
+            onChange={(e) => setZoom(parseFloat(e.target.value))}
+            className="w-full"
+          />
+        </div>
       </div>
     )
   }
