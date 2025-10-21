@@ -144,7 +144,7 @@ export default function Certificado() {
         </p>
 
         {trackRef.current?.getCapabilities().zoom && (
-          <div className="absolute text-white bottom-8 w-full px-8 z-100">
+          <div className="absolute text-white bottom-8 w-full px-8 z-20">
             <SCLabel>
               <Text>Zoom</Text>
             </SCLabel>
