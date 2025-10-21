@@ -7,6 +7,9 @@ from atividade.models import Atividade
 from .services import PresencaService
 from atividade.validators import TokenPresencaValidator
 
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
@@ -29,5 +32,16 @@ def registrar_presenca(request):
     sucesso, mensagem = service.registrar_presenca()
 
     if sucesso:
+        try:
+            user = User.objects.get(email=email)
+            if hasattr(user, 'jogador'):
+                jogador = user.jogador
+                jogador.pontos += 50
+                jogador.save()
+        except User.DoesNotExist:
+            pass
+
         return Response({'message': mensagem}, status=status.HTTP_201_CREATED)
+
     return Response({'error': mensagem}, status=status.HTTP_400_BAD_REQUEST)
+
