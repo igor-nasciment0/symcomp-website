@@ -38,6 +38,25 @@
     ]
   },
   {
+    "name": "NIC.br",
+    "tier": "GIGA+",
+    "atividades": [
+      {
+        "horario": "12:00 - 13:00",
+        "data": "21/10",
+        "titulo": "Stand da NIC.br",
+        "descricao": "Veja o stand da NIC.br!",
+        "palestrante": "Colaboradores da NIC.br",
+        "sobre": "Os colaboradores da empresa estarão no IME para fazer networking com você!",
+        "foto": "nic-br.svg",
+        "contato": "https://nic.br/",
+        "status": "ok",
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NW9haGVuMXVhNW85ZDhsMms0NnNyZHRzbmMgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "ai"
+      }
+    ]
+  },
+  {
     "name": "Opus Software",
     "tier": "GIGA+",
     "atividades": [
@@ -95,25 +114,6 @@
     ]
   },
   {
-    "name": "Murabei",
-    "tier": "MEGA+",
-    "atividades": [
-      {
-        "horario": "16:00 - 17:00",
-        "data": "23/10",
-        "titulo": "O papel do cientista de dados no mundo dos AI",
-        "descricao": "O hype do AI vem com força nos últimos anos, ele abarca desde o desenvolvimento às decisões de negócio. Como profissionais de ciência de dados, engenharia, desenvolvimento e outras áreas de programação o uso dessas ferramentas é algo inevitável no dia a dia.\n\nDeste uso nascem diversas práticas questionáveis: o vibe code, a fetichização da tecnologia, onde a aplicação de modelos mais avançados como LLM vem antes da definição do problema.\n\nNascem também coisas fantásticas: como a possibilidade do tratamento de dados desestruturados (textos, imagens, sons e vídeos) que antes não eram possíveis sem o auxílio humano; a interação com sistemas através de linguagem natural possibilitando a democratização do uso de ferramentas de análise avançada.\n\nO mercado muda, posições de trabalho antes ocupadas por recém formados (juniors) são substituídas por algoritmos, mas também potencializam a produtividade permitindo a solução rápida de problemas. Soluções rápidas que, muitas vezes, trazem débito técnico, aparentemente todo ganho vem com um custo.\n\nO objetivo da palestra é explorar a dualidade vinda da aplicação do AI no dia a dia dos projetos de desenvolvimento de sistemas e ciência de dados. Murabei como uma empresa com mais de 10 anos, viveu essa mudança e aplica no dia a dia tais técnicas. Se podemos adiantar, algo que não muda é o pensamento científico, abordagem crítica sobre os problemas e a noção estética sobre a escolha das soluções.\n\nAtos humanos até que venha a próxima geração de AIs.",
-        "palestrante": "André Baceti ",
-        "sobre": "MSc. Biólogo e Matemático. Formado em biologia pela Universidade de São Paulo, trabalhou em diversas áreas como química orgânica aplicada ao desenvolvimento de órgãos artificiais e desenvolvimento de biossensores, que o levaram ao curso de Matemática Aplicada e Computacional, também pela Universidade de São Paulo.\n\nDesde 2014, ele coordena o desenvolvimento tecnológico da Murabei sendo um entusiasta dos Microsserviços. Ele acredita que, mais que apenas algoritmos de machine learning, o método científico e o correto entendimento dos desenhos experimentais são cruciais para o desenvolvimento de uma cultura crítica dentro das empresas.",
-        "foto": "murabei.png",
-        "contato": "https://www.murabei.com/",
-        "status": "Tudo Ok",
-        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3U1ZXJ1MjdtbmtocGdudHM4cDUyMTRka2sgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "ai"
-      }
-    ]
-  },
-  {
     "name": "Rocketseat",
     "tier": "GIGA+",
     "atividades": [
@@ -147,6 +147,25 @@
         "contato": "https://www.thomsonreuters.com.br/pt.html",
         "status": "falta tudo",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NTU4a2VvODh2dnZhcmQ4aWw1dGNnZ2pkZm4gY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
+        "keyWord": "ai"
+      }
+    ]
+  },
+  {
+    "name": "Murabei",
+    "tier": "MEGA+",
+    "atividades": [
+      {
+        "horario": "16:00 - 17:00",
+        "data": "23/10",
+        "titulo": "O papel do cientista de dados no mundo dos AI",
+        "descricao": "O hype do AI vem com força nos últimos anos, ele abarca desde o desenvolvimento às decisões de negócio. Como profissionais de ciência de dados, engenharia, desenvolvimento e outras áreas de programação o uso dessas ferramentas é algo inevitável no dia a dia.\n\nDeste uso nascem diversas práticas questionáveis: o vibe code, a fetichização da tecnologia, onde a aplicação de modelos mais avançados como LLM vem antes da definição do problema.\n\nNascem também coisas fantásticas: como a possibilidade do tratamento de dados desestruturados (textos, imagens, sons e vídeos) que antes não eram possíveis sem o auxílio humano; a interação com sistemas através de linguagem natural possibilitando a democratização do uso de ferramentas de análise avançada.\n\nO mercado muda, posições de trabalho antes ocupadas por recém formados (juniors) são substituídas por algoritmos, mas também potencializam a produtividade permitindo a solução rápida de problemas. Soluções rápidas que, muitas vezes, trazem débito técnico, aparentemente todo ganho vem com um custo.\n\nO objetivo da palestra é explorar a dualidade vinda da aplicação do AI no dia a dia dos projetos de desenvolvimento de sistemas e ciência de dados. Murabei como uma empresa com mais de 10 anos, viveu essa mudança e aplica no dia a dia tais técnicas. Se podemos adiantar, algo que não muda é o pensamento científico, abordagem crítica sobre os problemas e a noção estética sobre a escolha das soluções.\n\nAtos humanos até que venha a próxima geração de AIs.",
+        "palestrante": "André Baceti ",
+        "sobre": "MSc. Biólogo e Matemático. Formado em biologia pela Universidade de São Paulo, trabalhou em diversas áreas como química orgânica aplicada ao desenvolvimento de órgãos artificiais e desenvolvimento de biossensores, que o levaram ao curso de Matemática Aplicada e Computacional, também pela Universidade de São Paulo.\n\nDesde 2014, ele coordena o desenvolvimento tecnológico da Murabei sendo um entusiasta dos Microsserviços. Ele acredita que, mais que apenas algoritmos de machine learning, o método científico e o correto entendimento dos desenhos experimentais são cruciais para o desenvolvimento de uma cultura crítica dentro das empresas.",
+        "foto": "murabei.png",
+        "contato": "https://www.murabei.com/",
+        "status": "Tudo Ok",
+        "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3U1ZXJ1MjdtbmtocGdudHM4cDUyMTRka2sgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
         "keyWord": "ai"
       }
     ]
