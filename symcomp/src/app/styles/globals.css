@@ -96,3 +96,10 @@
     transform: translateX(-500%);
   }
 }
+
+@layer utilities {
+  .no-zoom {
+    touch-action: pan-x pan-y;
+    overscroll-behavior: none;
+  }
+}

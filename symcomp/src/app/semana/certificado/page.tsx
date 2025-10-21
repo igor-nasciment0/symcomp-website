@@ -3,8 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
 import { CheckCheck, X } from 'lucide-react'
-import dynamic from 'next/dynamic'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -18,11 +17,6 @@ import { FieldGroup } from '@/components/ui/field'
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import registerPresence from '@/lib/http/register-presence'
 
-const Scanner = dynamic(
-  () => import('@yudiel/react-qr-scanner').then((mod) => mod.Scanner),
-  { ssr: false },
-)
-
 const formSchema = z.object({
   name: z.string().min(3, 'Informe seu nome completo'),
   email: z.string().email('E-mail inválido'),
@@ -35,6 +29,8 @@ type QRResult = { rawValue: string }
 export default function Certificado() {
   const [etapa, setEtapa] = useState<'form' | 'scan' | 'done' | 'error'>('form')
   const [zoom, setZoom] = useState(1)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const trackRef = useRef<MediaStreamTrack | null>(null)
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -46,6 +42,38 @@ export default function Certificado() {
     onSuccess: () => setEtapa('done'),
     onError: () => setEtapa('error'),
   })
+
+  useEffect(() => {
+    if (etapa !== 'scan') return
+
+    const constraints: MediaStreamConstraints = {
+      video: { facingMode: 'environment' },
+    }
+
+    navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+      if (!videoRef.current) return
+      videoRef.current.srcObject = stream
+      videoRef.current.play()
+      trackRef.current = stream.getVideoTracks()[0]
+
+      const capabilities = trackRef.current.getCapabilities() as any
+      if (capabilities.zoom) {
+        const maxZoom = capabilities.zoom.max
+        setZoom(Math.min(zoom, maxZoom))
+      }
+    })
+  }, [etapa])
+
+  const handleZoomChange = (value: number) => {
+    setZoom(value)
+    if (!trackRef.current) return
+    const capabilities = trackRef.current.getCapabilities() as any
+    if (!capabilities.zoom) return
+    const zoomValue = Math.min(value, capabilities.zoom.max)
+    trackRef.current
+      .applyConstraints({ advanced: [{ zoom: zoomValue }] })
+      .catch(console.error)
+  }
 
   if (etapa === 'error') {
     return (
@@ -69,40 +97,10 @@ export default function Certificado() {
 
   if (etapa === 'scan') {
     return (
-      <div className="relative w-full max-sm:h-[500px] max-md:h-[650px] max-lg:h-[750px] h-screen bg-black">
-        <Scanner
-          styles={{ video: { width: '100%', height: '100%' } }}
-          constraints={{ facingMode: 'environment' }}
-          onScan={(result: QRResult | QRResult[] | null) => {
-            if (!result) return
+      <div className="absolute w-full h-svh bg-black top-0 z-10 no-zoom">
+        <video ref={videoRef} className="w-full h-full object-cover" playsInline muted />
 
-            const data = form.getValues()
-
-            let token: string = ''
-
-            if (Array.isArray(result)) {
-              token = result[0]?.rawValue ?? ''
-            } else if (
-              typeof result === 'object' &&
-              result !== null &&
-              'rawValue' in result
-            ) {
-              token = (result as QRResult).rawValue
-            }
-
-            if (token) {
-              mutate({
-                email: data.email,
-                name: data.name,
-                compartilhar: data.allowSponsors || false,
-                token,
-              })
-            }
-          }}
-          sound={false}
-        />
-
-        <p className="absolute top-[30px] w-full text-center text-white text-lg font-semibold bg-black/40 p-8">
+        <p className="absolute top-[150px] w-full text-center text-white text-lg font-semibold bg-black/40 p-8">
           Aponte a câmera para o QR da palestra
         </p>
 
@@ -113,10 +111,10 @@ export default function Certificado() {
           <input
             type="range"
             min="1"
-            max="10"
+            max={trackRef.current?.getCapabilities().zoom?.max ?? 3}
             step="0.1"
             value={zoom}
-            onChange={(e) => setZoom(parseFloat(e.target.value))}
+            onChange={(e) => handleZoomChange(parseFloat(e.target.value))}
             className="w-full"
           />
         </div>
