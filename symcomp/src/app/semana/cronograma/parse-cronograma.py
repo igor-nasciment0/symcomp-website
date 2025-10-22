@@ -19,20 +19,24 @@ def parse_csv(path_csv: str, path_json: str):
         atividades = []
         for row in rows:
             if row.get("Dia da Semana") == dia["key"]:
-                atividades.append({
-                    "horario": row.get("Horário"),
+                # Garantir todos os campos necessários, preenchendo com string vazia se faltar
+                atividade = {
+                    "horario": row.get("Horário", ""),
                     "data": dia["key"],
-                    "titulo": row.get("Titulo da Palestra"),
-                    "descricao": row.get("Descrição"),
-                    "palestrante": row.get("Nome do palestrante"),
-                    "sobre": row.get("Sobre o palestrante"),
-                    "foto": row.get("arquivo_foto"),
-                    "contato": row.get("Contato"),
-                    "status": row.get("Status"),
-                    "linkCalendar": row.get("link_calendar"),
-                    "keyWord": row.get("key_word"),
-                    "linkLive": row.get("link_live")
-                })
+                    "titulo": row.get("Titulo da Palestra", ""),
+                    "descricao": row.get("Descrição", ""),
+                    "palestrante": row.get("Nome do palestrante", ""),
+                    "sobre": row.get("Sobre o palestrante", ""),
+                    "foto": row.get("arquivo_foto", ""),
+                    "contato": row.get("Contato", ""),
+                    "status": row.get("Status", ""),
+                    "linkCalendar": row.get("link_calendar", ""),
+                    "keyWord": row.get("key_word", ""),
+                    "linkLive": row.get("link_live", ""),  # essencial para o Palestra
+                    "sponsorName": row.get("sponsor_name", ""),
+                    "sponsorTier": row.get("sponsor_tier", ""),
+                }
+                atividades.append(atividade)
         cronograma.append({
             "name": dia["name"],
             "date": dia["date"],
@@ -43,6 +47,7 @@ def parse_csv(path_csv: str, path_json: str):
         json.dump(cronograma, jsonfile, indent=2, ensure_ascii=False)
 
     print(f"✅ Arquivo JSON gerado em: {path_json}")
+
 
 if __name__ == "__main__":
     parse_csv("2025-10-22-2__cronograma.csv", "cronograma.json")
