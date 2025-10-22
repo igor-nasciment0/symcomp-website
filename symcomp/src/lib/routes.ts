@@ -6,3 +6,5 @@ export const semanaCadastro = `${semanaHome}/cadastro`
 export const semanaValidar = `${semanaCadastro}/validar`
 export const semanaDashboard = `${semanaHome}/dashboard`
 export const semanaRegistrarPresenca = `${semanaHome}/certificado`
+export const semanaEnigma = `${semanaHome}/enigma`
+export const semanaLeadboard = `${semanaHome}/leadboard`

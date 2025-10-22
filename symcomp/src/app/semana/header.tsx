@@ -11,7 +11,9 @@ import {
   semanaCadastro,
   semanaCrongorama,
   semanaDashboard,
+  semanaEnigma,
   semanaHome,
+  semanaLeadboard,
   semanaLogin,
   semanaPatrocinadores,
   semanaRegistrarPresenca,
@@ -76,6 +78,12 @@ export default function SemanaHeader() {
             </Link>
             <Link href={semanaPatrocinadores}>
               <Text className="text-[#FB5607] text-xl">{`/`} Patrocinadores</Text>
+            </Link>
+            <Link href={semanaEnigma}>
+              <Text className="text-xl text-white">/ Enigma</Text>
+            </Link>
+            <Link href={semanaLeadboard}>
+              <Text className="text-xl text-symcomp-secondary">/ Leadboard</Text>
             </Link>
           </div>
         </SheetContent>
