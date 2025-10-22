@@ -12,4 +12,4 @@ class AtividadePontos(models.Model):
     valor = models.IntegerField(default=250)
 
     def __str__(self):
-        return f'{self.atividade.titulo} - {self.pontos}'
+        return f'{self.atividade.titulo} - {self.valor}'
