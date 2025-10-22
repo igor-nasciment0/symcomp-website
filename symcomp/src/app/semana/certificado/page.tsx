@@ -17,8 +17,8 @@ import { Highlight, Text } from '@/components/sc-2025/typography'
 import { Checkbox } from '@/components/ui/checkbox'
 import { FieldGroup } from '@/components/ui/field'
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
-import registerPresence from '@/lib/http/register-presence'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
+import registerPresence from '@/lib/http/register-presence'
 
 const Scanner = dynamic(
   () => import('@yudiel/react-qr-scanner').then((mod) => mod.Scanner),

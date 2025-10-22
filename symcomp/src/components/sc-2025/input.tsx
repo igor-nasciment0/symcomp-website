@@ -10,7 +10,7 @@ interface SCInputProps {
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void
   required?: boolean
   type?: string
-  disabled: boolean
+  disabled?: boolean
 }
 
 export function SCInput({
