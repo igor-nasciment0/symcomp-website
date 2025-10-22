@@ -12,7 +12,7 @@ class Resposta(models.Model):
     jogador = models.ForeignKey(Jogador, on_delete=models.CASCADE, related_name='respostas')
     
     resposta = models.CharField(max_length=255)
-    correta = models.BooleanField(null=True, blank=True) # Verifica se a resposta foi correta ao validar
+    correta = models.BooleanField(null=True, blank=True)
     
     class Meta:
         unique_together = ('jogador', 'questao')

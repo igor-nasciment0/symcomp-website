@@ -36,7 +36,7 @@ def registrar_presenca(request):
             user = User.objects.get(email=email)
             if hasattr(user, 'jogador'):
                 jogador = user.jogador
-                jogador.pontos += 50
+                jogador.pontos += atividade.pontos.valor
                 jogador.save()
         except User.DoesNotExist:
             pass

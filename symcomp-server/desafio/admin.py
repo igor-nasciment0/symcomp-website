@@ -3,6 +3,7 @@ from .models import Desafio
 from .questao.models import Questao
 from .jogador.models import Jogador
 from .resposta.models import Resposta
+from .atividade_pontos.models import AtividadePontos
 
 @admin.register(Desafio)
 class DesafioAdmin(admin.ModelAdmin):
@@ -19,3 +20,4 @@ class DesafioAdmin(admin.ModelAdmin):
 admin.site.register(Questao)
 admin.site.register(Jogador)
 admin.site.register(Resposta)
+admin.site.register(AtividadePontos)

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'desafio',
     'desafio.username',
+    'desafio.atividade_pontos',
     'atividade',
     "email_service",
     "drf_spectacular",
