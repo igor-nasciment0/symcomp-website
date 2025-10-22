@@ -18,6 +18,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { FieldGroup } from '@/components/ui/field'
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import registerPresence from '@/lib/http/register-presence'
+import { useCurrentUser } from '@/hooks/useCurrentUser'
 
 const Scanner = dynamic(
   () => import('@yudiel/react-qr-scanner').then((mod) => mod.Scanner),
@@ -39,6 +40,8 @@ export default function Certificado() {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const trackRef = useRef<MediaStreamTrack | null>(null)
 
+  const currentUser = useCurrentUser()
+
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: { name: '', email: '', allowSponsors: false },
@@ -51,12 +54,18 @@ export default function Certificado() {
   })
 
   useEffect(() => {
+    if (!currentUser.isPending && currentUser.data?.user && etapa === 'form') {
+      form.setValue('name', currentUser.data.user.name || '')
+      form.setValue('email', currentUser.data.user.email || '')
+    }
+
     if (etapa !== 'scan') return
 
     const interval = setInterval(() => {
       const video = document.querySelector('video') as HTMLVideoElement | null
       if (video && video.srcObject && video.srcObject instanceof MediaStream) {
         videoRef.current = video
+        videoRef.current.style.zIndex = '0'
         trackRef.current = video.srcObject.getVideoTracks()[0]
 
         const capabilities = trackRef.current.getCapabilities() as any
@@ -69,7 +78,7 @@ export default function Certificado() {
     }, 200)
 
     return () => clearInterval(interval)
-  }, [etapa])
+  }, [etapa, currentUser, zoom])
 
   const handleZoomChange = (value: number) => {
     setZoom(value)
@@ -106,7 +115,7 @@ export default function Certificado() {
 
   if (etapa === 'scan') {
     return (
-      <div className="absolute top-0 w-full h-svh bg-black z-10">
+      <div className="absolute top-0 w-full h-svh bg-black">
         <Scanner
           styles={{ video: { width: '100%', height: '100%' } }}
           constraints={{ facingMode: 'environment' }}
@@ -144,7 +153,10 @@ export default function Certificado() {
         </p>
 
         {trackRef.current?.getCapabilities().zoom && (
-          <div className="absolute text-white bottom-8 w-full px-8 z-20">
+          <div
+            style={{ zIndex: 100 }}
+            className="absolute text-white bottom-8 w-full px-8"
+          >
             <SCLabel>
               <Text>Zoom</Text>
             </SCLabel>
@@ -193,7 +205,11 @@ export default function Certificado() {
                 <FormItem className="space-y-0">
                   <SCLabel>Nome completo:</SCLabel>
                   <FormControl>
-                    <SCInput placeholder="Digite o seu nome completo" {...field} />
+                    <SCInput
+                      disabled={currentUser.isPending}
+                      placeholder="Digite o seu nome completo"
+                      {...field}
+                    />
                   </FormControl>
                   <SCFormMessage />
                 </FormItem>
@@ -207,7 +223,12 @@ export default function Certificado() {
                 <FormItem className="space-y-0">
                   <SCLabel>Email:</SCLabel>
                   <FormControl>
-                    <SCInput placeholder="Não precisa ser @usp.br" {...field} />
+                    <SCInput
+                      disabled={currentUser.isPending}
+                      placeholder="Não precisa ser @usp.br"
+                      type="email"
+                      {...field}
+                    />
                   </FormControl>
                   <SCFormMessage />
                 </FormItem>

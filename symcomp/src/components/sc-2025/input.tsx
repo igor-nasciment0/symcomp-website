@@ -10,6 +10,7 @@ interface SCInputProps {
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void
   required?: boolean
   type?: string
+  disabled: boolean
 }
 
 export function SCInput({
@@ -19,6 +20,7 @@ export function SCInput({
   required,
   type,
   onBlur,
+  disabled,
 }: SCInputProps) {
   return (
     <Input
@@ -26,6 +28,7 @@ export function SCInput({
       value={value ?? ''}
       onChange={onChange}
       onBlur={onBlur}
+      disabled={disabled}
       className={cn(
         barlowCondensed.className,
         'placeholder:font-normal placeholder:opacity-70 border-sc-2025-contrast border-[8px] rounded-none px-4 py-6 !text-lg !text-sc-2025-contrast',
