@@ -22,6 +22,8 @@ import { Palestra } from '@/types/palestra'
 
 import cronograma from './cronograma.json'
 import { CronogramaDetail, parseHorarioToICS } from './cronograma-detail'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { ColoredAvatarFallback } from './colored-avatar-fallback'
 
 export function CronogramaCarousel() {
   return (
@@ -78,15 +80,28 @@ function AtividadeCard({ palestra }: { palestra: Palestra }) {
   googleCalendarUrl.searchParams.set('details', palestra.descricao || '')
   googleCalendarUrl.searchParams.set('dates', `${start}/${end}`)
 
+  const palestrantes = palestra.palestrante?.split(',')
+
   return (
     <SCWrapper key={palestra.horario}>
-      <div className="p-4 w-[340px] flex flex-row items-center gap-4">
-        <IconDictionary keyWord={palestra.keyWord} />
-        <div className="flex flex-col gap-4 w-[242px]">
-          <TypographyH2 className="text-left text-2xl text-sc-2025-contrast font-semibold">
+      <div className="p-4 w-[340px] flex flex-col gap-4">
+        <div className="flex flex-row items-center gap-4 ">
+          <IconDictionary keyWord={palestra.keyWord} />
+          <TypographyH2 className="text-left text-2xl text-sc-2025-contrast font-semibold w-[242px]">
             {palestra.titulo}
           </TypographyH2>
-          <Text variant="secondary">{palestra.palestrante}</Text>
+        </div>
+        <div className="flex flex-row items-center gap-4">
+          <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
+            {palestrantes?.map((palestrante) => (
+              <Avatar className="size-[30px]" key={palestrante}>
+                <ColoredAvatarFallback nome={palestrante} />
+              </Avatar>
+            ))}
+          </div>
+          <Text variant="secondary" className="w-[242px]">
+            {palestra.palestrante}
+          </Text>
         </div>
       </div>
       <SCWrapperFooter>

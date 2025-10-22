@@ -8,13 +8,14 @@
         "data": "SEG",
         "titulo": "Entre bugs e boss fights: os desafios reais de criar jogos mobile para milhões de pessoas.",
         "descricao": "Uma conversa sobre os bastidores do desenvolvimento de jogos mobile — dos desafios técnicos às decisões criativas — e o que realmente acontece por trás das telas que entretêm milhões de jogadores.",
-        "palestrante": "Victor Domiciano (Wildlife)",
+        "palestrante": "Victor Domiciano",
         "sobre": "Victor é um desenvolvedor de jogos formado em \nCiência da Computação pelo IME-USP, \ncom mais de 6 anos de experiência \nprofissional no desenvolvimento \nde jogos 2D e 3D para plataformas móveis \nAndroid e iOS. Hoje trabalha como Game Engineer\nna Wildlife Studios.",
         "foto": null,
         "contato": " https://www.linkedin.com/in/victor-domiciano/ e Odair tem o número do Gustavo Futanaka",
         "status": "Quase Ok",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NHBkZzVuOGpvbWJnMzRoMGo1M2l1MThqMXAgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "games"
+        "keyWord": "games",
+        "linkLive": "https://youtube.com/live/VbFKEEa7gqs"
       },
       {
         "horario": "13:15 - 14:15",
@@ -27,7 +28,8 @@
         "contato": "gkc@connect.ust.hk",
         "status": "Tudo OK",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3M5bGYzYWZzbWdwNXBiaGxlbzBmYXEwZzUgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "research"
+        "keyWord": "research",
+        "linkLive": "https://www.youtube.com/watch?v=2Ympe42ik1M"
       },
       {
         "horario": "14:15 - 14:45",
@@ -40,46 +42,50 @@
         "contato": "",
         "status": "",
         "linkCalendar": "",
-        "keyWord": "break"
+        "keyWord": "break",
+        "linkLive": ""
       },
       {
         "horario": "14:45 - 15:45",
         "data": "SEG",
         "titulo": "Antes e Depois da IA: Como Mudou Nosso Jeito de Criar Software",
         "descricao": "Nesta palestra, compartilharemos a experiência real da Irya Solutions navegando pela revolução da IA no desenvolvimento de software. Vamos explorar como era nosso dia a dia antes do boom, quais ferramentas e práticas adotamos, e o impacto direto que sentimos em projetos e na relação com clientes. Além de casos práticos, discutiremos as habilidades que se tornaram essenciais para devs neste novo contexto e nossa visão sobre o que vem pela frente.\n",
-        "palestrante": "Rafael Reggiani Manzo; e Diego Araujo Martinez Camarinha",
+        "palestrante": "Rafael Reggiani Manzo, Diego Araujo Martinez Camarinha",
         "sobre": "Diego e Rafael são ex-alunos do BCC e do mestrado. Sócios fundadores da Irya Solutions, uma empresa de consultoria em desenvolvimento de software, com 7 anos de atividades, mais de 20 empresas e 35 projetos atendidos.",
         "foto": null,
         "contato": "rafael@iryasolutions.com.br",
         "status": "Tudo OK",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NHJ1cTNzbWdnYTZkbHZoa3RoZWU3NzA3ZDcgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "ai"
+        "keyWord": "ai",
+        "linkLive": "https://www.youtube.com/watch?v=ORB0ehuSiM0&pp=0gcJCfwJAYcqIYzv"
       },
       {
         "horario": "16:00 - 17:00",
         "data": "SEG",
         "titulo": "Como IAs modernas são construídas: intuição, teoria e prática",
         "descricao": "Nesta palestra vamos abordar os fundamentos do funcionamento das redes neurais, com foco nos modelos de linguagem e na arquitetura Transformer. Em seguida, exploraremos como se dá o treinamento em múltiplos estágios e o papel dos dados. Por fim, buscaremos transmitir a intuição de por que a ordem em que as informações são apresentadas aos LLMs) é de extrema importância, e discutiremos algumas hipóteses sobre a alucinação em LLMs.",
-        "palestrante": "Rodrigo Nogueira (Maritaca AI)",
+        "palestrante": "Rodrigo Nogueira",
         "sobre": "Rodrigo Nogueira é fundador e CEO da Maritaca AI, uma empresa que desenvolve IAs fundamentais, utilizadas direta e indiretamente por milhões de pessoas. Nogueira tem graduação e mestrado pela UNICAMP e doutorado pela Universidade de Nova York. Foi um dos pioneiros a utilizar modelos de deep learning em sistemas de busca e é coautor do BERTimbau, um modelo em português com mais de 50 milhões de downloads. Além disso, é um pesquisador ativo na área de processamento de linguagem natural, contando com 10 mil citações de acordo com o Google Scholar.",
         "foto": null,
         "contato": "https://www.linkedin.com/in/rodrigo-nogueira-730ba431/",
-        "status": "Tudo OK",
+        "status": "Cancelada",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M2tzN2g1cTFrMmw3aGF0cDh2NmRuNmZyZGEgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "ai"
+        "keyWord": "ai",
+        "linkLive": "https://www.youtube.com/watch?v=Xgf1TGjcnAY"
       },
       {
         "horario": "17:15 - 18:15",
         "data": "SEG",
         "titulo": "A Jornada de Pivot of Hearts",
         "descricao": "A Dragonroll Studio é um empresa indie de jogos fundada por três alumni USP e que lançou seu primeiro jogo, Pivot of Hearts, em maio de 2025. O jogo passou por três editais, foi premiado no SBGames 2022 e foi finalista na Gamescom latam 2024. Nessa apresentação, compartilharemos nossos aprendizados para quem tem interesse em trabalhar com desenvolvimento de jogos e abrir seu próprio estúdio de jogos no futuro. Abordaremos temas como dicas de editais, o papel de incubadoras e aceleradoras, os desafios de participar de eventos e rodadas de negócio, estratégias de marketing e outras coisas que normalmente não se tem oportunidade de aprender numa graduação em computação.",
-        "palestrante": "Wilson Kazuo Mizutani\nLivia Maki Yoshikawa\nLívia Amaral Santos",
+        "palestrante": "Wilson Kazuo Mizutani, Livia Maki Yoshikawa, Lívia Amaral Santos",
         "sobre": "Wilson é programador e desenvolvedor-chefe da Dragonroll Studio. Foi da turma 2009 do BCC e completou também mestrado e doutorado na área. Trabalhou como líder técnico na Irya Solutions e é co-fundador do USPGameDev.\n\nLivia Maki Yoshikawa é diretora de som, designer e produtora executiva na Dragonroll Studio. Formada no bacharelado em composição na ECA-USP e tendo cursado parcialmente a graduação de design da FAU-USP, começou a desenvolver jogos no USPGameDev, grupo de extensão de desenvolvimento de jogos.\n\nLívia (a outra) é diretora de arte na Dragonroll Studio. Formada em Artes Visuais pela ECA-USP e também trabalha com animação, ilustração e às vezes ainda arrisca fazer quadrinhos.",
         "foto": null,
         "contato": "Telegram (Anna)",
         "status": "Tudo ok",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NHBtcmJybHVoN3BnZzE1MmgwZGNkZG90Nm8gY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "games"
+        "keyWord": "games",
+        "linkLive": "https://www.youtube.com/watch?v=SqpA0Fc7x8U&pp=0gcJCfwJAYcqIYzv"
       },
       {
         "horario": "18:15 - 19:30",
@@ -92,7 +98,8 @@
         "contato": "",
         "status": "",
         "linkCalendar": "",
-        "keyWord": "break"
+        "keyWord": "break",
+        "linkLive": ""
       }
     ]
   },
@@ -111,20 +118,22 @@
         "contato": "",
         "status": "",
         "linkCalendar": "",
-        "keyWord": ""
+        "keyWord": "",
+        "linkLive": ""
       },
       {
         "horario": "13:15 - 14:15",
         "data": "TER",
         "titulo": "Porque estudar computação é legal pra caramba ",
         "descricao": "Nessa palestra conto algumas histórias da minha trajetória na computação e como a faculdade me ajudou a vencer desafios e alcançar objetivos pessoais e profissionais. O que me permite continuar atualizado hoje? Como alguém que está estudando hoje pode se preparar para um futuro cada vez mais imprevisível?",
-        "palestrante": "João Barguil (Opus)",
+        "palestrante": "João Barguil",
         "sobre": "João Marcos Barguil é engenheiro, mestre e doutor em computação pela USP. Sempre próximo ao mundo de empreendedorismo e inovação, tem experiência internacional e já foi CTO de startups premiadas. Atualmente, é head de inovação da Opus Software, empresa de desenvolvimento de software especializada em problemas de alta complexidade, e professor do departamento de engenharia de computação da Poli-USP. Escreve sobre IA e tecnologia em @jbarguil nas redes sociais.",
         "foto": null,
         "contato": "",
         "status": "Tudo OK",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWdxdWxxcXI2czhqczFpOW1pZHRqbGNmM2kgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "market"
+        "keyWord": "market",
+        "linkLive": "https://www.youtube.com/watch?v=lrFAxTwMnH0"
       },
       {
         "horario": "14:15 - 14:45",
@@ -137,7 +146,8 @@
         "contato": "",
         "status": "",
         "linkCalendar": "",
-        "keyWord": "break"
+        "keyWord": "break",
+        "linkLive": ""
       },
       {
         "horario": "14:45 - 15:45",
@@ -150,7 +160,8 @@
         "contato": "anchisesbr@gmail.com",
         "status": "Tudo OK",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M2twM2l2aGYzNTM3OGJvdWluZGloNzNwZjggY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "cybersecurity"
+        "keyWord": "cybersecurity",
+        "linkLive": "https://www.youtube.com/watch?v=SwwwrzbkVKY"
       },
       {
         "horario": "16:00 - 17:00",
@@ -163,7 +174,8 @@
         "contato": "paulo.silveira@alura.com.br",
         "status": "Tudo OK",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=Nm5ubjc5bTJ1Z29tNmozZDFza243dWx2NzIgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "ai"
+        "keyWord": "ai",
+        "linkLive": "https://www.youtube.com/watch?v=ig2alqXReME"
       },
       {
         "horario": "17:15 - 18:15",
@@ -176,7 +188,8 @@
         "contato": "fgcozman@usp.br",
         "status": "Tudo OK",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDdtdnVtZ2h0NHNnOWw2ZXNmdnJ0NGF2bHYgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "ai"
+        "keyWord": "ai",
+        "linkLive": "https://www.youtube.com/watch?v=Y8rb2RlrXic"
       },
       {
         "horario": "18:15 - 19:30",
@@ -189,7 +202,8 @@
         "contato": "",
         "status": "",
         "linkCalendar": "",
-        "keyWord": "break"
+        "keyWord": "break",
+        "linkLive": ""
       }
     ]
   },
@@ -208,7 +222,8 @@
         "contato": "",
         "status": "falta ft",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MmdodGUydjJmdDY2bDVhb3BoNGZ0N2kwMmMgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "ai"
+        "keyWord": "ai",
+        "linkLive": "https://youtube.com/live/HiyzI6qgXcY"
       },
       {
         "horario": "13:15 - 14:15",
@@ -221,7 +236,8 @@
         "contato": "cef@ime.usp.br",
         "status": "Tudo Ok",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NTgyN2xwcTJnanY3cjhoYzBqZjBzdDZ2bG4gY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "research"
+        "keyWord": "research",
+        "linkLive": "https://youtube.com/live/pNNTBgOmFpw"
       },
       {
         "horario": "14:15 - 14:45",
@@ -234,7 +250,8 @@
         "contato": "",
         "status": "",
         "linkCalendar": "",
-        "keyWord": "break"
+        "keyWord": "break",
+        "linkLive": ""
       },
       {
         "horario": "14:45 - 15:45",
@@ -247,7 +264,8 @@
         "contato": "paloma.silva@teltecsolutions.com.br ou https://www.linkedin.com/in/frankllin-nunes/",
         "status": "Tudo Ok",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDI4b21saDQ5NjV2dnQ2cnJxYTcydjFrcHEgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "cybersecurity"
+        "keyWord": "cybersecurity",
+        "linkLive": "https://youtube.com/live/U753P165P3k"
       },
       {
         "horario": "16:00 - 17:00",
@@ -260,7 +278,8 @@
         "contato": "lxoliva@fsfla.org",
         "status": "Tudo Ok",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDI4b21saDQ5NjV2dnQ2cnJxYTcydjFrcHEgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "systems"
+        "keyWord": "systems",
+        "linkLive": "https://youtube.com/live/IPzzv2D4cMg"
       },
       {
         "horario": "17:15 - 18:15",
@@ -273,7 +292,8 @@
         "contato": "",
         "status": "",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NzNxZGM5amFjMjRkamE4NmQ1YmszNnNqdGUgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "ai"
+        "keyWord": "ai",
+        "linkLive": "https://youtube.com/live/KWnHNeq3fEU"
       },
       {
         "horario": "18:15 - 19:30",
@@ -286,7 +306,8 @@
         "contato": "",
         "status": "",
         "linkCalendar": "",
-        "keyWord": "break"
+        "keyWord": "break",
+        "linkLive": ""
       }
     ]
   },
@@ -305,7 +326,8 @@
         "contato": "",
         "status": "Tudo oK",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NWhxOXFzOTFzNmw3OWswaDVmaDFwdDFtYmcgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "market"
+        "keyWord": "market",
+        "linkLive": "https://youtube.com/live/a5xyJ9tHQCA"
       },
       {
         "horario": "13:15 - 14:15",
@@ -318,7 +340,8 @@
         "contato": "renatogeh@gmail.com",
         "status": "Tudo Ok",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=N3Blb29vaG5tdm45N2k2ZDFyMmFhdHNxa3YgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "ai"
+        "keyWord": "ai",
+        "linkLive": "https://www.youtube.com/live/jSOescygXdg?si=EwzYjc47QiWCrstZ"
       },
       {
         "horario": "14:15 - 14:45",
@@ -331,7 +354,8 @@
         "contato": "",
         "status": "",
         "linkCalendar": "",
-        "keyWord": "break"
+        "keyWord": "break",
+        "linkLive": ""
       },
       {
         "horario": "14:45 - 15:45",
@@ -344,20 +368,22 @@
         "contato": "jerry@jerrystrazzeri.com",
         "status": "Tudo Ok",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NTUwcDV0cGl2OXFiNGlsa3VhMHAwa3BhcmogY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "ai"
+        "keyWord": "ai",
+        "linkLive": "https://www.youtube.com/live/i3tiaccIQ1c?si=oZArQHTPX4tJx8MN"
       },
       {
         "horario": "16:00 - 17:00",
         "data": "QUI",
         "titulo": "O papel do cientista de dados no mundo dos AI",
         "descricao": "O hype do AI vem com força nos últimos anos, ele abarca desde o desenvolvimento às decisões de negócio. Como profissionais de ciência de dados, engenharia, desenvolvimento e outras áreas de programação o uso dessas ferramentas é algo inevitável no dia a dia.\n\nDeste uso nascem diversas práticas questionáveis: o vibe code, a fetichização da tecnologia, onde a aplicação de modelos mais avançados como LLM vem antes da definição do problema.\n\nNascem também coisas fantásticas: como a possibilidade do tratamento de dados desestruturados (textos, imagens, sons e vídeos) que antes não eram possíveis sem o auxílio humano; a interação com sistemas através de linguagem natural possibilitando a democratização do uso de ferramentas de análise avançada.\n\nO mercado muda, posições de trabalho antes ocupadas por recém formados (juniors) são substituídas por algoritmos, mas também potencializam a produtividade permitindo a solução rápida de problemas. Soluções rápidas que, muitas vezes, trazem débito técnico, aparentemente todo ganho vem com um custo.\n\nO objetivo da palestra é explorar a dualidade vinda da aplicação do AI no dia a dia dos projetos de desenvolvimento de sistemas e ciência de dados. Murabei como uma empresa com mais de 10 anos, viveu essa mudança e aplica no dia a dia tais técnicas. Se podemos adiantar, algo que não muda é o pensamento científico, abordagem crítica sobre os problemas e a noção estética sobre a escolha das soluções.\n\nAtos humanos até que venha a próxima geração de AIs.",
-        "palestrante": "(Murabei) André Baceti ",
+        "palestrante": "André Baceti ",
         "sobre": "MSc. Biólogo e Matemático. Formado em biologia pela Universidade de São Paulo, trabalhou em diversas áreas como química orgânica aplicada ao desenvolvimento de órgãos artificiais e desenvolvimento de biossensores, que o levaram ao curso de Matemática Aplicada e Computacional, também pela Universidade de São Paulo.\n\nDesde 2014, ele coordena o desenvolvimento tecnológico da Murabei sendo um entusiasta dos Microsserviços. Ele acredita que, mais que apenas algoritmos de machine learning, o método científico e o correto entendimento dos desenhos experimentais são cruciais para o desenvolvimento de uma cultura crítica dentro das empresas.",
         "foto": null,
         "contato": "",
         "status": "Tudo Ok",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M3U1ZXJ1MjdtbmtocGdudHM4cDUyMTRka2sgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "ai"
+        "keyWord": "ai",
+        "linkLive": "https://www.youtube.com/live/yx6q4vxrmXU?si=QmkvDP8yJohRGafk"
       },
       {
         "horario": "17:15 - 18:15",
@@ -370,7 +396,8 @@
         "contato": "phmb@cin.ufpe.br",
         "status": "Tudo Ok",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDlwbG1raDM3bnRsaXVvdGZiNTJyaGVwMGYgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "ai"
+        "keyWord": "ai",
+        "linkLive": "https://www.youtube.com/live/7f7jFSd1_q0?si=8IIPlkMKQ_5mBEzR"
       },
       {
         "horario": "18:15 - 19:30",
@@ -383,7 +410,8 @@
         "contato": "",
         "status": "",
         "linkCalendar": "",
-        "keyWord": "break"
+        "keyWord": "break",
+        "linkLive": ""
       }
     ]
   },
@@ -394,15 +422,16 @@
       {
         "horario": "12:00 - 13:00",
         "data": "SEX",
-        "titulo": "",
-        "descricao": "",
-        "palestrante": "IME Sec",
-        "sobre": "",
+        "titulo": "Cybersegurança, com o hype",
+        "descricao": "O IMEsec é o grupo de extensão do IME-USP focado em segurança da informação e liberdade digital, construído por alunos do curso de Ciências da Computação do Instituto de Matemática e Estatística (IME - USP). Criado em 2016, o grupo foi reestruturado em 2024, promovendo o ensino e a prática da cibersegurança dentro e fora da Universidade de São Paulo. Nossa missão é capacitar os estudantes como futuros profissionais da segurança digital, disseminar esse conhecimento estratégico para a comunidade, e defender a liberdade digital na atual era da informação. Por meio de aulas práticas, palestras, eventos e CTFs, proporcionamos um ambiente inclusivo e colaborativo que conecta o meio acadêmico às necessidades reais do mercado de tecnologia e segurança. Você não está seguro.\nIMEsec.",
+        "palestrante": "Nicolas Borsari, Thiago Duvanel, Lucas Garijo",
+        "sobre": "Panorama geral sobre cibersegurança: motivação, contexto global, e prática na Universidade de São Paulo\n",
         "foto": null,
         "contato": "",
         "status": "",
         "linkCalendar": "",
-        "keyWord": "cybersecurity"
+        "keyWord": "cybersecurity",
+        "linkLive": ""
       },
       {
         "horario": "13:15 - 14:15",
@@ -415,7 +444,8 @@
         "contato": "bruno.mestanza@rocketseat.team",
         "status": "falta descrição da palestra e enviar o convite pelo google calendar",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MzcxZDFkZTRhMm45amJwYzYyOHRmNHE4czEgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "systems"
+        "keyWord": "systems",
+        "linkLive": "https://www.youtube.com/live/FHOO36dNaVo?si=KJRD_lKSiZsPzBhi"
       },
       {
         "horario": "14:15 - 14:45",
@@ -428,33 +458,36 @@
         "contato": "",
         "status": "",
         "linkCalendar": "",
-        "keyWord": "break"
+        "keyWord": "break",
+        "linkLive": ""
       },
       {
         "horario": "14:45 - 15:45",
         "data": "SEX",
         "titulo": "Bate-papo academico",
-        "descricao": "",
-        "palestrante": "Cristina G. Fernandes                \n Kelly Rosa Braghetto",
+        "descricao": "Junte-se a três professoras do IME-USP em uma conversa inspiradora sobre suas carreiras em Computação. Elas vão compartilhar os caminhos que as levaram à pesquisa, os desafios que enfrentaram e as descobertas que marcaram suas trajetórias. Com experiências em áreas totalmente distintas, o papo promete uma visão ampla e autêntica sobre o universo da ciência. Esta é uma oportunidade única para você conhecer a realidade da vida acadêmica, tirar suas dúvidas e se conectar com quem vive a pesquisa no dia a dia.",
+        "palestrante": "Cristina G. Fernandes, Kelly Rosa Braghetto, Renata Wassermann",
         "sobre": "Formada no BCC em 1987, fez mestrado no IME e doutorado no Georgia Institute of Technology, EUA, em algoritmos de aproximação. É docente do IME desde 1988 e faz parte do grupo de Combinatória, Otimização e Teoria da Computação (COMBO) do IME. Voltou do doutorado em 1992 e, desde então, trabalha em algoritmos de aproximação, teoria dos grafos, e assuntos correlatos. \n\n   Kelly Rosa Braghetto obteve o título de Doutora (2011) e Mestre (2006) em Ciência da Computação pela Universidade de São Paulo (USP) e o título de Bacharel em Ciências da Computação (2002) pela Universidade Estadual Paulista Júlio de Mesquita Filho (UNESP). É professora do Departamento de Ciência da Computação (DCC) do IME-USP desde 2012. Desenvolve pesquisas na área de Bancos de Dados, em subáreas como engenharia de dados, arquiteturas de integração de dados, gerenciamento de dados científicos e gerenciamento de workflows. Atualmente, coordena projetos de pesquisa que envolvem o desenvolvimento de novas tecnologias de dados para aplicações em cidades inteligentes. Também desenvolve iniciativas para a divulgação da Computação para meninas do ensino básico de escolas públicas, a fim de promover maior inclusão delas nas áreas STEM.",
         "foto": null,
         "contato": "",
         "status": "Falta a Renata. Temos que criar a descrição.",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NXBzNDltbWpqNDY1cGttcG5zbThpNTVuN24gY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "research"
+        "keyWord": "research",
+        "linkLive": "https://www.youtube.com/live/6SUVyeAEyfo?si=8nSjs9qqXEXkJ_-L"
       },
       {
         "horario": "16:00 - 17:00",
         "data": "SEX",
         "titulo": "Ferramentas de IA para o desenvolvimento de software.",
         "descricao": "As ferramentas de inteligência artificial estão revolucionando o ciclo de desenvolvimento de software, desde a escrita de código até a manutenção e otimização de sistemas.\n\nAbordaremos as principais categorias de ferramentas disponíveis, incluindo assistentes de código e suas features, geradores de testes automatizados e ferramentas de revisão de código inteligente.\n\nTambém vamos discutir casos práticos de uso, benefícios em produtividade, limitações atuais e como integrar essas tecnologias de forma eficaz no fluxo de trabalho das equipes de desenvolvimento, sempre considerando boas práticas de IA no contexto profissional.",
-        "palestrante": "Mario Silva e Lucas Sobrinho",
+        "palestrante": "Mario Silva, Lucas Sobrinho",
         "sobre": "Mario Silva é Engineering Manager Frontend na Thomson Reuters, onde lidera o time de engenharia frontend da plataforma de IA. Com mais de 17 anos de experiência em desenvolvimento web, incluindo 10 anos trabalhando na Europa em 4 países diferentes, combina expertise técnica profunda com perspectiva internacional e paixão por liderança de pessoas e desenvolvimento de produtos de IA. Foca em construir times de alta performance que entregam soluções inovadoras com impacto real para usuários globalmente.\n\nLucas Sobrinho é formado em Ciência da Computação pelo IME-USP e Software Engineer na Thomson Reuters, atuando nos times de Deployment e Skills SDK da plataforma de IA. Entusiasta de Aprendizado de Máquina, Ciência de Dados e as últimas tendências de AI Engineering.",
         "foto": null,
         "contato": "Telegram",
         "status": "falta tudo",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NTU4a2VvODh2dnZhcmQ4aWw1dGNnZ2pkZm4gY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "ai"
+        "keyWord": "ai",
+        "linkLive": "https://www.youtube.com/live/lOupgMMB9LY?si=vDMeCStQvWG7Zscu"
       },
       {
         "horario": "17:15 - 18:15",
@@ -467,12 +500,13 @@
         "contato": "",
         "status": "Falta a descrição da palestra.",
         "linkCalendar": "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MTVtYm9ham9hY2h1aDRhNnE5M3JvNjAzdDIgY18yOTc5YWExMmMyYjRjOGJhZTUwZjM0YTNiNGQzYWMzNGQ5NGI2YzY0MDZhZmM2N2JjMjc1NTg0ZGE3YjYzZDc3QGc&tmsrc=c_2979aa12c2b4c8bae50f34a3b4d3ac34d94b6c6406afc67bc275584da7b63d77%40group.calendar.google.com",
-        "keyWord": "ai"
+        "keyWord": "ai",
+        "linkLive": "https://www.youtube.com/live/Lp8cT-Zx4Fc?si=nR23enRtxvTxw3Lj"
       },
       {
         "horario": "18:15 - 19:30",
         "data": "SEX",
-        "titulo": "Encerramento",
+        "titulo": "Coffee de encerramento",
         "descricao": "",
         "palestrante": "",
         "sobre": "",
@@ -480,7 +514,8 @@
         "contato": "",
         "status": "",
         "linkCalendar": "",
-        "keyWord": "break"
+        "keyWord": "break",
+        "linkLive": ""
       }
     ]
   }
