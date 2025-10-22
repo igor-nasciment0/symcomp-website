@@ -16,14 +16,15 @@ import { SCButton } from '@/components/sc-2025/button'
 import { SCCarousel } from '@/components/sc-2025/carousel'
 import { Text, TypographyH2 } from '@/components/sc-2025/typography'
 import { SCWrapper, SCWrapperFooter } from '@/components/sc-2025/wrapper'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
 import { barlowCondensed } from '@/lib/font'
 import { Palestra } from '@/types/palestra'
 
+import { ColoredAvatarFallback } from './colored-avatar-fallback'
 import cronograma from './cronograma.json'
 import { CronogramaDetail, parseHorarioToICS } from './cronograma-detail'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { ColoredAvatarFallback } from './colored-avatar-fallback'
+import { BsYoutube } from 'react-icons/bs'
 
 export function CronogramaCarousel() {
   return (
@@ -123,7 +124,7 @@ function AtividadeCard({ palestra }: { palestra: Palestra }) {
               <CronogramaDetail palestra={palestra} />
             </DialogContent>
           </Dialog>
-          <div className="px-4 bg-white py-2 flex flex-row gap-4">
+          <div className="px-4 bg-white py-2 flex flex-row gap-4 items-center">
             <Text variant="secondary" className="text-sc-2025-contrast font-bold">
               {palestra.horario}
             </Text>
@@ -133,6 +134,9 @@ function AtividadeCard({ palestra }: { palestra: Palestra }) {
               rel="noopener noreferrer"
             >
               <CalendarPlus color="black" />
+            </a>
+            <a href={palestra.linkLive} target="_blank" rel="noopener noreferrer">
+              <BsYoutube size={24} color="black" />
             </a>
           </div>
         </div>

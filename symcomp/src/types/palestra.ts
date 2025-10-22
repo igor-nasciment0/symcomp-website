@@ -10,4 +10,5 @@ export type Palestra = {
   status: string | null
   linkCalendar: string
   keyWord: string
+  linkLive: string
 }

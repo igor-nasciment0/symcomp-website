@@ -1,10 +1,12 @@
 'use client'
 
+import { useQuery } from '@tanstack/react-query'
+
 import { Text, TypographyH1 } from '@/components/sc-2025/typography'
-import SemanaHeader from '../header'
 import { getDesafios } from '@/lib/http/get-desafios'
 import { getLeadboard } from '@/lib/http/get-leadboard'
-import { useQuery } from '@tanstack/react-query'
+
+import SemanaHeader from '../header'
 
 export default function LeadboardPage() {
   const { data: desafios, isLoading: desafiosLoading } = useQuery({
