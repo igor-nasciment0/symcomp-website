@@ -19,6 +19,9 @@ def registrar_presenca(request):
     email = request.data.get('email')
     compartilhar = request.data.get('compartilhar')
 
+    if email:
+        email = email.strip().lower().replace(" ", "")
+
     if not name or not email:
         return Response({'error': 'Nome e e-mail são obrigatórios.'}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -44,4 +47,3 @@ def registrar_presenca(request):
         return Response({'message': mensagem}, status=status.HTTP_201_CREATED)
 
     return Response({'error': mensagem}, status=status.HTTP_400_BAD_REQUEST)
-

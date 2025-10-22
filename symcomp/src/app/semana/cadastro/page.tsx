@@ -102,7 +102,11 @@ export default function CadastroPage() {
                 <FormItem className="space-y-0">
                   <SCLabel>Email</SCLabel>
                   <FormControl>
-                    <SCInput placeholder="Ex.: grace.hopper@ime.usp.br" {...field} />
+                    <SCInput
+                      type="email"
+                      placeholder="Ex.: grace.hopper@ime.usp.br"
+                      {...field}
+                    />
                   </FormControl>
                   <SCFormMessage />
                 </FormItem>
