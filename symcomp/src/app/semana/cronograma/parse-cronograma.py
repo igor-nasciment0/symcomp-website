@@ -32,7 +32,7 @@ def parse_csv(path_csv: str, path_json: str):
                     "status": row.get("Status", ""),
                     "linkCalendar": row.get("link_calendar", ""),
                     "keyWord": row.get("key_word", ""),
-                    "linkLive": row.get("link_live", ""),  # essencial para o Palestra
+                    "linkLive": row.get("link_live", ""),
                     "sponsorName": row.get("sponsor_name", ""),
                     "sponsorTier": row.get("sponsor_tier", ""),
                 }

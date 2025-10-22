@@ -19,9 +19,19 @@ export function PatrocinadoresCarousel() {
       sponsor.atividades
         .filter((atividade) => atividade.titulo)
         .map((atividade) => ({
-          ...atividade,
-          sponsorName: sponsor.name,
-          sponsorTier: sponsor.tier,
+          titulo: atividade.titulo || '',
+          descricao: atividade.descricao || '',
+          palestrante: atividade.palestrante || '',
+          sobre: atividade.sobre || '',
+          foto: atividade.foto || '',
+          contato: atividade.contato || '',
+          status: atividade.status || '',
+          linkCalendar: atividade.linkCalendar || '',
+          keyWord: atividade.keyWord || '',
+          horario: atividade.horario || '',
+          data: atividade.data || '',
+          sponsorName: sponsor.name || '',
+          sponsorTier: sponsor.tier || '',
         })),
     )
   }, [])
@@ -30,35 +40,24 @@ export function PatrocinadoresCarousel() {
     <SCCarousel
       items={allAtividades}
       renderItem={(atividade) => (
-        <div className="flex justify-center w-full px-4 sm:px-0">
-          <AtividadeCard
-            key={atividade.titulo}
-            palestra={atividade as Palestra}
-            sponsorName={atividade.sponsorName}
-            sponsorTier={atividade.sponsorTier}
-          />
+        <div className="flex justify-center w-full px-4 sm:px-0" key={atividade.titulo}>
+          <AtividadeCard palestra={atividade as Palestra} />
         </div>
       )}
     />
   )
 }
 
-function AtividadeCard({
-  palestra,
-  sponsorName,
-  sponsorTier,
-}: {
-  palestra: Palestra
-  sponsorName: string
-  sponsorTier: string
-}) {
+function AtividadeCard({ palestra }: { palestra: Palestra }) {
   const fotoUrl = palestra.foto ? `/sc-2025/patrocinadores/${palestra.foto}` : ''
 
   return (
     <div className="relative w-auto max-w-[340px] top-3 max-md:px-16">
-      <div className="absolute -top-1 -right-1 max-md:w-fit max-md:h-fit max-md:right-10 px-1 py-1 bg-[#1D1D1D] border-8 border-white rounded-none z-10">
-        <Text className="text-white text-xs">{sponsorTier}</Text>
-      </div>
+      {palestra.sponsorTier && (
+        <div className="absolute -top-1 -right-1 max-md:w-fit max-md:h-fit max-md:right-10 px-1 py-1 bg-[#1D1D1D] border-8 border-white rounded-none z-10">
+          <Text className="text-white text-xs">{palestra.sponsorTier}</Text>
+        </div>
+      )}
 
       <SCWrapper>
         <div className="p-4 w-full flex flex-row justify-center items-center gap-4">
@@ -73,7 +72,7 @@ function AtividadeCard({
               </div>
             )}
             <Text className="text-sc-2025-contrast text-center text-xl font-bold leading-tight">
-              {sponsorName}
+              {palestra.sponsorName}
             </Text>
           </div>
         </div>
