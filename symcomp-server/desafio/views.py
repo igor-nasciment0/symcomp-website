@@ -145,7 +145,7 @@ def responder_questao(request, questao_id):
     })
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def obter_ranking(request, desafio_id):
     """
     Obtém o ranking (Top 10) de um desafio
