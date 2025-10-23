@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from atividade.models import Atividade, TipoAtividade
 from desafio.atividade_pontos.models import AtividadePontos
 from atividade.presenca import Presenca
-from jogador.models import Jogador
+from desafio.jogador.models import Jogador
 
 
 class Command(BaseCommand):
