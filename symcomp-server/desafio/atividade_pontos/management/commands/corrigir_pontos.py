@@ -4,7 +4,7 @@ from django.db import transaction
 from datetime import datetime, timedelta
 
 from atividade.models import Atividade, TipoAtividade
-from atividade_pontos.models import AtividadePontos
+from desafio.atividade_pontos.models import AtividadePontos
 from atividade.presenca import Presenca
 from jogador.models import Jogador
 
