@@ -15,7 +15,7 @@ class Jogador(models.Model):
         related_name="jogadores"
     )
     pontos = models.IntegerField(default=0)
-    username = models.CharField(max_length=255, blank=True)
+    username = models.CharField(max_length=255, blank=True, unique=True)
 
     def __str__(self):
         return f'{self.username or "Sem username"} - {self.user.email}'

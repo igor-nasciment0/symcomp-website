@@ -12,7 +12,7 @@ python wait-for-db.py
 echo "Applying database migrations..."
 python manage.py migrate
 
-python manage.py import_drag_family
+# python manage.py import_drag_family
 
 if [ "$DJANGO_ENV" = "production" ]; then
   echo "Collecting static files..."
