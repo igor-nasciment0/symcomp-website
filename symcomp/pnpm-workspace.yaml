@@ -1,12 +1,6 @@
 allowBuilds:
-  esbuild: false
-  react-tsparticles: false
-  sharp: false
-  tsparticles-engine: false
-  unrs-resolver: false
-onlyBuiltDependencies:
-  - esbuild
-  - react-tsparticles
-  - sharp
-  - tsparticles-engine
-  - unrs-resolver
+  esbuild: true
+  react-tsparticles: true
+  sharp: true
+  tsparticles-engine: true
+  unrs-resolver: true
