@@ -1,132 +1,98 @@
-## Project Setup
+# Symcomp frontend
 
-First, install the packages required for the project
+## Development environment
+
+This project uses Node.js 24 LTS and pnpm 11.3.0. The required Node version is
+recorded in [`.nvmrc`](.nvmrc), and the pnpm version is recorded in
+[`package.json`](package.json).
+
+### Prerequisites
+
+- [Node.js 24 LTS](https://nodejs.org/), preferably through
+  [nvm](https://github.com/nvm-sh/nvm)
+- Corepack (bundled with Node.js) to provide pnpm
+
+Check the active versions:
 
 ```bash
-pnpm install
+node --version
+pnpm --version
 ```
 
-Then, copy the .env
+They should report Node `v24.x` and pnpm `11.3.0`.
+
+### Install
+
+With nvm:
 
 ```bash
-cp .env.example .env
+nvm install
+nvm use
+corepack enable
+pnpm install --frozen-lockfile
 ```
 
-Check with other members the details of those variables.
+If you do not use nvm, install a Node 24 LTS release before running the last
+two commands. Do not use npm or Yarn in this repository: pnpm and
+[`pnpm-lock.yaml`](pnpm-lock.yaml) are the source of truth for dependencies.
 
-## Running the project
-
-After following the steps above and meeting its requeriments, run in the terminal:
+### Run locally
 
 ```bash
 pnpm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000> in a browser.
 
-## Deploying project
+## Verification
 
-### Manual deploy
-
-Access the machine via ssh key. For that use:
+Run these checks after changing dependencies or before opening a pull request:
 
 ```bash
-ssh <user>@symcomp.ime.usp.br
+# Confirm that the committed lockfile installs without changes and has no
+# unsatisfied dependency peers.
+pnpm install --frozen-lockfile --strict-peer-dependencies
+
+# Check the dependency graph against npm security advisories.
+pnpm audit
+
+# Check formatting and lint rules.
+pnpm run format
+pnpm run lint
+
+# Create a production build.
+pnpm run build
 ```
 
-Within the machine, access the folder where the site files are. For more information consult the techical members. To make the deploy, you must make sure the main branch is updated. Then, execute the following commands:
+`pnpm audit` requires access to the npm registry. Do not use `pnpm audit --fix`
+without reviewing its changes: a fix may add overrides to
+[`pnpm-workspace.yaml`](pnpm-workspace.yaml).
+
+## Dependency maintenance
+
+Use the following workflow for dependency updates:
 
 ```bash
-sudo docker exec -it 120d50346564 /bin/bash
-git pull
-yarn
-yarn build
-exit
-sudo docker restart 120d50346564
+pnpm update
+pnpm audit
+pnpm install --frozen-lockfile --strict-peer-dependencies
+pnpm run lint
+pnpm run build
 ```
 
-### Automatic deploy
+Commit `package.json`, `pnpm-lock.yaml`, and `pnpm-workspace.yaml` together
+whenever an update changes them. `package-lock.json` is intentionally not used
+by this project.
 
-In order to create a script to be executed automatically on the physical machine you must add a git bare repository.
+## Formatting
 
-**There are a bare folder in the current server**
-
-If you need to create a new one you follow:
-
-Access the machine with the ssh credentials. Then, run the commands.
+Install the **Prettier - Code formatter** VS Code extension and enable format
+on save. The project also provides:
 
 ```bash
-mkdir -p /path/to/respo/name-bare.git
-cd /path/to/resp/name-bare.git
-git init --bare
-```
+# Check formatting without changing files.
+pnpm run format
 
-Create the script **/path/to/respo/name-bare.git/deploy.sh**
-
-```bash
-#!/bin/bash
-
-CONTAINER_ID="120d50346564"
-
-sudo docker exec "$CONTAINER_ID" /bin/bash -c "
-  git pull && \
-  yarn && \
-  yarn build
-"
-
-sudo docker restart "$CONTAINER_ID"
-
-```
-
-Create the file **/path/to/respo/name-bare.git/hooks/post-receive**
-
-```bash
-#!/bin/bash
-
-read oldrev newrev ref
-
-BRANCH="refs/heads/main"
-
-if [ "$ref" == "$BRANCH" ]; then
-    /path/to/respo/deploy.sh
-fi
-```
-
-Make the file executable.
-
-```bash
-chmod +x /path/to/respo/name-bare.git/hooks/post-receive
-```
-
-Exit the remote machine. Next, on your local machine configure another remote.
-
-```bash
-git remote add server user@user:/path/to/respo/name-bare.git
-```
-
-Finally, when you need to make the deploy, run on your local machine
-
-```bash
-git push origin main
-git push server main
-```
-
-## Contribute with the project
-
-To make sure we follow the best pratices in code development, the project run ESlint and Prettier to ensure writing standard throughout its file. So, to make it easier to contribute, install extension **Prettier - Code formatter** to your VS code.
-
-Not only that, but to ensure you are formatting, you should press **control + ,** to enter VS code configuration.
-
-Open the editor for settings and add the following line at the end of the json file:
-
-```json
-{
-  //...
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always"
-  }
-  //...
-}
+# Apply formatting changes.
+pnpm run format:fix
 ```
