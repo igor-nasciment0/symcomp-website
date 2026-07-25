@@ -1,3 +1,9 @@
+allowBuilds:
+  esbuild: false
+  react-tsparticles: false
+  sharp: false
+  tsparticles-engine: false
+  unrs-resolver: false
 onlyBuiltDependencies:
   - esbuild
   - react-tsparticles
