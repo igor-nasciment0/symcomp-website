@@ -24,35 +24,6 @@ $ uv venv
 
 Lastly, use `uv sync` to install dependencies on virtual environment.
 
-## Contributing 
-
-For commits, use **Conventional Commits**. Format:
-
-```
-<type>(<scope>): <description>
-
-[body, optional]
-```
-
-Example:
-
-- `feat(auth): add google oauth2 login integration`
-
-Check Conventional Commits [docs](www.conventionalcommits.org/en/v1.0.0/)
-
-To make PRs, follow these guidelines:
-- Keep it focused: One PR should address one issue or feature, unless absolutely necessary.
-- Write tests: Ensure new code has matching tests.
-- Run linters: Run lint, format and tests locally before pushing.
-- Use our PR template.
-
-For branches, use specific prefixes to indentify their purpose. Examples:
-
-- `feat/short-description`
-- `docs/some-message`
-
-This is a recommendation, but may be ignored if needed.
-
 ## ORM and Alembic workflow
 
 When using SQLAlchemy ORM paired with Alembic for migrations, workflow is mostly:
