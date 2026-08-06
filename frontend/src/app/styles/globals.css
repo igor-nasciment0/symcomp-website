@@ -72,28 +72,9 @@
 
 /* Utilities personalizadas */
 @layer utilities {
-  .sc-2025-text-shadow-solid {
-    text-shadow: -6px 4px 0 #003049;
-  }
-
   .symcomp-border {
     box-shadow: 5px 5px 0 black;
     border: 5px solid black;
-  }
-
-  .animate-marquee {
-    display: flex;
-    animation: marquee 1800s linear infinite;
-  }
-}
-
-/* Keyframes para animação marquee */
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-500%);
   }
 }
 

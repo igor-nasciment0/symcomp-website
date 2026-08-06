@@ -1,16 +1,15 @@
 import type { Metadata } from 'next'
 
-import { Header } from '@/components/header'
+import { SiteHeader } from '@/components/layout/site-header'
+import { BCContent } from '@/features/bytecafe/components/content'
+import { BCFaq } from '@/features/bytecafe/components/faq'
+import { BCFooter } from '@/features/bytecafe/components/footer'
+import { BCHome } from '@/features/bytecafe/components/home'
+import { BCParticipation } from '@/features/bytecafe/components/participation'
+import { BCPresentation } from '@/features/bytecafe/components/presentation'
 import { BC_PRIMARY_COLOR, BC_PRIMARY_COLOR_CONTRAST } from '@/lib/constants'
 import { Color } from '@/types/color'
 import { Logo } from '@/types/logo'
-
-import { BCContent } from './content'
-import { BCFaq } from './faq'
-import { BCFooter } from './footer'
-import { BCHome } from './home'
-import { BCParticipation } from './participation'
-import { BCPresentation } from './presentation'
 
 export const metadata: Metadata = {
   title: 'ByteCafé | Um Projeto SymComp',
@@ -57,7 +56,7 @@ export default function ByteCafe() {
 
   return (
     <main className="flex flex-col justify-start items-center bg-bc-white font-mont h-[100vh]">
-      <Header
+      <SiteHeader
         color={color}
         sections={sections}
         logo={logo}

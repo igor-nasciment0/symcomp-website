@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 
-import { Header } from '@/components/header'
-import { AboutUs } from '@/components/home/about-us'
-import { Footer } from '@/components/home/footer'
-import { HeroSection } from '@/components/home/hero-section'
-import { Projects } from '@/components/home/projects'
+import { SiteHeader } from '@/components/layout/site-header'
+import { AboutUs } from '@/features/symcomp/components/about-us'
+import { Footer } from '@/features/symcomp/components/footer'
+import { HeroSection } from '@/features/symcomp/components/hero-section'
+import { Projects } from '@/features/symcomp/components/projects'
 import { SYMCOMP_PRIMARY_COLOR, SYMCOMP_PRIMARY_COLOR_CONTRAST } from '@/lib/constants'
 import { Color } from '@/types/color'
 import { Logo } from '@/types/logo'
@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <main className="bg-white h-svh">
       <div className="grid grid-rows-[auto,1fr] h-full">
-        <Header
+        <SiteHeader
           backgroundColor="bg-symcomp-background"
           color={color}
           sections={sections}
