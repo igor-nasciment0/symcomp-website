@@ -65,6 +65,8 @@ to `components/ui` only when it is design-neutral and reused across features.
 The 2025 Semana implementation has been retired from this working frontend;
 recover it from the archived release tag if it is ever needed.
 
+Read [UI conventions](../docs/ui-conventions.md) before starting frontend work.
+
 ## Verification
 
 Run these checks after changing dependencies or before opening a pull request:
