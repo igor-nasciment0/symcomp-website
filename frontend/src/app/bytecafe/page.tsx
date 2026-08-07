@@ -1,0 +1,75 @@
+import type { Metadata } from 'next'
+
+import { SiteHeader } from '@/components/layout/site-header'
+import { BCContent } from '@/features/bytecafe/components/content'
+import { BCFaq } from '@/features/bytecafe/components/faq'
+import { BCFooter } from '@/features/bytecafe/components/footer'
+import { BCHome } from '@/features/bytecafe/components/home'
+import { BCParticipation } from '@/features/bytecafe/components/participation'
+import { BCPresentation } from '@/features/bytecafe/components/presentation'
+import { BC_PRIMARY_COLOR, BC_PRIMARY_COLOR_CONTRAST } from '@/lib/constants'
+import { Color } from '@/types/color'
+import { Logo } from '@/types/logo'
+
+export const metadata: Metadata = {
+  title: 'ByteCafé | Um Projeto SymComp',
+  description:
+    'O ByteCafé é um projeto organizado pelo grupo de extensão do IME USP SymComp - Simpósio de Computação, com o objetivo de atrair mais alunos para o curso de computação e para USP, proporcionando aos visitantes experiências da vida universitária imeana.',
+}
+
+export default function ByteCafe() {
+  const sections = [
+    {
+      label: 'Início',
+      href: 'home',
+    },
+    {
+      label: 'Quem Somos',
+      href: 'presentation',
+    },
+    {
+      label: 'Edições Anteriores',
+      href: 'content',
+    },
+    {
+      label: 'Participe',
+      href: 'participation',
+    },
+    {
+      label: 'FAQ',
+      href: 'bcfaq',
+    },
+  ]
+
+  const logo: Logo = {
+    alt: 'Logo do evento. Uma chícara de café cheia. No seu interior temos números binários dentro.',
+    src: '/logo/logo_byte_horizontal.png',
+    width: 200,
+    height: 200,
+    className: 'h-[50px]',
+  }
+
+  const color: Color = {
+    primary: BC_PRIMARY_COLOR,
+    contrast: BC_PRIMARY_COLOR_CONTRAST,
+  }
+
+  return (
+    <main className="flex flex-col justify-start items-center bg-bc-white font-mont h-[100vh]">
+      <SiteHeader
+        color={color}
+        sections={sections}
+        logo={logo}
+        backgroundColor="bc-backgrond"
+      />
+      <div className="flex flex-col justify-start items-center w-full ">
+        <BCHome />
+        <BCPresentation />
+        <BCContent />
+        <BCParticipation />
+        <BCFaq />
+        <BCFooter />
+      </div>
+    </main>
+  )
+}
