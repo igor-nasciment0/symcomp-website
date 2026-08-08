@@ -1,3 +1,4 @@
+import os
 import asyncio
 from logging.config import fileConfig
 
@@ -28,6 +29,10 @@ target_metadata = Base.metadata
 # can be acquired:
 # my_important_option = config.get_main_option("my_important_option")
 # ... etc.
+
+# getting database connection string from .env
+database_url = os.getenv("DATABASE_URL", "postgresql+asyncpg://user:password@postgres/database")
+config.set_main_option("sqlalchemy.url", database_url)
 
 
 def run_migrations_offline() -> None:
