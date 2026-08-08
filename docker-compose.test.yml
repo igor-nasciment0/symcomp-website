@@ -12,9 +12,7 @@ services:
     build:
       target: development
     volumes:
-    - ./symcomp-server:/app
-    entrypoint: ["/bin/sh", "/app/entrypoint-test.sh"]
-    
+    - ./backend:/app    
   
   frontend:
     env_file:
