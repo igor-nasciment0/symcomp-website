@@ -23,11 +23,12 @@ class Settings(BaseSettings):
 
     database_url: PostgresDsn = Field(
         default_factory=lambda: PostgresDsn.build(
+            scheme="postgresql+asyncpg",
             username="postgres",
             password="postgres",
             host="localhost",
             port=5432,
-            scheme="symcomp",
+            path="symcomp",
         ),
         title="Database URL",
         description="The database connection string",
