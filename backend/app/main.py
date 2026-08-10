@@ -7,9 +7,15 @@ from app.core import config, database
 
 
 @asynccontextmanager
-async def lifespan(_: FastAPI):
+async def lifespan(app: FastAPI):
+    settings = config.get_settings()
+    engine, session_factory = database.create_database(settings)
+
+    app.state.engine = engine
+    app.state.session_factory = session_factory
+
     yield
-    await database.engine.dispose()
+    await engine.dispose()
 
 
 app = FastAPI(title="SymComp API", version="0.1.0", lifespan=lifespan)
