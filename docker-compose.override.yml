@@ -6,9 +6,10 @@ services:
   backend:
     build:
       target: development
-    command: python manage.py runserver 0.0.0.0:8000
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     volumes:
-      - ./symcomp-server:/app
+      - ./backend:/app
+      - /app/.venv
     ports:
       - "8000:8000"
     
@@ -16,7 +17,7 @@ services:
     build:
       target: development
     volumes:
-      - ./symcomp:/app
+      - ./frontend:/app
       - /app/node_modules
     ports:
       - "3000:3000"
