@@ -1,5 +1,6 @@
 from collections.abc import AsyncGenerator
 
+from fastapi import Request
 from sqlalchemy.ext.asyncio import (
     AsyncEngine,
     AsyncSession,
@@ -8,7 +9,7 @@ from sqlalchemy.ext.asyncio import (
 )
 from sqlalchemy.orm import DeclarativeBase
 
-from app.core.config import Settings, get_settings
+from app.core.config import Settings
 
 
 class Base(DeclarativeBase):
@@ -23,14 +24,19 @@ def create_session_factory(engine: AsyncEngine) -> async_sessionmaker[AsyncSessi
     return async_sessionmaker(bind=engine, class_=AsyncSession, expire_on_commit=False)
 
 
-settings = get_settings()
-engine = create_engine(settings)
-async_session_factory = create_session_factory(engine)
+def create_database(
+    settings: Settings,
+) -> tuple[AsyncEngine, async_sessionmaker[AsyncSession]]:
+    engine = create_engine(settings)
+    session_factory = create_session_factory(engine)
+
+    return engine, session_factory
 
 
-async def get_session() -> AsyncGenerator[AsyncSession, None]:
+async def get_session(request: Request) -> AsyncGenerator[AsyncSession, None]:
+    session_factory = request.app.state.session_factory
 
-    async with async_session_factory() as session:
+    async with session_factory() as session:
         try:
             yield session
         except Exception:
