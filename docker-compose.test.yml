@@ -12,7 +12,10 @@ services:
     build:
       target: development
     volumes:
-    - ./backend:/app    
+      - ./backend:/app    
+      - /app/.venv
+    entrypoint: ["/bin/sh", "/app/entrypoint-test.sh"]
+
   
   frontend:
     env_file:
@@ -20,7 +23,8 @@ services:
     build:
       target: development
     volumes:
-    - ./symcomp:/app
+      - ./symcomp:/app
+      - /app/node_modules
     command: echo "testing frontend?"
 
 #Ensures our development database isnt impacted
