@@ -36,6 +36,11 @@ EXPOSE 8000
 # 4. DEVELOPMENT STAGE
 # ==========================================
 FROM runtime AS development
+
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+RUN uv sync --frozen
+
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
 # ==========================================
