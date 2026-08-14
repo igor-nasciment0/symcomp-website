@@ -1,10 +1,11 @@
 import pytest
 import pytest_asyncio
-from httpx2 import AsyncClient, ASGITransport
-from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
-from app.main import app
+from httpx2 import ASGITransport, AsyncClient
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
+
 from app.core.config import Settings, get_settings
 from app.core.database import get_session
+from app.main import app
 
 
 @pytest.fixture
@@ -12,6 +13,7 @@ def test_settings() -> Settings:
     settings = get_settings()
     settings.app_env = "dev"
     return settings
+
 
 @pytest_asyncio.fixture
 async def db_session(test_settings: Settings):
@@ -31,6 +33,7 @@ async def db_session(test_settings: Settings):
         await transaction.rollback()
 
     await engine.dispose()
+
 
 @pytest_asyncio.fixture
 async def client(db_session: AsyncSession, test_settings: Settings):

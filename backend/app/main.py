@@ -2,7 +2,6 @@ from contextlib import asynccontextmanager
 
 from fastapi import Depends, FastAPI
 
-from app.api.middlewares import log_request
 from app.api.router import api_router
 from app.core import config, database
 
