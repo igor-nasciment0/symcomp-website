@@ -2,7 +2,9 @@
 
 Welcome to the SymComp website repository!
 
-To run it locally, use
+First of all, copy .env.example to .env file
+
+Next, to run it locally, use
 
 ```bash
 docker compose up --build
