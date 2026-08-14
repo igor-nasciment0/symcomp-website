@@ -31,7 +31,9 @@ target_metadata = Base.metadata
 # ... etc.
 
 # getting database connection string from .env
-database_url = os.getenv("DATABASE_URL", "postgresql+asyncpg://user:password@postgres/database")
+database_url = os.getenv(
+    "DATABASE_URL", "postgresql+asyncpg://user:password@postgres/database"
+)
 config.set_main_option("sqlalchemy.url", database_url)
 
 
